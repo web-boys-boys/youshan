@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+</head>
+
+<body>
+    <!--  -->
+    <div id="login-register">
+        <!-- 内容 -->
+        <div class="box">
+            <div class="loginPage">
+                <div class="login-information">
+                    <!-- form表单 -->
+                    <form action="" class="menu">
+                        <div class="quit"><a href=""><img src="../images/Vector (3).png" alt=""></a></div>
+                        <!-- 注册头部信息 -->
+                        <div class="login-head">
+                            <section>
+                                <div class="annotation"><span>用户注册</span> </div>
+                                <div class="go-register">
+                                    <a href="./login.html">
+                                        <div class="icon">
+                                            <img class="iconImg1" src="../images/Vector (4).png" alt="">
+                                            <img class="iconImg2" src="../images/Vector (5).png" alt="">
+                                        </div>
+                                        <span>登录</span>
+                                    </a>
+                                </div>
+                            </section>
+                            <div class="english">Star your cook adventure</div>
+                        </div>
+
+                        <div class="main">
+                            <!--用户u -->
+                            <section class="input-box" data-tips="账号由4~8位字母、数字、下划线组成">
+                                <input type="text" id="username" data-reg="^\w{4,8}$" placeholder="用户名">
+                            </section>
+                            <!-- 邮箱 -->
+                            <section class="input-box register" data-tips="邮箱格式不正确">
+                                <input type="email" id="email" data-reg="@" placeholder="邮箱">
+                            </section>
+                            <!-- 密码 -->
+                            <section class="input-box" data-tips="账号由4~8位字母、数字、下划线组成">
+                                <input type="password" id="password" data-reg="^\w{4,8}$" placeholder="密码">
+                            </section>
+                            <!-- 确认密码 -->
+                            <section class="input-box register" data-tips="两次密码不一致">
+                                <input type="password" id="confirmPsw" placeholder="确认密码">
+                            </section>
+                            
+                            <div class="register-infos">
+                                <div class="agree username-password"> <img src="../images/Vector (6).png" alt="">
+                                    <span>同意《友膳用户使用协议》</span> </div>
+                            </div>
+
+                            <!-- 注册按钮 -->
+                            <button type="submit" class="btn" id="submit">注册</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                <!-- 版心右侧图片 -->
+                <div class="decorate">
+                    <div class="login-img"><img src="../images/ZuIDLSz3XLg.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
