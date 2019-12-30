@@ -58,6 +58,7 @@ body {
                     margin: 0 50px 0 15px;
 
                     a {
+                        display        : inline-block;
                         font-size      : 16px;
                         text-decoration: none;
                         color          : @ys_color;
@@ -83,9 +84,7 @@ body {
     position: relative;
 
     .banner {
-        position: absolute;
-        top     : 0;
-        left    : 0;
+        position: relative;
 
         img {
             width: 100%;
@@ -101,67 +100,148 @@ body {
             color    : @ys_color;
 
             .logo {
-                margin-top: 278px;
+                margin-top: 14vw;
 
                 img {
-                    width: 580px;
+                    width: 32vw;
                 }
             }
 
             .text_one {
                 font-style : normal;
                 font-weight: bold;
-                font-size  : 72px;
-                line-height: 92px;
-                margin-top : 28px;
+                font-size  : 3.7vw;
+                line-height: 5vw;
+                margin-top : 1.5vw;
             }
 
             .text_two {
                 font-style : normal;
                 font-weight: normal;
-                font-size  : 48px;
-                line-height: 60px;
-                margin-top : 8px;
+                font-size  : 2.5vw;
+                line-height: 3.5vw;
+                margin-top : .5vw;
             }
 
             .text_car {
-                margin-top      : 50px;
-                width           : 376px;
-                height          : 86px;
+                margin-top      : 2vw;
+                width           : 20.5vw;
+                height          : 4.5vw;
                 background      : linear-gradient(252.68deg, #FF4B2B -1.95%, @ys_color 172.83%);
-                box-shadow      : 2px 2px 12px rgba(255, 65, 108, 0.5);
-                border-radius   : 50px;
+                box-shadow      : 2px 2px .6vw rgba(255, 65, 108, 0.5);
+                border-radius   : 3vw;
                 // transform    : matrix(-1, 0, 0, 1, 0, 0);
 
                 ._car {
                     height        : 100%;
-                    font-size     : 32px;
                     color         : white;
                     font-style    : normal;
                     font-weight   : bold;
-                    font-size     : 32px;
-                    line-height   : 40px;
+                    font-size     : 1.6vw;
+                    line-height   : 2.1vw;
                     letter-spacing: 0.1em;
                     position      : relative;
 
                     .car_img {
-                        width       : 36px;
-                        margin-right: 40px;
+                        width       : 1.6vw;
+                        margin-right: 2vw;
                     }
 
                     .car_num {
                         position     : absolute;
-                        top          : -20px;
+                        top          : -1vw;
                         right        : 0;
-                        width        : 40px;
-                        height       : 40px;
-                        font-size    : 24px;
+                        width        : 2.1vw;
+                        height       : 2.1vw;
+                        font-size    : 1.3vw;
                         border-radius: 100%;
                         background   : linear-gradient(105.46deg, #FBB245 -1.67%, #FDC767 97.42%);
                     }
                 }
             }
+
+            .banner_search {
+                margin-top: 2vw;
+
+                .banner_search_div {
+                    display         : inline-block;
+                    padding         : .6vw;
+                    background-color: #ffffff;
+                    border-radius   : 100vw;
+                    position        : relative;
+                    box-shadow      : 4px 4px 1.1vw rgba(0, 0, 0, 0.06);
+                }
+
+                .search_img {
+                    display : inline-block;
+                    width   : 2.4vw;
+                    position: relative;
+                    top     : .5vw;
+                    left    : .5vw;
+                    cursor  : pointer;
+                }
+
+                .search_input {
+                    vertical-align: top;
+                    width         : 30vw;
+                    border        : none;
+                    font-size     : 1.3vw;
+                    padding       : .9vw;
+                    outline       : none;
+                }
+
+                .search_list {
+                    vertical-align  : top;
+                    border          : none;
+                    font-size       : 1.3vw;
+                    padding         : 1vw 2.6vw 1vw 0;
+                    outline         : none;
+                    appearance      : none;
+                    color           : @ys_color;
+                    position        : relative;
+                    border-radius   : 0 2.6vw 2.6vw 0;
+                    z-index         : 2;
+                    background-color: transparent;
+                }
+
+                .list_img {
+                    position : absolute;
+                    top      : 52%;
+                    transform: translateY(-50%);
+                    right    : 1.3vw;
+                    width    : 1.3vw;
+                }
+            }
         }
 
+    }
+
+    .menu_bar {
+        height       : 88px;
+        background   : #FFFFFF;
+        box-shadow   : 0px 2px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+
+        .menu_grop {
+            cursor    : pointer;
+            // padding: 0 40px;
+
+            .menus {
+                display: inline-block;
+                width  : 53px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .menus_a {
+                font-size      : 16px;
+                line-height    : 20px;
+                color          : @ys_color;
+                text-decoration: none;
+                padding        : 0 20px;
+            }
+        }
     }
 }
