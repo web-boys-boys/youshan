@@ -3,3 +3,165 @@
     color      : pink;
     font-weight: 400;
 }
+
+body {
+    position: relative;
+}
+
+@ys_color: #FF416C;
+
+.header {
+    height             : 80px;
+    // background-color: rgb(152, 255, 224);
+    color              : @ys_color;
+    box-shadow         : 0px 4px 4px rgba(0, 0, 0, 0.1);
+    background         : white;
+    position           : fixed;
+    top                : 0;
+    left               : 0;
+    z-index            : 10;
+    width              : 100%;
+
+    .header_top {
+        height                : 80px;
+        // background-color   : rgb(0, 247, 247);
+
+        .header_main {
+            height: 80px;
+            width : 100%;
+
+            .header_left {
+                float    : left;
+                font-size: 16px;
+
+                .address_list {
+                    margin        : 0 10px 0 6px;
+                    border        : none;
+                    outline       : none;
+                    border        : 1px solid #FF416C;
+                    border-radius : 4px;
+                    font-size     : 16px;
+                    padding-bottom: 5px;
+                    color         : #FF416C;
+                }
+
+                .welcome_text {
+                    font-size  : 12px;
+                    padding-top: 3px;
+                }
+            }
+
+            .header_right {
+                float: right;
+
+                .login_rigster {
+                    margin: 0 50px 0 15px;
+
+                    a {
+                        font-size      : 16px;
+                        text-decoration: none;
+                        color          : @ys_color;
+                    }
+                }
+
+                .car_div {
+                    cursor: pointer;
+
+                    .user_car {
+                        margin-left: 15px;
+                    }
+
+                }
+            }
+
+        }
+    }
+
+}
+
+.main {
+    position: relative;
+
+    .banner {
+        position: absolute;
+        top     : 0;
+        left    : 0;
+
+        img {
+            width: 100%;
+        }
+
+        .banner_text {
+            position : absolute;
+            top      : 0;
+            left     : 50%;
+            transform: translateX(-50%);
+            width    : 100%;
+            height   : 100%;
+            color    : @ys_color;
+
+            .logo {
+                margin-top: 278px;
+
+                img {
+                    width: 580px;
+                }
+            }
+
+            .text_one {
+                font-style : normal;
+                font-weight: bold;
+                font-size  : 72px;
+                line-height: 92px;
+                margin-top : 28px;
+            }
+
+            .text_two {
+                font-style : normal;
+                font-weight: normal;
+                font-size  : 48px;
+                line-height: 60px;
+                margin-top : 8px;
+            }
+
+            .text_car {
+                margin-top      : 50px;
+                width           : 376px;
+                height          : 86px;
+                background      : linear-gradient(252.68deg, #FF4B2B -1.95%, @ys_color 172.83%);
+                box-shadow      : 2px 2px 12px rgba(255, 65, 108, 0.5);
+                border-radius   : 50px;
+                // transform    : matrix(-1, 0, 0, 1, 0, 0);
+
+                ._car {
+                    height        : 100%;
+                    font-size     : 32px;
+                    color         : white;
+                    font-style    : normal;
+                    font-weight   : bold;
+                    font-size     : 32px;
+                    line-height   : 40px;
+                    letter-spacing: 0.1em;
+                    position      : relative;
+
+                    .car_img {
+                        width       : 36px;
+                        margin-right: 40px;
+                    }
+
+                    .car_num {
+                        position     : absolute;
+                        top          : -20px;
+                        right        : 0;
+                        width        : 40px;
+                        height       : 40px;
+                        font-size    : 24px;
+                        border-radius: 100%;
+                        background   : linear-gradient(105.46deg, #FBB245 -1.67%, #FDC767 97.42%);
+                    }
+                }
+            }
+        }
+
+    }
+}
