@@ -36,3 +36,40 @@ img {
     justify-content: space-around;
     align-items    : center;
 }
+/* 去除表单元素的边框和轮廓 */
+input,
+button,
+textarea {
+    outline: none;
+    border: none;
+}
+
+/* 浮动相关 */
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearFix {
+    zoom: 1;
+}
+
+.clearFix:after {
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+/* 去除列表项目标号 */
+ul,
+li {
+    list-style: none;
+}
+/* 去除超链接默认下划线 */
+a {
+    text-decoration: none;
+}
