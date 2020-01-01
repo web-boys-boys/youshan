@@ -1,0 +1,181 @@
+body {
+    height: 5000px;
+}
+@font-face {
+    font-family: 'iconfont';  /* project id 1482357 */
+    src: url('//at.alicdn.com/t/font_1482357_wj7us1wfyzh.eot');
+    src: url('//at.alicdn.com/t/font_1482357_wj7us1wfyzh.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1482357_wj7us1wfyzh.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1482357_wj7us1wfyzh.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1482357_wj7us1wfyzh.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1482357_wj7us1wfyzh.svg#iconfont') format('svg');
+  }
+  .iconfont{
+    font-family:"iconfont" !important;
+    font-size:20px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+
+.bg {
+    background-image: url('../images/product_page/BG.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.top_menu {
+    margin-top: 90px;
+    height: 1300px;
+
+
+    .fl_menu {
+        width: 144px;
+        height: 46px;
+
+        span {
+            font:bold 36px/46px 'Microsoft YaHei';
+            color: #FF416C;
+            cursor: none;
+        }
+    }
+
+    .fr_menu {
+        margin-left: 277px;
+        width: 730px;
+        height: 46px;
+
+        li {
+            margin-left: 25px;
+            width: 170px;
+            height: 46px;
+            background: linear-gradient(255.22deg, #E5E2FA -1.95%, #E3E3E3 172.83%);
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+            text-align: center;
+
+            a {
+                font:bold  20px/46px 'Microsoft YaHei';
+                letter-spacing: 0.2em;
+                color: #FF416C;
+            }
+        }
+    }
+
+}
+
+.content {
+    margin-top: 10px;
+    height: 1634px;
+
+    .list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        // grid-gap: 30px;
+       
+
+        li {
+            background: #FFFFFF;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            margin: 20px;
+        }
+
+        .ad {
+            grid-column: 1;
+            grid-row: 1 / span 5;
+            background: #FFFFFF;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            .se1 {
+                width: 232px;
+                height: 375px;
+
+                img {
+                    width: 194px;
+                    height: 194px;
+                    margin: 20px 9px 0 10px;
+                }
+
+                h2 {
+                    font:bold  20px/46px 'Microsoft YaHei';
+                    text-align: center;
+                    letter-spacing: 0.2em;
+                    color: #FF416C;
+                    margin-bottom: 11px;
+                }
+
+                span {
+                    font: 15px/16px 'Microsoft YaHei UI';
+                    letter-spacing: 0.1em;
+                    color: #333333;
+                }
+                .star{
+                    color: rgb(212, 211, 211);
+                    transition: all .6s;
+                    &:hover{
+                        color: rgb(238, 255, 0);
+                        transform: translate3d(0,-2px,0);
+                    }
+                }
+                h3 {
+                    margin-top: 15px;
+                    font: normal bold 20px/26px 'Microsoft YaHei UI';   
+                    color: #FF416C;
+                    text-align: center;
+
+                }
+            }
+
+        }
+
+        .item {
+           grid-row: 1 / 2;
+           cursor: pointer;
+           overflow: hidden;
+           transition:  all .4s ease-in-out;
+           
+           h2 {
+                font: bold 25px/20px 'Microsoft YaHei UI';
+                letter-spacing: 0.1em;
+                text-align: center;
+                color: #FF416C;
+                margin-bottom: 12px;
+            }
+            .star{
+                color: rgb(212, 211, 211);
+                transition: all .6s;
+                &:hover{
+                    color:orange;
+                    transform: translate3d(0,-2px,0);
+                }
+            }
+            .desc{
+                font: 15px/16px 'Microsoft YaHei UI';
+                letter-spacing: 0.1em;
+                color: #333333;
+                
+            }
+           
+            .goods_img img {
+                margin: 30px 10px;
+                width: 180px;
+                overflow: hidden;
+                transition:  all 1s ;
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+        
+            &:hover{
+            z-index: 2;
+            box-shadow: 0px 5px 8px rgba(255, 65, 108, 0.5);         
+            transform: translate3d(0,-2px,0);
+            }
+        }
+
+
+    }
+
+}
