@@ -244,4 +244,148 @@ body {
             }
         }
     }
+
+    .Menu_grup {
+        margin: 70px auto;
+
+        .Menu_title {
+            padding       : 20px 0;
+            line-height   : 46px;
+            font-size     : 36px;
+            text-align    : center;
+            font-style    : normal;
+            font-weight   : bold;
+            letter-spacing: 0.2em;
+            color         : @ys_color;
+
+        }
+
+        .Menu_main {
+            margin: 20px 0;
+            width : 100%;
+
+            .container {
+                display                 : grid;
+                width                   : 100%;
+                // background-color     : red;
+                grid-template-columns   : repeat(5, 1fr);
+                grid-template-rows      : repeat(2, 1fr);
+                grid-gap                : 15px;
+
+                .item {
+                    @transition_one: all .4s ease-in-out;
+
+                    border-radius: 8px;
+                    overflow     : hidden;
+                    // &         :hover {
+                    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.12);
+                    // }
+                    position: relative;
+
+                    &:hover img {
+                        // transition: all .3s;
+                        transform    : scale(1);
+                    }
+
+                    &:hover .layer_hover {
+                        // transition: all .3s;
+                        opacity      : 1;
+                        transform    : scale(1);
+                    }
+
+                    &:hover .layer_dis {
+                        transform: translateY(100%);
+                        opacity  : 0;
+                    }
+
+                    .layer {
+                        transition   : @transition_one;
+                        position     : absolute;
+                        width        : calc(100% - 8%);
+                        height       : calc(100% - 8%);
+                        top          : 4%;
+                        left         : 4%;
+                        padding      : 0 4%;
+                        background   : linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+                        opacity      : 1;
+                        color        : #fff;
+                        border-radius: 8px;
+
+                        .layer_text {
+                            position   : absolute;
+                            bottom     : 8%;
+                            font-size  : 36px;
+                            line-height: 46px;
+
+                            .ayer_text_price {
+                                letter-spacing: .1em;
+                            }
+
+
+                        }
+
+                        .bnt_grup {
+                            .btn_by {
+                                background-color: white;
+                                color           : @ys_color;
+                                padding         : 0 25px;
+                                border-radius   : 100px;
+                                font-size       : 18px;
+                                transition      : @transition_one;
+                                cursor          : pointer;
+
+                                &:hover {
+                                    background-color: @ys_color;
+                                    color           : white;
+                                }
+                            }
+
+                            .btn_heart {
+                                // margin-left      : 8%;
+                                width            : 36px;
+                                height           : 32px;
+                                background-image : url("../images/h_heart.svg");
+                                background-repeat: no-repeat;
+                                background-size  : cover;
+                            }
+
+                        }
+                    }
+
+                    .layer_hover {
+                        // transition: @transition_one;
+                        background   : rgba(0, 0, 0, 0.4);
+                        opacity      : 0;
+                        transform    : scale(.9);
+                    }
+
+                    img {
+                        width        : 100%;
+                        height       : 100%;
+                        border-radius: 8px;
+                        transform    : scale(1.1);
+                        transition   : @transition_one;
+                    }
+                }
+
+                .item-one {
+                    grid-row-start   : 1;
+                    grid-row-end     : 3;
+                    grid-column-start: 1;
+                    grid-column-end  : 3;
+                }
+
+                .item-two {
+                    grid-column-start: 3;
+                    grid-column-end  : 6;
+
+                    img {
+                        // height          : 100%;
+                        border-radius      : 8px;
+                        // z-index         : 0;
+                    }
+                }
+            }
+        }
+    }
 }
