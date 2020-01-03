@@ -42,6 +42,6 @@ $(".menu_grop").mouseenter(function () {
     //    $(".menu_grop_s").html($(this).data("id"));
 })
 $(".menu_bar").mouseleave(function () {
-    $(".menu_bottom").css({ opacity: "0", zIndex: "0" });
+    $(".menu_bottom").css({ opacity: "0", zIndex: "-10" });
 })
 
