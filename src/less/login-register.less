@@ -1,25 +1,35 @@
-body {
-    background-image: url('../images/wcDru6t-aCg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+html{
+    height: 100%;
+    width: 100%;
+    body {
+        background-image: url('../images/wcDru6t-aCg.png');
+        background-repeat: no-repeat;
+        background-position: center ;
+        background-size: cover;
+    }
 }
+@ys_color:#999999;
+@ys_pink:#FF416C;
 
 #login-register {
     .box {
         max-width: 1280px;
         margin: 0 auto;
-        margin-top: 7%;
         .loginPage {
-            width: 844px;
-            height: 474px;
+            min-width: 844px;
+            // min-height: 474px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
             margin: 0 auto;
             background: #FFFFFF;
-
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            box-sizing: border-box;
             .login-information {
                 width: 311px;
-                height: 474px;
+                // height: 474px;
                 float: left;
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
@@ -57,7 +67,7 @@ body {
                                     font-weight: bold;
                                     font-size: 24px;
                                     line-height: 30px;
-                                    color: #FF416C;
+                                    color: @ys_pink;
                                 }
                             }
 
@@ -71,10 +81,10 @@ body {
                                         top: 2px;
                                         left: 3px;
 
-                                        .iconImg1 {
+                                        .iconImg {
                                             position: relative;
-                                            left: 11px;
-                                            top: -2.7px;
+                                            left: 1px;
+                                            top: 0.3px;
                                         }
 
                                         img {
@@ -88,7 +98,7 @@ body {
                                         font-weight: bold;
                                         font-size: 12px;
                                         line-height: 15px;
-                                        color: #FF416C;
+                                        color: @ys_pink;
                                     }
                                 }
                             }
@@ -102,7 +112,7 @@ body {
                             font-weight: bold;
                             font-size: 12px;
                             line-height: 15px;
-                            color: #FF416C;
+                            color: @ys_pink;
                         }
                     }
 
@@ -119,7 +129,6 @@ body {
                                 outline: none;
                                 border: none;
                                 border-radius: 6px;
-                                margin-bottom: 20px;
                                 font-family: Microsoft YaHei UI;
                                 font-style: normal;
                                 font-weight: normal;
@@ -129,12 +138,25 @@ body {
                                 color: #999999;
                             }
                         }
+                        .input-box::after  {
+                            content: attr(data-tips);
+                            opacity: 0;
+                            text-align: left;
+                            font-size: 12px;
+                            display: block;
+                            text-indent: 7px;
+                            color: red;
+                            line-height: 20px;
+                        } 
+                        .err::after {
+                            opacity: 1;
+                        }
 
                         .infos {
                             display: flex;
                             justify-content: space-between;
-                            margin-bottom: 20px;
-                            color: #999999;
+                            margin:5px 0 20px 0;
+                            color: @ys_color;
 
                             .username-password {
                                 font-family: Microsoft YaHei UI;
@@ -142,11 +164,12 @@ body {
                                 font-weight: normal;
                                 font-size: 10px;
                                 line-height: 13px;
-                                color: #999999;
+                                color: @ys_color;
                             }
 
                             .remember {
-                                img {
+                                .svg-img {
+                                    cursor: pointer;
                                     background-repeat: no-repeat;
                                 }
 
@@ -160,23 +183,25 @@ body {
                             .forget {
                                 a {
                                     vertical-align: -2px;
-                                    color: #999999;
+                                    color: @ys_color;
                                 }
                             }
                         }
                         .register-infos{
-                            color: #999999;
-                            margin-bottom: 40px;
+                            color: @ys_color;
+                            margin:5px 0  30px 0;
+                            
                             .username-password {
                                 font-family: Microsoft YaHei UI;
                                 font-style: normal;
                                 font-weight: normal;
                                 font-size: 10px;
                                 line-height: 13px;
-                                color: #999999;
+                                color: @ys_color;
                             }
                             .agree {
-                                img {
+                                .svg-img {
+                                    cursor: pointer;
                                     background-repeat: no-repeat;
                                 }
 
@@ -191,7 +216,7 @@ body {
                         .btn {
                             width: 100%;
                             height: 30px;
-                            background: linear-gradient(243.14deg, #FF416C -1.95%, #FF4B2B 172.83%);
+                            background: linear-gradient(243.14deg, @ys_pink -1.95%, #FF4B2B 172.83%);
                             box-shadow: 0px 2px 10px rgba(255, 65, 108, 0.5);
                             border-radius: 6px;
                             outline: none;
@@ -211,7 +236,7 @@ body {
                     .login-bottom-img {
                         width: 170px;
                         margin: 0 auto;
-                        margin-top: 28px;
+                        margin-top: 23px;
 
                         .img {
                             width: 100%;

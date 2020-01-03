@@ -1,76 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>注册</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!--  -->
     <div id="login-register">
-        <!-- 内容 -->
-        <div class="box">
-            <div class="loginPage">
-                <div class="login-information">
-                    <!-- form表单 -->
-                    <form action="" class="menu">
-                        <div class="quit"><a href=""><img src="../images/Vector (3).png" alt=""></a></div>
-                        <!-- 注册头部信息 -->
-                        <div class="login-head">
-                            <section>
-                                <div class="annotation"><span>用户注册</span> </div>
-                                <div class="go-register">
-                                    <a href="./login.html">
-                                        <div class="icon">
-                                            <img class="iconImg1" src="../images/Vector (4).png" alt="">
-                                            <img class="iconImg2" src="../images/Vector (5).png" alt="">
-                                        </div>
-                                        <span>登录</span>
-                                    </a>
-                                </div>
-                            </section>
-                            <div class="english">Star your cook adventure</div>
-                        </div>
+      <!-- 内容 -->
+      <div class="box">
+        <div class="loginPage">
+          <div class="login-information">
+            <!-- form表单 -->
+            <div class="menu">
+              <div class="quit">
+                <a href=""><img src="../images/Vector (3).png" alt=""/></a>
+              </div>
+              <!-- 注册头部信息 -->
+              <div class="login-head">
+                <section>
+                  <div class="annotation"><span>用户注册</span></div>
+                  <div class="go-register">
+                    <a href="./login.html">
+                      <div class="icon">
+                        <img
+                          class="iconImg"
+                          src="../images/denglu.png"
+                          alt=""
+                        />
+                      </div>
+                      <span>登录</span>
+                    </a>
+                  </div>
+                </section>
+                <div class="english">Star your cook adventure</div>
+              </div>
 
-                        <div class="main">
-                            <!--用户u -->
-                            <section class="input-box" data-tips="账号由4~8位字母、数字、下划线组成">
-                                <input type="text" id="username" data-reg="^\w{4,8}$" placeholder="用户名">
-                            </section>
-                            <!-- 邮箱 -->
-                            <section class="input-box register" data-tips="邮箱格式不正确">
-                                <input type="email" id="email" data-reg="@" placeholder="邮箱">
-                            </section>
-                            <!-- 密码 -->
-                            <section class="input-box" data-tips="账号由4~8位字母、数字、下划线组成">
-                                <input type="password" id="password" data-reg="^\w{4,8}$" placeholder="密码">
-                            </section>
-                            <!-- 确认密码 -->
-                            <section class="input-box register" data-tips="两次密码不一致">
-                                <input type="password" id="confirmPsw" placeholder="确认密码">
-                            </section>
-                            
-                            <div class="register-infos">
-                                <div class="agree username-password"> <img src="../images/Vector (6).png" alt="">
-                                    <span>同意《友膳用户使用协议》</span> </div>
-                            </div>
+              <div class="main">
+                <!--用户u -->
+                <section class="input-box" data-tips="用户名格式错误">
+                  <input
+                    type="text"
+                    id="username"
+                    data-reg="^\w{4,8}$"
+                    placeholder="用户名"
+                  />
+                </section>
+                <!-- 邮箱 -->
+                <section class="input-box register" data-tips="邮箱格式不正确">
+                  <input
+                    type="email"
+                    id="email"
+                    data-reg="^\w{2,}@\w{2,}\.[A-Za-z0-9]{2,}$"
+                    placeholder="邮箱"
+                  />
+                </section>
+                <!-- 密码 -->
+                <section class="input-box" data-tips="请输入6~12位的密码">
+                  <input
+                    type="password"
+                    id="password"
+                    data-reg="^.{6,12}$"
+                    placeholder="密码"
+                  />
+                </section>
+                <!-- 确认密码 -->
+                <section class="input-box register" data-tips="密码不一致">
+                  <input
+                    type="password"
+                    id="confirmPsw"
+                    data-reg="^.{6,12}$"
+                    placeholder="确认密码"
+                  />
+                </section>
 
-                            <!-- 注册按钮 -->
-                            <button type="submit" class="btn" id="submit">注册</button>
-                        </div>
-                        
-                    </form>
+                <div class="register-infos">
+                  <div class="agree username-password">
+                    <svg
+                      class="svg-img"
+                      width="15"
+                      height="15"
+                      viewBox="0 0 15 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.5 0C6.01664 0 4.5666 0.439867 3.33323 1.26398C2.09986 2.08809 1.13856 3.25943 0.570907 4.62987C0.00324965 6.00032 -0.145275 7.50832 0.144114 8.96318C0.433503 10.418 1.14781 11.7544 2.1967 12.8033C3.2456 13.8522 4.58197 14.5665 6.03683 14.8559C7.49168 15.1453 8.99968 14.9968 10.3701 14.4291C11.7406 13.8614 12.9119 12.9001 13.736 11.6668C14.5601 10.4334 15 8.98336 15 7.5C15 5.51088 14.2098 3.60322 12.8033 2.1967C11.3968 0.790176 9.48913 0 7.5 0ZM10.9098 5.60625L6.35625 10.1598C6.33135 10.1849 6.30173 10.2049 6.26909 10.2185C6.23645 10.2321 6.20144 10.2391 6.16607 10.2391C6.13071 10.2391 6.0957 10.2321 6.06306 10.2185C6.03042 10.2049 6.0008 10.1849 5.9759 10.1598L4.08215 8.26607C4.05704 8.24117 4.03711 8.21154 4.02351 8.1789C4.00992 8.14626 4.00291 8.11125 4.00291 8.07589C4.00291 8.04053 4.00992 8.00552 4.02351 7.97288C4.03711 7.94024 4.05704 7.91061 4.08215 7.88571L4.47054 7.5C4.52073 7.45011 4.58861 7.42211 4.65938 7.42211C4.73014 7.42211 4.79803 7.45011 4.84822 7.5L6.09911 8.75089C6.11914 8.77052 6.14607 8.78152 6.17411 8.78152C6.20216 8.78152 6.22908 8.77052 6.24911 8.75089L10.1518 4.84821C10.202 4.79833 10.2699 4.77032 10.3406 4.77032C10.4114 4.77032 10.4793 4.79833 10.5295 4.84821L10.9098 5.22589C10.9349 5.25079 10.9549 5.28042 10.9685 5.31306C10.9821 5.3457 10.9891 5.38071 10.9891 5.41607C10.9891 5.45143 10.9821 5.48644 10.9685 5.51908C10.9549 5.55172 10.9349 5.58135 10.9098 5.60625Z"
+                        fill="#999999"
+                      />
+                    </svg>
+                    <span>同意《友膳用户使用协议》</span>
+                  </div>
                 </div>
-                <!-- 版心右侧图片 -->
-                <div class="decorate">
-                    <div class="login-img"><img src="../images/ZuIDLSz3XLg.png" alt=""></div>
-                </div>
+
+                <!-- 注册按钮 -->
+                <button class="btn" id="submit">注册</button>
+              </div>
             </div>
+          </div>
+          <!-- 版心右侧图片 -->
+          <div class="decorate">
+            <div class="login-img">
+              <img src="../images/ZuIDLSz3XLg.png" alt="" />
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
