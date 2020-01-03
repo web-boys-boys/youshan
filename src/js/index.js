@@ -2,6 +2,7 @@ import '../less/index.less';
 import '../less/util.less';
 import Swiper from "swiper";
 import "swiper/css/swiper.css";
+import './JsHtml.js';
 
 // 轮播图
 let mySwiper = new Swiper('.swiper-container', {
