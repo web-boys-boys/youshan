@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 body {
     height: 5000px;
 }
+=======
+
+>>>>>>> 003076587bae703e837b70e5f87f175c9175176c
 @font-face {
     font-family: 'iconfont';  /* project id 1482357 */
     src: url('//at.alicdn.com/t/font_1482357_v08se44a2yp.eot');
@@ -10,6 +14,10 @@ body {
     url('//at.alicdn.com/t/font_1482357_v08se44a2yp.ttf') format('truetype'),
     url('//at.alicdn.com/t/font_1482357_v08se44a2yp.svg#iconfont') format('svg');
   }
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 003076587bae703e837b70e5f87f175c9175176c
   .iconfont{
     font-family:"iconfont" !important;
     font-size:25px;font-style:normal;
@@ -23,22 +31,33 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
 }
+//选择菜单的颜色
+.active{
+    color: blue !important;
+}
 
 .top_menu {
     margin-top: 90px;
-    height: 1300px;
-
-
     .fl_menu {
         width: 144px;
         height: 46px;
 
         span {
+<<<<<<< HEAD
             font:bold 36px/46px 'Microsoft YaHei';
             color: #FF416C;
             cursor: none;
+=======
+            position: relative;
+            left: 50px;
+            font:bold 36px/46px 'Microsoft YaHei';
+            color: #FF416C;
+            cursor: none;
+          
+>>>>>>> 003076587bae703e837b70e5f87f175c9175176c
         }
     }
+    
 
     .fr_menu {
         margin-left: 277px;
@@ -110,6 +129,7 @@ body {
                     font: 15px/16px 'Microsoft YaHei UI';
                     letter-spacing: 0.1em;
                     color: #333333;
+                   
                 }
 
                 h3 {
@@ -151,6 +171,7 @@ body {
                 font: 15px/16px 'Microsoft YaHei UI';
                 letter-spacing: 0.1em;
                 color: #333333;
+                text-indent: 2rem;
                 
             }
             .price{
@@ -188,4 +209,61 @@ body {
 
     }
 
+}
+//分页器
+
+.paination {
+    /* background-color: rgb(167, 85, 85); */
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    padding-right: 100px;
+    margin: 80px 80px 80px;
+
+
+    p {
+        float: right;
+        line-height: 26px;
+
+        input {
+            width: 50px;
+            height: 30px;
+            outline: none;
+            border: 1px solid gray;
+        }
+
+        button {
+            width: 66px;
+            height: 24px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #FFFFFF;
+            line-height: 20px;
+            letter-spacing: 0.2em;
+            background: linear-gradient(258.9deg, #FF416C -1.95%, #FF4B2B 172.83%);
+            border-radius: 12px;
+        }
+    }
+
+    ul {
+        float: right;
+
+        li:nth-child(3) {
+            color: #FF416C;
+        }
+
+        li {
+            float: left;
+            border: 1px solid black;
+            padding: 5px;
+            cursor: pointer;
+            margin-right: 15px;
+
+            &:hover {
+                background-color: rgb(44, 44, 44);
+                color: white;
+            }
+
+        }
+    }
 }
