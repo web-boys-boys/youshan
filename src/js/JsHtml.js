@@ -67,7 +67,7 @@ let htmlone=`<div class="banner">
     <div class="menu_top flex-between-a">
         <section class="menu_grop flex-between-c">
             <span class="menus"><img src="${require('../images/Menu.svg')}" alt=""></span>
-            <span><a class="menus_a">精选菜谱</a></span>
+            <span><a class="menus_a" herf="../static/pages/Menu_Page.html">精选菜谱</a></span>
         </section>
         <section class="menu_grop flex-between-c">
             <span class="menus"><img src="${require('../images/Vegetables.svg')}" alt=""></span>
