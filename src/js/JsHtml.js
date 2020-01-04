@@ -279,26 +279,27 @@ export { fun_header, fun_banner, fun_footer }
 import Swiper from "swiper";
 import "swiper/css/swiper.css";
 // 轮播图
-let mySwiper = new Swiper('.swiper-container', {
-    loop: true, // 循环模式选项
-    // 自动播放
-    autoplay: true,
-    // 切换效果
-    effect: 'coverflow',
-    // 如果需要分页器
-    pagination: {
-        el: '.swiper-pagination',
-    },
-    // 如果需要前进后退按钮
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    }
-})
-$(".swiper_img_click").on("click", function () {
-    console.log($(this).attr("src"))
-})
 setTimeout(function () {
+    let mySwiper = new Swiper('.swiper-container', {
+        loop: true, // 循环模式选项
+        // 自动播放
+        autoplay: true,
+        // 切换效果
+        effect: 'coverflow',
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    })
+    $(".swiper_img_click").on("click", function () {
+        console.log($(this).attr("src"))
+    })
+
     console.log($(".menu_grop"));
     $(".menu_grop").each((index, itme) => {
         console.log(index);

@@ -72,12 +72,14 @@
 
     // background-color: red;
     .user_meau {
+        margin-right : 40px;
         padding      : 40px 10px;
         border-radius: 8px;
         box-shadow   : 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align   : center;
 
         .user_content_title {
-            font-size: 39px;
+            font-size: 36px;
         }
 
         .user_hr {
@@ -101,6 +103,155 @@
                 box-shadow   : 0 4px 8px rgba(0, 0, 0, 0.1);
                 box-shadow   : 0 0px 8px #FF4268;
                 border-radius: 8px;
+            }
+        }
+    }
+
+    .user_meau_list {
+        display      : flex;
+        flex         : auto;
+        box-shadow   : 4px 4px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+
+
+        .user_list {
+            margin : 100px auto 60px;
+            display: none;
+
+            .user_list_info_img {
+                width           : 380px;
+                height          : 380px;
+                border-radius   : 100%;
+                background-color: red;
+                margin-bottom   : 70px;
+
+                img {
+                    width        : 100%;
+                    height       : 100%;
+                    border-radius: 100%;
+                }
+
+            }
+
+            .form_a {
+                padding: 20px 0;
+            }
+
+            .form-group {
+                margin-bottom: 2rem;
+
+                .select_cai {
+                    margin-right: 1rem;
+                }
+            }
+
+            .kouwei_group {
+                margin-bottom: 0rem;
+            }
+
+            .btn_group_user {
+                margin-top: 4rem;
+            }
+
+            input {
+                border : 0.933526px solid #E3E3E3;
+                padding: 5px;
+                width  : 280px;
+            }
+
+            label {
+                min-width : 100px;
+                text-align: right;
+            }
+
+            .kouwei_div {
+                max-width: 280px;
+
+                button {
+                    position     : relative;
+                    margin-right : 20px;
+                    margin-bottom: 10px;
+
+                    .del_kouwwei {
+                        position        : absolute;
+                        width           : 20px;
+                        height          : 20px;
+                        background-color: red;
+                        border-radius   : 100%;
+                        top             : -10px;
+                        right           : -10px;
+                        color           : white;
+                    }
+                }
+            }
+
+
+            .user_list_info {
+
+
+                display: none;
+            }
+
+            .user_editor_info {
+                position: relative;
+
+                .editor_btn {
+                    position: absolute;
+                    top     : -50px;
+                    right   : -200px;
+                }
+
+                .form_fonts {
+                    width         : 280px;
+                    padding-top   : calc(0.375rem + 1px);
+                    padding-bottom: calc(0.375rem + 1px);
+                    margin-bottom : 0;
+                    font-size     : inherit;
+                    line-height   : 1.5;
+                    text-align    : center;
+                }
+
+                // display: none;
+            }
+        }
+
+        .user_order {
+            display: block;
+            width  : 100%;
+
+            .navs_flex {
+                width: 100%;
+            }
+
+            .m_left {
+                margin-left: 20px;
+            }
+
+            .m_right {
+                margin-right: 30px;
+            }
+
+            th {
+                vertical-align: middle;
+            }
+
+            .table_clebtn {
+                text-align   : right;
+                padding-right: 43px;
+            }
+
+            .tabel_grup {
+                padding: 10px;
+                border : 2px solid #dee2e6;
+
+                .tabel_grup_top {
+                    padding-bottom: 10px;
+                    border-bottom : 2px solid #dee2e6;
+                }
+
+                .foot-infrmation {
+                    width: 30%;
+                }
             }
         }
     }
