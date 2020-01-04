@@ -13,10 +13,10 @@ html{
 
 #login-register {
     .box {
-        max-width: 1280px;
+        max-width: 1266px;
         margin: 0 auto;
         .loginPage {
-            min-width: 844px;
+            min-width: 1180px;
             // min-height: 474px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
@@ -28,7 +28,7 @@ html{
             transform: translate(-50%,-50%);
             box-sizing: border-box;
             .login-information {
-                width: 311px;
+                width: 466.5px;
                 // height: 474px;
                 float: left;
                 border-top-left-radius: 10px;
@@ -36,13 +36,17 @@ html{
 
                 form,
                 .menu {
+                    // padding-left: 50px;
+                    // box-sizing: border-box;
+                    
+
                     .quit {
-                        margin-top: 12px;
+                        margin-top: 18px;
 
                         a {
-                            width: 10px;
-                            height: 16px;
-                            margin-left: 13px;
+                            width: 15px;
+                            height: 24px;
+                            margin-left: 19.5px;
 
                             img {
                                 background-repeat: no-repeat;
@@ -52,10 +56,10 @@ html{
                     }
 
                     .login-head {
-                        margin-top: 17px;
+                        margin-top:25.5px;
 
                         section {
-                            width: 212px;
+                            width: 318px;
                             margin: 0 auto;
                             display: flex;
                             justify-content: space-between;
@@ -65,26 +69,26 @@ html{
                                     font-family: Microsoft YaHei UI;
                                     font-style: normal;
                                     font-weight: bold;
-                                    font-size: 24px;
-                                    line-height: 30px;
+                                    font-size: 36px;
+                                    line-height: 45px;
                                     color: @ys_pink;
                                 }
                             }
 
                             .go-register {
                                 a {
-                                    vertical-align: -8px;
-
+                                    vertical-align: -12px;
+// 
                                     .icon {
                                         display: inline;
                                         position: relative;
-                                        top: 2px;
-                                        left: 3px;
+                                        top: 1px;
+    left: -0.5px;
 
                                         .iconImg {
                                             position: relative;
-                                            left: 1px;
-                                            top: 0.3px;
+                                            left: 1.5px;
+                                            top: 0.45px;
                                         }
 
                                         img {
@@ -96,8 +100,8 @@ html{
                                         font-family: Microsoft YaHei UI;
                                         font-style: normal;
                                         font-weight: bold;
-                                        font-size: 12px;
-                                        line-height: 15px;
+                                        font-size: 18px;
+                                        line-height: 22.5px;
                                         color: @ys_pink;
                                     }
                                 }
@@ -105,26 +109,26 @@ html{
                         }
 
                         .english {
-                            width: 212px;
-                            margin: 10px auto;
+                            width: 318px;
+                            margin: 15px auto;
                             font-family: Microsoft YaHei UI;
                             font-style: normal;
                             font-weight: bold;
-                            font-size: 12px;
-                            line-height: 15px;
+                            font-size: 18px;
+                            line-height: 22.5px;
                             color: @ys_pink;
                         }
                     }
 
                     .main {
-                        width: 212px;
+                        width: 318px;
                         margin: 0 auto;
-                        margin-top: 35px;
+                        margin-top: 52.5px;
 
                         .input-box {
                             input {
                                 width: 100%;
-                                height: 30px;
+                                height: 45px;
                                 background: #EEEEEE;
                                 outline: none;
                                 border: none;
@@ -132,9 +136,9 @@ html{
                                 font-family: Microsoft YaHei UI;
                                 font-style: normal;
                                 font-weight: normal;
-                                font-size: 12px;
-                                line-height: 15px;
-                                text-indent: 7px;
+                                font-size: 18px;
+                                line-height: 22.5px;
+                                text-indent: 10.5px;
                                 color: #999999;
                             }
                         }
@@ -142,11 +146,11 @@ html{
                             content: attr(data-tips);
                             opacity: 0;
                             text-align: left;
-                            font-size: 12px;
+                            font-size: 16px;
                             display: block;
                             text-indent: 7px;
                             color: red;
-                            line-height: 20px;
+                            line-height: 25px;
                         } 
                         .err::after {
                             opacity: 1;
@@ -162,8 +166,8 @@ html{
                                 font-family: Microsoft YaHei UI;
                                 font-style: normal;
                                 font-weight: normal;
-                                font-size: 10px;
-                                line-height: 13px;
+                                font-size: 14px;
+                                line-height: 18px;
                                 color: @ys_color;
                             }
 
@@ -195,8 +199,8 @@ html{
                                 font-family: Microsoft YaHei UI;
                                 font-style: normal;
                                 font-weight: normal;
-                                font-size: 10px;
-                                line-height: 13px;
+                                font-size: 14px;
+                                line-height: 18px;
                                 color: @ys_color;
                             }
                             .agree {
@@ -215,7 +219,7 @@ html{
 
                         .btn {
                             width: 100%;
-                            height: 30px;
+                            height: 45px;
                             background: linear-gradient(243.14deg, @ys_pink -1.95%, #FF4B2B 172.83%);
                             box-shadow: 0px 2px 10px rgba(255, 65, 108, 0.5);
                             border-radius: 6px;
@@ -224,37 +228,39 @@ html{
                             font-family: Microsoft YaHei UI;
                             font-style: normal;
                             font-weight: 600;
-                            font-size: 14px;
-                            line-height: 18px;
+                            font-size: 20px;
+                            line-height: 27px;
                             text-align: center;
-                            letter-spacing: 0.1em;
+                            letter-spacing: 0.15em;
                             color: #FFFFFF;
                         }
                         
                     }
 
                     .login-bottom-img {
-                        width: 170px;
+                        width: 256px;
                         margin: 0 auto;
-                        margin-top: 23px;
+                        margin-top: 18px;
 
                         .img {
                             width: 100%;
-                            background: no-repeat center center;
                         }
                     }
                 }
             }
 
             .decorate {
-                height: 474px;
+                
+                width: 711px;
                 float: right;
 
                 .login-img {
                     width: 100%;
-
+                    // height: 100%;
                     img {
+                        box-shadow: 0 10px 10px rgb(94, 94, 94);
                         width: 100%;
+                        height: 100%;
                         border-top-right-radius: 10px;
                         border-bottom-right-radius: 10px;
                     }
