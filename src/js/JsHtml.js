@@ -1,5 +1,5 @@
-function headerHtml() {
-    let html=`<div class="areasize header_top">
+let fun_header = function (page_url) {
+    let html = `<div class="areasize header_top">
     <section class="header_main flex-between-b">
         <div class="header_left flex-between-b">
             <span class="address"><img src="${require('../images/address.png')}" alt="" sizes="" srcset=""></span>
@@ -16,21 +16,23 @@ function headerHtml() {
                 <span class="login_rigster_img"><img src="${require('../images/login_register.png')}" alt="" sizes=""
                         srcset=""></span>
                 <span class="login_rigster">
-                    <a href="../static/pages/login.html">登录</a> |
-                    <a href="../static/pages/register.html">注册</a>
+                    <a href="${page_url}login.html">登录</a> |
+                    <a href="${page_url}register.html">注册</a>
                 </span>
             </section>
             <section class="car_div flex-between-b">
                 <span><img src="${require('../images/shopping_car.png')}" alt="" sizes="" srcset=""></span>
                 <span class="user_car">
-                    <span>我的购物车</span>
+                    <span><a href="${page_url}user_info.html">我的购物车</a></span>
                 </span>
             </section>
         </div>
     </section>
 </div>`;
-$(".header").html(html);
-let htmlone=`<div class="banner">
+    $(".header").html(html);
+}
+let fun_banner = function (page_url) {
+    let htmlone = `<div class="banner">
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -67,11 +69,11 @@ let htmlone=`<div class="banner">
     <div class="menu_top flex-between-a">
         <section class="menu_grop flex-between-c">
             <span class="menus"><img src="${require('../images/Menu.svg')}" alt=""></span>
-            <span><a class="menus_a" href="../static/pages/Menu_Page.html">精选菜谱</a></span>
+            <span><a class="menus_a" href="${page_url}Menu_Page.html">精选菜谱</a></span>
         </section>
         <section class="menu_grop flex-between-c">
             <span class="menus"><img src="${require('../images/Vegetables.svg')}" alt=""></span>
-            <span><a class="menus_a" href="./static/pages/Product_Page.html">蔬菜蛋品</a></span>
+            <span><a class="menus_a" href="${page_url}Product_Page.html">蔬菜蛋品</a></span>
         </section>
         <section class="menu_grop flex-between-c">
             <span class="menus"><img src="${require('../images/Meat.svg')}" alt=""></span>
@@ -227,9 +229,52 @@ let htmlone=`<div class="banner">
     </div>
 </div>
 </div>`;
-$(".main").prepend(htmlone);
+
+    $(".main").prepend(htmlone);
 }
-headerHtml();
+let fun_footer = function () {
+    let htmltwo = `<div class="footer_content">
+<section class="foot_logo">
+    <img src="${require('../images/footer_logo.png')}" alt="">
+</section>
+<section>
+    <span>国内领先的综合网上购物平台</span>
+</section>
+<section>
+    <span> 送货更准时 好货更超值 上新货更快 全国联保 正品行货 门店自提 支持货到付款 智慧零售 服务美好生活！
+    </span>
+</section>
+<section class="frame flex-between-c">
+    <ul class="foot_con">
+        <li><img src="${require('../images/Frame7.png')}" alt=""></li>
+        <li><img src="${require('../images/Frame8.png')}" alt=""></li>
+        <li><img src="${require('../images/Frame9.png')}" alt=""></li>
+        <li><img src="${require('../images/Frame10.png')}" alt=""></li>
+    </ul>
+</section>
+</div>
+<div>
+<section class="footer_bottom flex-between-c">
+    <section class="footer_bottom_logo">
+        <img src="${require('../images/YOUSHAN.svg')}" alt="">
+    </section>
+    <section class="tub_one footer_bottom_tub flex-between-c">
+        <img src="${require('../images/cellimg.svg')}" alt="">
+        <span>15282222222</span>
+    </section>
+    <section class="tub_two footer_bottom_tub flex-between-c">
+        <img src="${require('../images/QQimg.svg')}" alt="">
+        <img src="${require('../images/wecatimg.svg')}" alt="">
+        <img src="${require('../images/weiboimg.svg')}" alt="">
+    </section>
+    <section class="footer_bottom_tub flex-between-c">
+        <span>Copyright© 2002-2020，友膳集团股份有限公司版权所有</span>
+    </section>
+</section>
+</div>`;
+    $(".footer").prepend(htmltwo);
+}
+export { fun_header, fun_banner, fun_footer }
 
 import Swiper from "swiper";
 import "swiper/css/swiper.css";
@@ -250,29 +295,30 @@ let mySwiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     }
 })
-
 $(".swiper_img_click").on("click", function () {
     console.log($(this).attr("src"))
 })
+setTimeout(function () {
+    console.log($(".menu_grop"));
+    $(".menu_grop").each((index, itme) => {
+        console.log(index);
+        $(itme).data("id", index);
+        // $(".menu_grop_s").css({ opacity: "1" });
+    })
 
+    $(".menu_grop").mouseenter(function () {
+        $(".menu_bottom").css({ opacity: "1", zIndex: "10" });
+        // $(".menu_grop_s").css({ opacity: "0" });
+        // let index = $(this).data("id");
+        // $($(".menu_grop_s")[index]).css({ opacity: "1" });
+        //    $(".menu_grop_s").html($(this).data("id"));
+    })
+    $(".menu_bar").mouseleave(function () {
+        $(".menu_bottom").css({ opacity: "0", zIndex: "-10" });
+    })
 
-console.log($(".menu_grop"));
-$(".menu_grop").each((index, itme) => {
-    console.log(index);
-    $(itme).data("id", index);
-    // $(".menu_grop_s").css({ opacity: "1" });
-})
+}, 50)
 
-$(".menu_grop").mouseenter(function () {
-    $(".menu_bottom").css({ opacity: "1", zIndex: "10" });
-    // $(".menu_grop_s").css({ opacity: "0" });
-    // let index = $(this).data("id");
-    // $($(".menu_grop_s")[index]).css({ opacity: "1" });
-    //    $(".menu_grop_s").html($(this).data("id"));
-})
-$(".menu_bar").mouseleave(function () {
-    $(".menu_bottom").css({ opacity: "0", zIndex: "-10" });
-})
 
 
 

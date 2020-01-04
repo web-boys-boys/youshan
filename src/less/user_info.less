@@ -1,0 +1,107 @@
+@ys_color: #FF416C;
+
+.user_ban {
+    @h        : 80px;
+    @h_h      : 2.5vw;
+    margin-top: @h ;
+    padding   : @h_h 0;
+
+    .user_logo {
+        img {
+            width: 17vw;
+        }
+    }
+
+    .user_font {
+        border-left: 2px solid;
+        margin-left: 2vw;
+        padding    : .6vw 0;
+
+        .user_title {
+            margin-left: 3vw;
+            font-size  : 2vw;
+        }
+    }
+
+    .user_car {
+        position: relative;
+
+        .user_text_car {
+            // position            : absolute;
+            // top                 : 32.5vw;
+            width                  : 18vw;
+            height                 : 4vw;
+            background             : linear-gradient(252.68deg, #FF4B2B -1.95%, @ys_color 172.83%);
+            box-shadow             : 2px 2px .6vw rgba(255, 65, 108, 0.5);
+            border-radius          : 3vw;
+            color                  : white;
+            font-style             : normal;
+            font-weight            : bold;
+            font-size              : 1.6vw;
+            line-height            : 4.5vw;
+            letter-spacing         : 0.1em;
+
+            .user_car_img {
+                width       : 1.6vw;
+                margin-right: 2vw;
+            }
+
+            .user_car_num {
+                position     : absolute;
+                top          : -0.9vw;
+                right        : 0;
+                width        : 1.9vw;
+                height       : 1.9vw;
+                font-size    : 1.2vw;
+                border-radius: 100%;
+                background   : linear-gradient(105.46deg, #FBB245 -1.67%, #FDC767 97.42%);
+
+            }
+        }
+    }
+}
+
+.hrs {
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.user_content {
+    // height : 500px;
+    display   : flex;
+    margin    : 20px auto;
+
+    // background-color: red;
+    .user_meau {
+        padding      : 40px 10px;
+        border-radius: 8px;
+        box-shadow   : 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        .user_content_title {
+            font-size: 39px;
+        }
+
+        .user_hr {
+            margin          : 20px 20px 25px;
+            height          : 1px;
+            background-color: #E3E3E3;
+
+
+        }
+
+        .user_meau_fonts {
+            margin    : 20px;
+            text-align: center;
+
+            .user_meau_font {
+
+                margin-top   : 20px;
+                padding      : 25px;
+                font-size    : 24px;
+                line-height  : 30px;
+                box-shadow   : 0 4px 8px rgba(0, 0, 0, 0.1);
+                box-shadow   : 0 0px 8px #FF4268;
+                border-radius: 8px;
+            }
+        }
+    }
+}

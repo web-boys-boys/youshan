@@ -111,4 +111,22 @@ module.exports = [
             removeEmptyAttributes: true
         }
     }),
+    // —> 所以订单页面
+    new HtmlWebpackPlugin({
+        // 模板文件
+        template: "./src/pages/user_info.html",
+        // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+        filename: "static/pages/user_info.html",
+        // 静态资源位置
+        inject: "body",
+        // 指定输出文件所依赖的入口文件（*.js）的[name]
+        chunks: ["user_info"],
+        // 控制压缩
+        minify: {
+            collapseWhitespace: false,
+            removeComments: true,
+            removeAttributeQuotes: true,
+            removeEmptyAttributes: true
+        }
+    })
 ]

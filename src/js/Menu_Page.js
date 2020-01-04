@@ -3,9 +3,6 @@ import '../less/util.less';
 import '../less/Menu_Page.less';
 import './JsHtml.js';
 
-import Swiper from "swiper";
-import "swiper/css/swiper.css";
-
 //选择菜单
 $('.fr_menu li').click(function () {
     $(this).children('a').addClass('active').parent().siblings().children('a').removeClass('active');
@@ -14,4 +11,10 @@ $('.fr_menu li').click(function () {
     console.log(idx);
     $(this).eq(idx).addClass('show').siblings('.list').removeClass('hidd')
 })
+
+//加载头部尾部
+import { fun_header, fun_banner, fun_footer } from "./JsHtml"
+fun_header("./");
+fun_banner("./");
+fun_footer();
 
