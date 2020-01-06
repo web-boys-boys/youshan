@@ -13,36 +13,40 @@ import "popper.js";
 import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
 
+
+//编辑按钮
 $(".editor_btn").click(function () {
     $(".user_list_info").css({ display: "block" })
     $(".user_editor_info").css({ display: "none" })
 })
+//关闭编辑页面
 $(".editor_close").click(function () {
     $(".user_list_info").css({ display: "none" })
     $(".user_editor_info").css({ display: "block" })
 })
-
-//tab选项卡
-$.each($(".user_meau_fonts").children(), (index, el) => {
-    $(el).data("user_index", index);
-    console.log($(el).data("user_index"))
-})
-$(".user_meau_fonts").children().click(function () {
-    let ins = $(this).data("user_index");
-    $.each($(".user_meau_list").children(), (index, el) => {
-        console.log(index);
-        if (index == ins) {
-            $(el).addClass("user_ds");
-        }
-        else {
-            $(el).removeClass("user_ds");
-        }
+//删除每个口味标签
+function del_kouwwei_fun() {
+    $('.del_kouwwei').click(function () {
+        $(this).parent().remove();
+        isnull();
     })
-})
-// $.each($(".user_meau_list").children(), (index, el) => {
-//     $(el).data("user_index_s", index);
-// })
+}
+del_kouwwei_fun();
 
+//查看口味列表的子元素个数
+function isnull() {
+    // if ($(".kouwei_div").children().length == 0) {
+    //     $(".kouwei_div").html(`<span class="isnullspan">请先选择口味...</span>`);
+    // }
+}
+
+//添加口味标签
+$(".choose_taete").click(function () {
+    let taetespan = `<button type="button" class="btn btn-outline-dark btn-sm" disabled>${$("#Taste_list").val()}<span
+    class="del_kouwwei">×</span></button>`
+    $(".kouwei_div").append(taetespan);
+    del_kouwwei_fun();
+})
 
 
 
@@ -71,7 +75,6 @@ $('.comment_star>.star_s').click(function () {
     let this_index = $(this).data("index");
     xxshu = this_index + 1;
 })
-
 $.each($(".comment_star"), (index, el) => {
     $.each($(el).children(), (index_s, el_s) => {
         $(el_s).data("index", index_s);

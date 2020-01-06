@@ -280,24 +280,35 @@ let fun_user = function (count_h) {
     let text_html = ``;
     if (count_h == 0) {
         text_h = "个人信息";
-        text_html = `<section class="user_meau_font user_meau_dis">个人<br>信息</section>
-        <section class="user_meau_font">我的<br>订单</section>
-            <section class="user_meau_font">我的<br>收藏</section>
-                <section class="user_meau_font">退出<br>登录</section>` ;
+        text_html = `<section class="user_meau_font user_meau_dis"><a class="user_link" href="./user_info.html">个人<br>信息</a></section>
+        <section class="user_meau_font"><a class="user_link" href="./user_order.html">我的<br>订单</a></section>
+        <section class="user_meau_font"><a class="user_link" href="./user_collection.html">我的<br>收藏</a>
+        </section>
+        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>` ;
     }
     if (count_h == 1) {
         text_h = "我的订单";
-        text_html = `<section class="user_meau_font ≈">个人<br>信息</section>
-        <section class="user_meau_font user_meau_dis">我的<br>订单</section>
-            <section class="user_meau_font">我的<br>收藏</section>
-                <section class="user_meau_font">退出<br>登录</section>` ;
+        text_html = `<section class="user_meau_font"><a class="user_link" href="./user_info.html">个人<br>信息</a></section>
+        <section class="user_meau_font user_meau_dis"><a class="user_link" href="./user_order.html">我的<br>订单</a></section>
+        <section class="user_meau_font"><a class="user_link" href="./user_collection.html">我的<br>收藏</a>
+        </section>
+        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>` ;
     }
     if (count_h == 2) {
         text_h = "我的收藏";
-        text_html = `<section class="user_meau_font ">个人<br>信息</section>
-        <section class="user_meau_font">我的<br>订单</section>
-            <section class="user_meau_font user_meau_dis">我的<br>收藏</section>
-                <section class="user_meau_font">退出<br>登录</section>` ;
+        text_html = `<section class="user_meau_font"><a class="user_link" href="./user_info.html">个人<br>信息</a></section>
+        <section class="user_meau_font"><a class="user_link" href="./user_order.html">我的<br>订单</a></section>
+        <section class="user_meau_font user_meau_dis"><a class="user_link" href="./user_collection.html">我的<br>收藏</a>
+        </section>
+        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>` ;
+    }
+    if (count_h == 3) {
+        text_h = "订单评价";
+        text_html = `<section class="user_meau_font"><a class="user_link" href="./user_info.html">个人<br>信息</a></section>
+        <section class="user_meau_font user_meau_dis"><a class="user_link" href="./user_order.html">我的<br>订单</a></section>
+        <section class="user_meau_font"><a class="user_link" href="./user_collection.html">我的<br>收藏</a>
+        </section>
+        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>` ;
     }
     let html = `<div class="user_ban areasize flex-between-b">
                             <section class="flex-between-a">
@@ -315,12 +326,12 @@ let fun_user = function (count_h) {
                                 <div class="hrs"></div>`;
     $(".main").prepend(html);
     let html_left = `<div class="user_meau">
-                                    <section><span class="user_content_title">用户中心</span></section>
-                                    <section class="user_hr"></section>
-                                    <div class="user_meau_fonts">
-                            ${text_html}
-                                    </div>
-                                </div>`
+    <section><span class="user_content_title">用户中心</span></section>
+    <section class="user_hr"></section>
+    <div class="user_meau_fonts">
+        ${text_html}
+    </div>
+</div>`
         ; $(".user_content").prepend(html_left);
 }
 export { fun_user }

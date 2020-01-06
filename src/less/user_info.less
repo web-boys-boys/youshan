@@ -102,6 +102,7 @@
                 box-shadow   : 0 4px 8px rgba(0, 0, 0, 0.1);
                 border-radius: 8px;
                 transition   : .3s all background;
+                width        : 104px;
 
                 .user_link {
                     color          : black;
@@ -115,8 +116,6 @@
                     background: rgb(251, 80, 114);
                 }
             }
-
-
 
             .user_meau_dis {
                 box-shadow: 0 0px 8px #FF4268;
@@ -246,6 +245,10 @@
 
             .kouwei_div {
                 max-width: 280px;
+
+                .isnullspan {
+                    line-height: 40px;
+                }
 
                 button {
                     position     : relative;
@@ -454,5 +457,81 @@
         .user_ds {
             display: block;
         }
+    }
+
+    .user_coll {
+        box-shadow   : 4px 4px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        width        : 100%;
+        padding      : 0 15px;
+
+        .user_coll_div {
+            width  : 100%;
+            display: inline-block;
+            margin : 15px 0;
+        }
+
+        .user_coll_search {
+            border: 2px solid #e3e3e3;
+
+
+            .form-inline {
+                float : right;
+                margin: 20px 20px;
+
+            }
+        }
+
+        .user_coll_lists {
+            .user_coll_list {
+                display              : grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows   : repeat(3, 1fr);
+                grid-gap             : 15px;
+
+                .coll_item {
+                    border            : 2px solid #E3E3E3;
+                    border-radius     : 8px;
+                    // display        : flex;
+                    // justify-content: center;
+                    padding           : 10%;
+                    position          : relative;
+                    cursor            : pointer;
+
+                    .del_coll {
+                        position: absolute;
+                        top     : 4%;
+                        right   : 4%;
+                    }
+
+                    .coll_item_img {
+                        border-radius: 8px;
+                        margin-bottom: 13px;
+
+                        img {
+                            width        : 100%;
+                            border-radius: 8px;
+                        }
+
+
+                    }
+
+                    .coll_item_font {
+                        text-align    : center;
+                        letter-spacing: 0.1em;
+                        font-size     : 16px;
+                        padding       : 5px 0;
+                        white-space   : nowrap;
+                        overflow      : hidden;
+                        text-overflow : ellipsis;
+
+                        .btn {
+                            margin: 0 5px;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
