@@ -51,7 +51,7 @@ let fun_banner = function (page_url) {
         <span class="text_two">Open friendly cooking every day</span>
         <span class="text_car _car flex-between-c">
             <img class="car_img" src="${require('../images/v_car.svg')}" alt="">
-            <span>我的购物车</span>
+            <span><a href="${page_url}shopping_cart.html">我的购物车</a></span>
             <section class="car_num flex-between-c"><span>2</span></section>
         </span>
         <span class="banner_search_div flex-between-b">

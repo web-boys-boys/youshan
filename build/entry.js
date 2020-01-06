@@ -7,5 +7,7 @@ module.exports = {
     Menu_Page:'./src/js/Menu_Page.js',
     orderPages: './src/js/order-pages.js',
     user_info: './src/js/user_info.js',
+    shopping_cart:'./src/js/shopping_cart.js',
+    order_list:'./src/js/order_list.js'
 }
 

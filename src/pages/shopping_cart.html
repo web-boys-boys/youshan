@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的购物车</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="header">
+    </header>
+    <!-- 内容 -->
+    <main class="main">
+        <div class="user_ban areasize flex-between-b">
+            <section class="flex-between-a">
+                <div class="user_logo"><img src="../images/users/ userinfo-YOUSHAN.png" alt=""></div>
+                <div class="user_font"><span class="user_title">用户中心</span></div>
+            </section>
+            <section class="search">
+                <input class="sec" type="text" value="" placeholder="请输入商品名字">
+                <button class="btn">搜索</button>
+            </section>
+        </div>
+        <div class="hrs"></div>
+        <div class="number areasize clearFix">
+            <div class="fr">
+                <span class="num">4</span>
+                <div class="text text4">支付成功</div>
+            </div>
+            <span class="bor fr"></span>
+
+            <div class="fr ">
+                <span class="num">3</span>
+                <div class="text text3">付款</div>
+            </div>
+            <span class="bor fr"></span>
+
+            <div class="fr ">
+                <span class="num">2</span>
+                <div class="text text2">确认订单</div>
+            </div>
+            <span class="bor fr"></span>
+
+            <div class="fr">
+                <span class="num selected">1</span>
+                <div class="text text1">我的购物车</div>
+            </div>
+            </span>
+        </div>
+
+        <section class="content areasize">
+            <div class="tot ">
+                <span>全部商品</span>
+                <span class="count">5</span>
+                <span>件</span>
+            </div>
+            <table class="table table-borderless">
+                <thead class="thead">
+                    <tr>
+                        <th scope="col"><input type="checkbox">全选</th>
+                        <th scope="col">商品信息</th>
+                        <th scope="col">单价</th>
+                        <th scope="col">数量</th>
+                        <th scope="col">金额</th>
+                        <th scope="col">操作</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <ul class="list">
+                <li>
+                    <input type="checkbox">
+                </li>
+                <li class="img">
+                    <img src="../images/shopping_cart/Frame 5.png" alt="">
+                </li>
+                <li class="desc">
+                    新鲜上好、菲律宾无眼菠萝
+                    <br> 一斤装
+                </li>
+                <li class="d_price">
+                    ￥30.00
+                </li>
+                <li class="count">
+                    <button class="butn fl">+</button>
+                    <input class="ipt" type="text" placeholder="1">
+                    <button class="butn fr">-</button>
+                </li>
+                <li class="tot_price">￥60.00</li>
+                <li class="del">删除</li>
+            </ul>
+            <ul class="list">
+                <li>
+                    <input type="checkbox">
+                </li>
+                <li class="img">
+                    <img src="../images/shopping_cart/Frame 5.png" alt="">
+                </li>
+                <li class="desc">
+                    新鲜上好、菲律宾无眼菠萝
+                    <br> 一斤装
+                </li>
+                <li class="d_price">
+                    ￥30.00
+                </li>
+                <li class="count">
+                    <button class="butn fl">+</button>
+                    <input class="ipt" type="text" placeholder="1">
+                    <button class="butn fr">-</button>
+                </li>
+                <li class="tot_price">￥60.00</li>
+                <li class="del">删除</li>
+            </ul>
+            <ul class="list">
+                <li>
+                    <input type="checkbox">
+                </li>
+                <li class="img">
+                    <img src="../images/shopping_cart/Frame 5.png" alt="">
+                </li>
+                <li class="desc">
+                    新鲜上好、菲律宾无眼菠萝
+                    <br> 一斤装
+                </li>
+                <li class="d_price">
+                    ￥30.00
+                </li>
+                <li class="count">
+                    <button class="butn fl">+</button>
+                    <input class="ipt" type="text" placeholder="1">
+                    <button class="butn fr">-</button>
+                </li>
+                <li class="tot_price">￥60.00</li>
+                <li class="del">删除</li>
+            </ul>
+            <ul class="list">
+                <li>
+                    <input type="checkbox">
+                </li>
+                <li class="img">
+                    <img src="../images/shopping_cart/Frame 5.png" alt="">
+                </li>
+                <li class="desc">
+                    新鲜上好、菲律宾无眼菠萝
+                    <br> 一斤装
+                </li>
+                <li class="d_price">
+                    ￥30.00
+                </li>
+                <li class="count">
+                    <button class="butn fl">+</button>
+                    <input class="ipt" type="text" placeholder="1">
+                    <button class="butn fr">-</button>
+                </li>
+                <li class="tot_price">￥60.00</li>
+                <li class="del">删除</li>
+            </ul>
+
+            <!-- 结算 -->
+            <ul class="pay list ">
+                <li>
+                    <input type="checkbox">
+                </li>
+                <li>
+                    <a href="">删除</a>
+                </li>
+                <li>
+                    <a href="">加入收藏夹</a>
+                </li>
+                <li>
+                    已选商品<span>2</span>件
+                </li>
+                <li>合计（不含运费）：￥
+                    <span class="tot_price">188.00</span>
+                </li>
+                <li>
+                    
+                    <button class="payment">  <a href="../pages/order_list.html">结算</a></button>
+                </li>
+
+            </ul>
+            <!-- 分页 -->
+            <nav aria-label="Page navigation example" class="page">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">首页</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                    <li class="page-item"><a class="page-link" href="#">7</a></li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">末页</a>
+                    </li>
+                </ul>
+            </nav>
+
+
+        </section>
+
+    </main>
+
+    <footer class="footer"></footer>
+</body>
+
+</html>
