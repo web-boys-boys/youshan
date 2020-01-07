@@ -13,8 +13,7 @@ import "popper.js";
 import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
 
-
-//
+//传头像
 $('.imgPreview').change(function () {
     imgPreview(this);
 })
@@ -46,7 +45,6 @@ function imgPreview(fileDom) {
     // 读取图片 => 将图片转换成base64
     reader.readAsDataURL(file);
 }
-
 function uploadImage() {
     let file = document.querySelector("input").files[0];
     if (!file) {
@@ -82,14 +80,12 @@ function del_kouwwei_fun() {
     })
 }
 del_kouwwei_fun();
-
 //查看口味列表的子元素个数
 function isnull() {
     // if ($(".kouwei_div").children().length == 0) {
     //     $(".kouwei_div").html(`<span class="isnullspan">请先选择口味...</span>`);
     // }
 }
-
 //添加口味标签
 $(".choose_taete").click(function () {
     let taetespan = `<button type="button" class="btn btn-outline-dark btn-sm" disabled>${$("#Taste_list").val()}<span
@@ -97,9 +93,6 @@ $(".choose_taete").click(function () {
     $(".kouwei_div").append(taetespan);
     del_kouwwei_fun();
 })
-
-
-
 //评星
 let xxshu;
 $('.comment_star>.star_s').mouseenter(function () {
@@ -141,3 +134,38 @@ $(".fbpl").click(() => {
     let comment_font = $(".comment_font").val();
     console.log(comment_font);
 })
+// function ajaxfun() {
+//     $.ajax({
+//         url: "data.json",
+//         // type:"get",
+//         type: "post",
+//         async: false, //异步请求关闭，就变为了同步
+//         // data:{
+//         //     "usernme":"",
+//         //     "password":"",
+//         //     "email":"",
+//         //     "usernme":"",
+//         // }
+//         //传纯字符串表单
+//         // data:$('#login_form').serialize(),  //序列化 ，serialize把对象转化为json
+//         //传包含文件的表单
+//         data: new FormData($("login_form")[0]),
+//         cache: false,
+//         processData: false,
+//         contentType: false,
+//         success: function (response_data) {
+//             console.log(response_data.content);
+//             console.info('22222');
+//         },
+//         beforeSend: function (xhr) {
+//             if (/\w{6,20}/.test($("#username").val())) {
+//                 console.log("验证成功");
+//                 return true;
+//             }
+//             else {
+//                 console.log("验证失败");
+//                 return false;
+//             }
+//         }
+//     })//ajax就不等待
+// }
