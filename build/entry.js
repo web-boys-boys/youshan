@@ -12,5 +12,6 @@ module.exports = {
   user_order_evau: './src/js/user_order_evau.js',
   user_collection: './src/js/user_collection.js',
   shopping_cart: './src/js/shopping_cart.js',
-  order_list: './src/js/order_list.js'
+  order_list: './src/js/order_list.js',
+  
 };

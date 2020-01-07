@@ -147,18 +147,26 @@
 
         .table {
             width: 1140px;
-            margin: 0 auto;
+             margin: 10px auto;
+             margin-left: 60px;
+            
 
             .thead {
                 font-size: 1.2rem;
                 color: #333333;
                 background: #E3E3E3;
+               margin-left:10px ;
+
                 input[type="checkbox"] {
                     margin-left: -5px;
-                    
                 }
             }
 
+        }
+
+        .footContent {
+            max-height: 1100px;
+            overflow-y: scroll;
         }
 
         .list:nth-child(even) {
@@ -178,8 +186,9 @@
             display: flex;
             align-items: center;
             position: relative;
-            .butn{
-                   
+
+            .butn {
+
                 width: 20px;
                 height: 36px;
                 background: #E3E3E3;
@@ -239,16 +248,15 @@
                 position: relative;
                 right: -103px;
 
-               
+
             }
 
 
         }
 
         .pay {
-            position: relative;
-            bottom: -80px;
-            width: 1280px;
+           margin-bottom: 180px;
+            width: 100%;
             background: #E3E3E3;
             height: 80px;
             border-radius: 0;
@@ -259,15 +267,26 @@
             text-align: center;
             letter-spacing: 0.1em;
             color: #333333;
+
             input[type="checkbox"] {
                 position: relative;
                 left: 25px;
-                
+           
+            }
+            .del_checkbox{
+                visibility: hidden;
             }
 
             .tot_price {
                 font-weight: bolder;
                 color: @ys_color;
+            }
+
+            li a {
+                text-decoration: none;
+                list-style: none;
+                letter-spacing: 0.1em;
+                color: #333333;
             }
 
             .payment {
@@ -282,12 +301,5 @@
 
 
     }
-
-    .page {
-        position: relative;
-        top: -150px;
-        margin-top: 80px;
-    }
-
 
 }
