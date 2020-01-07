@@ -1,7 +1,7 @@
 import '../less/index.less';
 import '../less/util.less';
 import '../less/user_info.less';
-import './JsHtml.js';
+// import './JsHtml.js';
 //加载头部尾部
 import { fun_header, fun_banner, fun_footer } from "./JsHtml"
 fun_header("");
@@ -162,3 +162,26 @@ function fun_click() {
         $($(this).parents("tbody")).remove();
     })
 }
+
+import Swiper from "swiper";
+import "swiper/css/swiper.css";
+var swiper = new Swiper('.swiper-container', {
+    loop: true,
+    // 一行显示slider的个数
+    slidesPerView: 5,
+    // 定义slides的数量多少为一组
+    slidesPerGroup: 5,
+
+    // 分页
+    pagination: {
+        el: '.swiper-pagination',
+
+        // 设为true, 点击分页器的指示点分页器会控制Swiper切换
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+});
+
