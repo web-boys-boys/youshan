@@ -59,7 +59,7 @@
             </div>
             <table class="table table-borderless">
                 <thead class="thead">
-                    <tr>
+                    <tr class="trr">
                         <th scope="col"><input type="checkbox">全选</th>
                         <th scope="col">商品信息</th>
                         <th scope="col">单价</th>
@@ -75,7 +75,29 @@
                     <input type="checkbox">
                 </li>
                 <li class="img">
-                    <img src="../images/shopping_cart/Frame 5.png" alt="">
+                    <img src="../images/shopping_cart/boluo.jpg" alt="">
+                </li>
+                <li class="desc">
+                    新鲜上好、菲律宾无眼菠萝
+                    <br> 一斤装
+                </li>
+                <li class="d_price">
+                    ￥<span id="d_price"> 30.00</span>
+                </li>
+                <li class="count">
+                    <button class="butn jia fl">+</button>
+                    <input class="ipt" type="text" value="1">
+                    <button class="butn jian fr">-</button>
+                </li>
+                <li class="tot_price">￥ <span id="tot_price">30</span> </li>
+                <li class="del">删除</li>
+            </ul>
+            <ul class="list">
+                <li>
+                    <input type="checkbox">
+                </li>
+                <li class="img">
+                    <img src="../images/shopping_cart/boluo.jpg" alt="">
                 </li>
                 <li class="desc">
                     新鲜上好、菲律宾无眼菠萝
@@ -85,9 +107,9 @@
                     ￥30.00
                 </li>
                 <li class="count">
-                    <button class="butn fl">+</button>
-                    <input class="ipt" type="text" placeholder="1">
-                    <button class="butn fr">-</button>
+                    <button class="butn jia fl">+</button>
+                    <input class="ipt" type="text" value="1">
+                    <button class="butn jian fr">-</button>
                 </li>
                 <li class="tot_price">￥60.00</li>
                 <li class="del">删除</li>
@@ -97,7 +119,7 @@
                     <input type="checkbox">
                 </li>
                 <li class="img">
-                    <img src="../images/shopping_cart/Frame 5.png" alt="">
+                    <img src="../images/shopping_cart/boluo.jpg" alt="">
                 </li>
                 <li class="desc">
                     新鲜上好、菲律宾无眼菠萝
@@ -107,9 +129,9 @@
                     ￥30.00
                 </li>
                 <li class="count">
-                    <button class="butn fl">+</button>
-                    <input class="ipt" type="text" placeholder="1">
-                    <button class="butn fr">-</button>
+                    <button class="butn jia fl">+</button>
+                    <input class="ipt" type="text"value='1'>
+                    <button class="butn jian fr" >-</button>
                 </li>
                 <li class="tot_price">￥60.00</li>
                 <li class="del">删除</li>
@@ -119,41 +141,19 @@
                     <input type="checkbox">
                 </li>
                 <li class="img">
-                    <img src="../images/shopping_cart/Frame 5.png" alt="">
+                    <img src="../images/shopping_cart/boluo.jpg" alt="">
                 </li>
                 <li class="desc">
                     新鲜上好、菲律宾无眼菠萝
                     <br> 一斤装
                 </li>
                 <li class="d_price">
-                    ￥30.00
+                    ￥  30.00
                 </li>
                 <li class="count">
-                    <button class="butn fl">+</button>
-                    <input class="ipt" type="text" placeholder="1">
-                    <button class="butn fr">-</button>
-                </li>
-                <li class="tot_price">￥60.00</li>
-                <li class="del">删除</li>
-            </ul>
-            <ul class="list">
-                <li>
-                    <input type="checkbox">
-                </li>
-                <li class="img">
-                    <img src="../images/shopping_cart/Frame 5.png" alt="">
-                </li>
-                <li class="desc">
-                    新鲜上好、菲律宾无眼菠萝
-                    <br> 一斤装
-                </li>
-                <li class="d_price">
-                    ￥30.00
-                </li>
-                <li class="count">
-                    <button class="butn fl">+</button>
-                    <input class="ipt" type="text" placeholder="1">
-                    <button class="butn fr">-</button>
+                    <button class="butn jia fl">+</button>
+                    <input class="ipt" type="text" value="1">
+                    <button class="butn jian fr">-</button>
                 </li>
                 <li class="tot_price">￥60.00</li>
                 <li class="del">删除</li>
@@ -174,10 +174,9 @@
                     已选商品<span>2</span>件
                 </li>
                 <li>合计（不含运费）：￥
-                    <span class="tot_price">188.00</span>
+                    <span class="tot_price" id="Alltot_price">188.00</span>
                 </li>
                 <li>
-                    
                     <button class="payment">  <a href="../pages/order_list.html">结算</a></button>
                 </li>
 
