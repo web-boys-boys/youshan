@@ -14,6 +14,10 @@ module.exports = {
   shopping_cart: './src/js/shopping_cart.js',
   order_list: './src/js/order_list.js',
   payment_page:'./src/js/payment_page.js',
+<<<<<<< HEAD
   success_page:'./src/js/success_page.js',
+=======
+  Menu_Details: "./src/js/Menu_Details.js",
+>>>>>>> e1c1ac1915d7f1f11ab7327c00d0833775f7a69a
   
 };
