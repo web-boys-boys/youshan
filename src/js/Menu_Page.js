@@ -9,7 +9,7 @@ $('.fr_menu li').click(function () {
     //获取鼠标当前移入这个li标签的索引
     let idx = $(this).index()
     console.log(idx);
-    $(this).eq(idx).addClass('show').siblings('.list').removeClass('hidd')
+    // $(this).eq(idx).addClass('show').siblings('.list').removeClass('hidd')
 })
 
 //加载头部尾部

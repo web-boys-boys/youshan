@@ -1,3 +1,4 @@
+
 import '../less/index.less';
 import '../less/util.less';
 import './JsHtml.js';
@@ -6,6 +7,12 @@ import '../less/shopping_cart.less';
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
+//x0popup插件弹出框
+
+
+
+
+
 
 //上边全选
 $('.trr th input').click(function () {
@@ -57,7 +64,7 @@ $(".del").click(function () {
 })
 //删除全部
 $('.All_del').click(function () {
-    alert('是否要全部删除')
+  
     $('.list').remove();
     jishuan();
 })

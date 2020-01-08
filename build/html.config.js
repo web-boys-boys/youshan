@@ -296,7 +296,6 @@ module.exports = [
         removeEmptyAttributes: true
       }
     }),
-<<<<<<< HEAD
       //payment_page
     // —> shopping cart
     new HtmlWebpackPlugin({
@@ -316,7 +315,6 @@ module.exports = [
         removeEmptyAttributes: true
       }
     }),
-=======
 
     // —> 菜谱详情
   new HtmlWebpackPlugin({
@@ -336,5 +334,4 @@ module.exports = [
       removeEmptyAttributes: true
     }
   }),
->>>>>>> e1c1ac1915d7f1f11ab7327c00d0833775f7a69a
 ];
