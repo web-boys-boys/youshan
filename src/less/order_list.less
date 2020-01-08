@@ -126,14 +126,159 @@
     line-height: 80px;
 
 }
-.jiesuan{
+
+.jiesuan {
     height: 200px;
     background: #FFFFFF;
     border: 1.6px solid #E3E3E3;
-    line-height: 80px;
-    border: 1px solid pink;
+    line-height: 50px;
+
+
+    .fll {
+        width: 79.5%;
+        height: 100%;
+
+        .youhuiquan {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 100px;
+            color: #333333;
+
+        }
+
+        .wuyouhui {
+            font-size: 16px;
+            color: #666666;
+
+        }
+
+        input[type="checkbox"] {
+            margin: 10px;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 10%;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 18px;
+            position: relative;
+        }
+
+        input[type="checkbox"]::before {
+            content: "";
+            position: absolute;
+            border-radius: 10%;
+            top: 0;
+            left: 0;
+            background-color: @ys_color;
+            width: 100%;
+            height: 100%;
+            border: 1px solid @ys_color
+        }
+
+        input[type="checkbox"]:checked::before {
+            content: "\271A";
+            border-radius: 10%;
+            background-color: @ys_color;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            // border: 1px solid ys_color;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+    }
+
+    .frr {
+        width: 20%;
+        height: 100%;
+
+        .word {
+            font-size: 16px;
+            line-height: 20px;
+            text-align: right;
+            letter-spacing: 0.2em;
+            color: #333333;
+
+        }
+
+    }
+
 }
+
 .f_row {
-    background-color:#f4f0f0;
+    background-color: #f4f0f0;
     box-sizing: border-box;
+}
+
+.payfor {
+    margin-top: 80px;
+    width: 65%;
+    height: 300px;
+    position: relative;
+ 
+    .paymand {
+        margin-right: 20px;
+        margin-top: 80px;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: right;
+        color: #333333;
+
+    }
+
+    .redc {
+      
+        font-size: 32px;
+        line-height: 40px;
+        text-align: right;
+        color: @ys_color;
+    }
+
+    .btna {
+        margin-right: 20px;
+        margin-top: 30px;
+        width: 240px;
+        height: 80px;
+        background: linear-gradient(257.92deg, #FF416C -1.95%, #FF4B2B 172.83%);
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 50px;
+            color: #FFFFFF;
+        }
+    }
+
+    .circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: @ys_color;
+        font-size:16px;
+        line-height: 20px;
+        text-align: center;
+        color: white;
+        position: absolute;
+        bottom: 1px;
+        left: -25px;
+
+        
+    }
+    .titles{
+        position: absolute;
+        top: 205px;
+        left: 18px;
+    }
+    .tit{
+        color: @ys_color;
+        font-size:18px;
+        line-height: 20px;
+
+    }
 }

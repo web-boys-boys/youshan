@@ -1,0 +1,135 @@
+@ys_color: #FF416C;
+.main{
+    margin-bottom: 200px;
+}
+.content {
+   
+    .tables {
+        width: 1140px;
+        margin: 20px auto;
+
+        .cashier {
+            font-size: 40px;
+            color: #333333;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            margin-top: 50px;
+        }
+
+        .py {
+            .payfor {
+                font-size: 24px;
+                line-height: 30px;
+                text-align: center;
+                color: #333333;
+
+            }
+
+            .m {
+                font-size: 32px;
+                line-height: 40px;
+                text-align: center;
+                color: @ys_color;
+            }
+
+            .set_row {
+                width: 1280px;
+            }
+        }
+
+        .head_bor {
+            background: #F9F9F9;
+            border: 1.7px solid #E3E3E3;
+        }
+
+        .body_bor {
+
+            background: #FFFFFF;
+            border: .2px solid #E3E3E3;
+            border-bottom: none;
+        }
+
+        .wid {
+            height: 80px;
+            line-height: 80px;
+        }
+    }
+
+    .payed {
+        margin-top: 80px;
+        height: 1000px;
+        border-top: 5px solid @ys_color;
+        background: #FFFFFF;
+
+        .article {
+            margin: 74px auto;
+            width: 1000px;
+            height: 840px;
+            border: 3px solid @ys_color;
+            background: #FFFFFF;
+            position: relative;
+            .zfb{
+                position: absolute;
+                top: 195px;
+                right: 100px;
+                display: none;
+            }
+            .zifu {
+                margin: 45px;
+                font-size: 32px;
+                line-height: 40px;
+                color: #333333;
+
+                span {
+                    font-size: 16px;
+                    line-height: 25px;
+                    color: #acacac;
+                }
+
+            }
+
+            .choice {
+
+                display: flex;
+                justify-content: center;
+
+                .wxbtn {
+                    margin-right: 30px;
+                }
+            }
+
+            .zf_box {
+                width: 73%;
+                margin: 20px auto;
+
+                img {
+                    display: inline-block;
+                }
+
+                .word {
+                    font-size: 24px;
+                    line-height: 30px;
+                    color: @ys_color;
+                }
+            }
+
+        }
+        .next {
+           margin-top: -57px;
+            button {
+                
+                width: 200px;
+                height: 60px;
+                background: linear-gradient(256.63deg, #FF416C -1.95%, #FF4B2B 172.83%);
+                a{
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 32px;
+                    line-height: 40px;
+                    text-align: center;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
