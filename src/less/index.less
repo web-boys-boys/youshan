@@ -56,13 +56,55 @@ body {
                 float: right;
 
                 .login_rigster {
-                    margin: 0 50px 0 15px;
+                    text-align: center;
+                    margin    : 0 30px 0 0;
+                    position  : relative;
 
                     a {
                         display        : inline-block;
                         font-size      : 16px;
                         text-decoration: none;
                         color          : @ys_color;
+                    }
+
+                }
+
+                .user_info_sec {
+                    width: 110px;
+                }
+
+                .user_info_sec_div {
+                    width        : 100px;
+                    position     : absolute;
+                    background   : #FFFFFF;
+                    top          : -25px;
+                    border-radius: 8px;
+
+                    // box-shadow   : 2px 2px 8px rgba(0, 0, 0, 0.12);
+                    .atcs {
+                        background-color: @ys_color;
+                        border-radius   : 8px;
+
+                        a {
+                            color: white !important;
+                        }
+                    }
+
+                    a {
+                        padding: 15px;
+                    }
+
+                    .hahan {
+                        display: none;
+                    }
+
+                    &:hover .hahan {
+                        display: block;
+                    }
+
+                    &:hover {
+                        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+
                     }
                 }
 

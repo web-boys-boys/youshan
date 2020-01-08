@@ -1,6 +1,10 @@
 import "../less/login-register.less";
 import "../less/reset.less";
 
+import "./sweet-alert.js";
+import "../css/sweet-alert.css";
+import "../css/example.css";
+
 $("input").on("change", function () {
   //表单验证
   let reg = new RegExp($(this).data("reg"));
@@ -34,6 +38,19 @@ $(".svg-img").click(function () {
 
 //点击注册
 $("#submit").click(function () {
+  swal({
+    title: "注册成功！",
+    // text: "You will not be able to recover this imaginary file!",
+    type: "success",
+    showCancelButton: true,
+    confirmButtonColor: "#DD6B55",
+    confirmButtonText: "Yes, delete it!",
+    closeOnConfirm: false
+  },
+    function () {
+      swal("Deleted!", "Your imaginary file has been deleted.", "success");
+    });
+
   let a = false;
   let reg;
   $.each([...$("input")], function (index, element) {
@@ -86,44 +103,78 @@ $("#submit").click(function () {
 
   if (a && b) {
     // console.log("全是ture");
-    register_ajax($("#username"), $("#email"), $("#password"));
-    location.href = "./login.html";
-    alert("注册成功");
+    // var def = {
+    //   content: "欢迎来到A5素材!",
+    //   time: 1000
+    // }
+    // $.Prompt(def);
+
+    // setTimeout(function () {
+    //   location.href = "../../index.html";
+    // }, 1500)
+
+    // register_ajax($("#username").val(), $("#email").val(), $("#password").val());
+    // location.href = "./login.html";
+    // alert("注册成功");
   } else {
     // console.log("我是灰色");
-    alert("注册失败");
+    // alert("注册失败");
   }
 });
+
+
+
 function register_ajax(username, email, password) {
+  // let datas = new FormData();
+  // datas.append("username", username);
+  // datas.append("email", email);
+  // datas.append("password", password);
+  // datas.append("repeat_password", password);
+  let datas = {
+    "username": username,
+    "email": email,
+    "password": password,
+    "repeat_password": password,
+  }
+  // sessionStorage.removeItem("userinfo");
+  sessionStorage.setItem("userinfo", JSON.stringify(datas));
   $.ajax({
-    url: "data.json",
+    url: "http://192.168.7.170:8000/register/",
     type: "post",
-    async: false, //异步请求关闭，就变为了同步
-    data: {
-      "usernme": username,
-      "password": password,
-      "email": email,
-    },
+    // async: true, //异步请求关闭，就变为了同步
+    // contentType: "application/json",
+    // processData: false,
+    dataType: "JSON",
+    data: datas,
     //传纯字符串表单
     // data:$('#login_form').serialize(),  //序列化 ，serialize把对象转化为json
     //传包含文件的表单
     // data: new FormData($("login_form")[0]),
-    cache: false,
-    processData: false,
-    contentType: false,
+    // cache: false,
+    // processData: false,
+    // contentType: false,
     success: function (response_data) {
-      console.log(response_data.content);
-      console.info('22222');
+      alert(response_data);
+      // console.info('22222');
+      sessionStorage.setItem("userinfo", JSON.stringify(datas));
+
+
+
     },
-    beforeSend: function (xhr) {
-      if (/\w{6,20}/.test($("#username").val())) {
-        console.log("验证成功");
-        return true;
-      }
-      else {
-        console.log("验证失败");
-        return false;
-      }
+    error: function (response_data) {
+      console.log(response_data.responseJSON);
+      alert(response_data.responseJSON.username[0]);
     }
+    // beforeSend: function (xhr) {
+    //   // if (/\w{6,20}/.test($("#username").val())) {
+    //   //   console.log("验证成功");
+    //   //   return true;
+    //   // }
+    //   // else {
+    //   //   console.log("验证失败");
+    //   //   return false;
+    //   // }
+    //   return true
+    // }
   })//ajax就不等待
 }

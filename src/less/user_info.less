@@ -582,9 +582,40 @@
         }
 
     }
+
+    .page-item {
+        a {
+            color: @ys_color;
+        }
+
+    }
+
+    .page-item.active .page-link {
+        z-index         : 3;
+        color           : #fff;
+        background-color: @ys_color;
+        border-color    : @ys_color;
+    }
 }
 
 .box {
-    display: flex;
-    margin : 20px auto;
+    // display: flex;
+    margin    : 20px auto;
+
+    .tuijan_font {
+        font-size : 38px;
+        text-align: center;
+        margin    : 40px 0 25px;
+    }
+
+    .swiper-slide {
+        img {
+            margin: 0 auto;
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: @ys_color;
+    }
 }

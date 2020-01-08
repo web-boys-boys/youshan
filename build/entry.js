@@ -13,8 +13,14 @@ module.exports = {
   user_collection: './src/js/user_collection.js',
   shopping_cart: './src/js/shopping_cart.js',
   order_list: './src/js/order_list.js',
+<<<<<<< HEAD
   payment_page:'./src/js/payment_page.js',
   success_page:'./src/js/success_page.js',
   Menu_Details: "./src/js/Menu_Details.js",
   
+=======
+  payment_page: './src/js/payment_page.js',
+  Menu_Details: "./src/js/Menu_Details.js",
+  success_page: './src/js/success_page.js',
+>>>>>>> a94debd5b6c9919ede8f2c9a29832091337853db
 };
