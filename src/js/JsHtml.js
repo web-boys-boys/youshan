@@ -1,4 +1,25 @@
+let userinfo = JSON.parse(sessionStorage.getItem("userinfo"));
+// console.log(JSON.parse(userinfo));
 let fun_header = function (page_url) {
+    let username = "";
+    let login_rigster_html = `<span class="login_rigster user_info_sec">
+<a href="${page_url}login.html">登录</a> |
+<a href="${page_url}register.html">注册</a>
+</span>`;
+    if (userinfo != null) {
+        username = userinfo.username;
+        login_rigster_html = `<span class="login_rigster user_info_sec">
+        <div class="user_info_sec_div">
+            <section class="atc"><a href="${page_url}user_info.html">用户中心</a></section>
+            <div class="hahan">
+                <section class="atc"><a href="${page_url}user_collection.html">我的收藏</a></section>
+                <section class="atc"><a href="${page_url}user_order.html">我的订单</a></section>
+                <section class="atc" id="outlogin"><a>退出登录</a></section>
+            </div>
+
+        </div>
+    </span>`
+    }
     let html = `<div class="areasize header_top">
     <section class="header_main flex-between-b">
         <div class="header_left flex-between-b">
@@ -8,17 +29,16 @@ let fun_header = function (page_url) {
                 <option value="">简阳</option>
                 <option value="">绵阳</option>
             </select>
-            <span class="welcome_text">你好，欢迎来到友膳</span>
+            <span class="welcome_text">你好<span>${username}</span>，欢迎来到友膳</span>
         </div>
         <div class="header_logo"><a href="../../index.html"><img src="${require('../images/YOUSHAN.svg')}" alt=""></a></div>
         <div class="header_right flex-between-b">
-            <section class="flex-between-b">
+            <section class="flex-between-b ">
                 <span class="login_rigster_img"><img src="${require('../images/login_register.png')}" alt="" sizes=""
                         srcset=""></span>
-                <span class="login_rigster">
-                    <a href="${page_url}login.html">登录</a> |
-                    <a href="${page_url}register.html">注册</a>
-                </span>
+                ${
+        login_rigster_html
+        }
             </section>
             <section class="car_div flex-between-b">
                 <span><img src="${require('../images/shopping_car.png')}" alt="" sizes="" srcset=""></span>
@@ -30,10 +50,20 @@ let fun_header = function (page_url) {
     </section>
 </div>`;
     $(".header").html(html);
+    $(".atc").mouseenter(function () {
+        $(this).addClass("atcs");
+    })
+    $(".atc").mouseleave(function () {
+        $(this).removeClass("atcs");
+    })
+    $("#outlogin").click(function () {
+        sessionStorage.removeItem("userinfo");
+        window.location.reload();
+    })
 }
 let fun_banner = function (page_url) {
     let htmlone = `<div class="banner">
-<div class="swiper-container">
+<div class="swiper-container swiper1">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <img class="swiper_img_click" src="${require('../images/08bOYnH_r_E.png')}" alt="">
@@ -42,7 +72,7 @@ let fun_banner = function (page_url) {
             <img class="swiper_img_click" src="${require('../images/Banner-2.png')}" alt="">
         </div>
     </div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper-pagination swp1"></div>
 </div>
 <div class="banner_text areasize">
     <div class="xiha">
@@ -273,6 +303,7 @@ let fun_footer = function () {
 </section>
 </div>`;
     $(".footer").prepend(htmltwo);
+
 }
 export { fun_header, fun_banner, fun_footer }
 let fun_user = function (count_h) {
@@ -341,7 +372,7 @@ import Swiper from "swiper";
 import "swiper/css/swiper.css";
 // 轮播图
 setTimeout(function () {
-    let mySwiper = new Swiper('.swiper-container', {
+    let mySwiper = new Swiper('.swiper1', {
         loop: true, // 循环模式选项
         // 自动播放
         autoplay: true,
@@ -349,7 +380,7 @@ setTimeout(function () {
         effect: 'coverflow',
         // 如果需要分页器
         pagination: {
-            el: '.swiper-pagination',
+            el: '.swp1'
         },
         // 如果需要前进后退按钮
         navigation: {
@@ -358,12 +389,12 @@ setTimeout(function () {
         }
     })
     $(".swiper_img_click").on("click", function () {
-        console.log($(this).attr("src"))
+        // console.log($(this).attr("src"))
     })
 
-    console.log($(".menu_grop"));
+    // console.log($(".menu_grop"));
     $(".menu_grop").each((index, itme) => {
-        console.log(index);
+        // console.log(index);
         $(itme).data("id", index);
         // $(".menu_grop_s").css({opacity: "1" });
     })

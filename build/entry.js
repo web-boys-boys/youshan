@@ -16,5 +16,8 @@ module.exports = {
   payment_page:'./src/js/payment_page.js',
   success_page:'./src/js/success_page.js',
   Menu_Details: "./src/js/Menu_Details.js",
-  
+  payment_page: './src/js/payment_page.js',
+  Menu_Details: "./src/js/Menu_Details.js",
+  success_page: './src/js/success_page.js',
+
 };
