@@ -130,6 +130,7 @@ module.exports = [
       removeEmptyAttributes: true
     }
   }),
+<<<<<<< HEAD
 
   // —> 菜谱详情
   new HtmlWebpackPlugin({
@@ -141,6 +142,17 @@ module.exports = [
     inject: "body",
     // 指定输出文件所依赖的入口文件（*.js）的[name]
     chunks: ["Menu_Details"],
+=======
+  // —>user_info
+  new HtmlWebpackPlugin({
+    // 模板文件
+    template: "./src/pages/user_info.html",
+    // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+    filename: "static/pages/user_info.html",
+    // 静态资源位置
+    inject: "body",
+    // 指定输出文件所依赖的入口文件（*.js）的[name]
+    chunks: ["user_info"],
     // 控制压缩
     minify: {
       collapseWhitespace: false,
@@ -149,4 +161,155 @@ module.exports = [
       removeEmptyAttributes: true
     }
   }),
+  // —>user_order
+  new HtmlWebpackPlugin({
+    // 模板文件
+    template: "./src/pages/user_order.html",
+    // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+    filename: "static/pages/user_order.html",
+    // 静态资源位置
+    inject: "body",
+    // 指定输出文件所依赖的入口文件（*.js）的[name]
+    chunks: ["user_order"],
+    // 控制压缩
+    minify: {
+      collapseWhitespace: false,
+      removeComments: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true
+    }
+  }),
+  // —>user_order_evau
+  new HtmlWebpackPlugin({
+    // 模板文件
+    template: "./src/pages/user_order_evau.html",
+    // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+    filename: "static/pages/user_order_evau.html",
+    // 静态资源位置
+    inject: "body",
+    // 指定输出文件所依赖的入口文件（*.js）的[name]
+    chunks: ["user_order_evau"],
+    // 控制压缩
+    minify: {
+      collapseWhitespace: false,
+      removeComments: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true
+    }
+  }),
+  // —>user_collection
+  new HtmlWebpackPlugin({
+    // 模板文件
+    template: "./src/pages/user_collection.html",
+    // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+    filename: "static/pages/user_collection.html",
+    // 静态资源位置
+    inject: "body",
+    // 指定输出文件所依赖的入口文件（*.js）的[name]
+    chunks: ["user_collection"],
+    // 控制压缩
+    minify: {
+      collapseWhitespace: false,
+      removeComments: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true
+    }
+  })
+  ,
+
+  // —> 所以订单页面
+  new HtmlWebpackPlugin({
+    // 模板文件
+    template: "./src/pages/order-pages.html",
+    // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+    filename: "static/pages/order-pages.html",
+    // 静态资源位置
+    inject: "body",
+    // 指定输出文件所依赖的入口文件（*.js）的[name]
+    chunks: ["orderPages"],
+    // 控制压缩
+    minify: {
+      collapseWhitespace: false,
+      removeComments: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true
+    }
+  }),
+  // —> 所以订单页面
+  new HtmlWebpackPlugin({
+    // 模板文件
+    template: "./src/pages/user_info.html",
+    // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+    filename: "static/pages/user_info.html",
+    // 静态资源位置
+    inject: "body",
+    // 指定输出文件所依赖的入口文件（*.js）的[name]
+    chunks: ["user_info"],
+    // 控制压缩
+    minify: {
+      collapseWhitespace: false,
+      removeComments: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true
+    }
+  }),
+  // —> shopping cart
+  new HtmlWebpackPlugin({
+    // 模板文件
+    template: "./src/pages/shopping_cart.html",
+    // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+    filename: "static/pages/shopping_cart.html",
+    // 静态资源位置
+    inject: "body",
+    // 指定输出文件所依赖的入口文件（*.js）的[name]
+    chunks: ["shopping_cart"],
+    // 控制压缩
+    minify: {
+      collapseWhitespace: false,
+      removeComments: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true
+    }
+  }),
+  // —> shopping cart
+  new HtmlWebpackPlugin({
+    // 模板文件
+    template: "./src/pages/order_list.html",
+    // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+    filename: "static/pages/order_list.html",
+    // 静态资源位置
+    inject: "body",
+    // 指定输出文件所依赖的入口文件（*.js）的[name]
+    chunks: ["order_list"],
+>>>>>>> 9679c10e27aea29a7301e6339acb8a3c8916556e
+    // 控制压缩
+    minify: {
+      collapseWhitespace: false,
+      removeComments: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true
+    }
+  }),
+<<<<<<< HEAD
+=======
+  //payment_page
+    // —> shopping cart
+    new HtmlWebpackPlugin({
+      // 模板文件
+      template: "./src/pages/payment_page.html",
+      // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+      filename: "static/pages/payment_page.html",
+      // 静态资源位置
+      inject: "body",
+      // 指定输出文件所依赖的入口文件（*.js）的[name]
+      chunks: ["payment_page"],
+      // 控制压缩
+      minify: {
+        collapseWhitespace: false,
+        removeComments: true,
+        removeAttributeQuotes: true,
+        removeEmptyAttributes: true
+      }
+    }),
+>>>>>>> 9679c10e27aea29a7301e6339acb8a3c8916556e
 ];

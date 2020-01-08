@@ -14,37 +14,23 @@
     </header>
     <!-- 内容 -->
     <main class="main">
-        <div class="user_ban areasize flex-between-b">
-            <section class="flex-between-a">
-                <div class="user_logo"><img src="../images/users/ userinfo-YOUSHAN.png" alt=""></div>
-                <div class="user_font"><span class="user_title">用户中心</span></div>
-            </section>
-            <section class="user_car">
-                <span class="user_text_car _car flex-between-c">
-                    <img class="user_car_img" src="../images/v_car.svg" alt="">
-                    <span>我的购物车</span>
-                    <section class="user_car_num flex-between-c"><span>2</span></section>
-                </span>
-            </section>
-        </div>
-        <div class="hrs"></div>
         <div class="user_content areasize">
-            <div class="user_meau">
-                <section><span class="user_content_title">用户中心</span></section>
-                <section class="user_hr"></section>
-                <div class="user_meau_fonts">
-                    <section class="user_meau_font">个人<br>信息</section>
-                    <section class="user_meau_font">我的<br>订单</section>
-                    <section class="user_meau_font">我的<br>收藏</section>
-                    <section class="user_meau_font">退出<br>登录</section>
-                </div>
-            </div>
             <div class="user_meau_list">
-                <div class="user_list">
+                <div class="user_list user_ds">
                     <div class="user_list_info">
                         <section class="user_list_info_img">
-                            <img src="../images/08bOYnH_r_E.png" alt="">
+                            <!-- <img src="../images/08bOYnH_r_E.png" alt=""> -->
+                            <!-- 容器 -->
+                            <div class="boxsss">
+                                <!-- accept：接受的类型 -->
+                                <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"
+                                    class="imgPreview" title="点击上传图片">
+                            </div>
+
                         </section>
+                        <!-- <div class="flex-between-c">
+                            <button type="button" class="btn btn-outline-dark">点击上传图片</button>
+                        </div> -->
                         <section class="form_a">
                             <div class="form-group row">
                                 <label for="" class="col-form-label">用户名：</label>
@@ -114,14 +100,14 @@
                             <div class="form-group row">
                                 <label for="" class="col-form-label"></label>
                                 <div class="select_cai">
-                                    <select class="form-control" id="inputTaste">
-                                        <option>川菜</option>
-                                        <option>粤菜</option>
-                                        <option>四川小吃</option>
+                                    <select class="form-control" id="Taste_list">
+                                        <option value="川菜">川菜</option>
+                                        <option value="粤菜">粤菜</option>
+                                        <option value="四川小吃">四川小吃</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <button type="button" class="btn btn-outline-dark">确认口味</button>
+                                    <button type="button" class="btn btn-outline-dark choose_taete">选择口味</button>
                                 </div>
                             </div>
                             <div class="form-group row flex-between-b btn_group_user">
@@ -135,7 +121,8 @@
                     <div class="user_editor_info">
                         <button type="button" class="btn btn-outline-dark btn-lg editor_btn">编辑信息</button>
                         <section class="user_list_info_img">
-                            <img src="../images/08bOYnH_r_E.png" alt="">
+                            <div class="tou_img"></div>
+                            <!-- <img src="../images/08bOYnH_r_E.png" alt=""> -->
                         </section>
                         <section class="form_a">
                             <div class="form-group row">
@@ -207,18 +194,14 @@
                             </form>
                         </div>
                     </nav>
-                    <div class="tab-content" id="myTabContent">
+                    <div class="tab-content tab_style" id="myTabContent">
                         <!-- 全部订单 -->
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <table class="table">
+                            <table class="table tabs_style">
                                 <thead class="thead-light">
                                     <tr>
                                         <th scope="col">
                                             <div class="flex-between-d">
-                                                <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                    <label class="form-check-label" for="exampleCheck1">全选</label>
-                                                </div>
                                                 <div class="m_left">
                                                     <select class="form-control" id="inputOneaddress">
                                                         <option>近三天</option>
@@ -235,177 +218,274 @@
                                         <th scope="col">操作</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class="foot-grups">
+                                    <tr class="ont_tr">
+                                        <td colspan="6"></td>
+                                    </tr>
                                     <tr>
-                                        <td colspan="6">
-                                            <div class="tabel_grup">
-                                                <section class="tabel_grup_top flex-between-b">
-                                                    <div>
-                                                        <input class="top_check" type="checkbox">
-                                                        <label class="form-check-label m_left">时间：2019-11-11
-                                                            08:12:12</label>
-                                                        <label class="form-check-label m_left">订单号：20154541450</label>
-                                                    </div>
-                                                    <div class="tabel_grup_cle">
-                                                        <button type="button"
-                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
-                                                    </div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">已完成</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">已完成</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
-                                                </section>
-                                            </div>
+                                        <td colspan="6" class="td_style td_top">
+                                            <section class="tabel_grup_top flex-between-b">
+                                                <div>
+                                                    <span>时间：2019-11-11
+                                                        08:12:12</span>
+                                                    <span class="m_left">订单号：20154541450</span>
+                                                </div>
+                                                <div class="tabel_grup_cle">
+                                                    <button type="button"
+                                                        class="btn btn-outline-dark btn-sm m_right del_btn">删除</button>
+                                                </div>
+                                            </section>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="6">
-                                            <div class="tabel_grup">
-                                                <section class="tabel_grup_top flex-between-b">
-                                                    <div>
-                                                        <input class="top_check" type="checkbox">
-                                                        <label class="form-check-label m_left">时间：2019-11-11
-                                                            08:12:12</label>
-                                                        <label class="form-check-label m_left">订单号：20154541450</label>
-                                                    </div>
-                                                    <div class="tabel_grup_cle">
-                                                        <button type="button"
-                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
-                                                    </div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">已完成</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">已完成</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
-                                                </section>
+                                        <td colspan="2" class="td_style">
+                                            <div class="foot-infrmation flex-between-d">
+                                                <div class="foot-img"><img src="../images/users/niupai.png" alt="">
+                                                </div>
+                                                <div class="foot-font">
+                                                    <div><span>M12级雪花牛排</span></div>
+                                                    <div><span>上等进口牛排</span></div>
+                                                    <div><span>半斤</span></div>
+                                                </div>
                                             </div>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6">
-                                            <div class="tabel_grup">
-                                                <section class="tabel_grup_top flex-between-b">
-                                                    <div>
-                                                        <input class="top_check" type="checkbox">
-                                                        <label class="form-check-label m_left">时间：2019-11-11
-                                                            08:12:12</label>
-                                                        <label class="form-check-label m_left">订单号：20154541450</label>
-                                                    </div>
-                                                    <div class="tabel_grup_cle">
-                                                        <button type="button"
-                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
-                                                    </div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">已完成</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">已完成</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
-                                                </section>
-                                            </div>
+                                        <td class="td_style">
+                                            <div class="foot-user">李某某</div>
+                                        </td>
+                                        <td class="td_style">
+                                            <div class="foot-user">总金额：￥18</div>
+                                        </td>
+                                        <td class="td_style">
+                                            <div class="foot-users">已完成</div>
+                                        </td>
+                                        <td class="td_style">
+                                            <div class="foot-users"><button type="button"
+                                                    class="btn btn-outline-dark btn-sm">再次购买</button></div>
                                         </td>
                                     </tr>
                                 </tbody>
+                                <tbody class="foot-grups">
+                                    <tr class="ont_tr">
+                                        <td colspan="6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6" class="td_style">
+                                            <section class="tabel_grup_top flex-between-b">
+                                                <div>
+                                                    <span>时间：2019-11-11
+                                                        08:12:12</span>
+                                                    <span class="m_left">订单号：20154541450</span>
+                                                </div>
+                                                <div class="tabel_grup_cle">
+                                                    <button type="button"
+                                                        class="btn btn-outline-dark btn-sm m_right del_btn">删除</button>
+                                                </div>
+                                            </section>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="td_style">
+                                            <div class="foot-infrmation flex-between-d">
+                                                <div class="foot-img"><img src="../images/users/niupai.png" alt="">
+                                                </div>
+                                                <div class="foot-font">
+                                                    <div><span>M12级雪花牛排</span></div>
+                                                    <div><span>上等进口牛排</span></div>
+                                                    <div><span>半斤</span></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td rowspan="2" class="td_style">
+                                            <div class="foot-user">李某某</div>
+                                        </td>
+                                        <td rowspan="2" class="td_style">
+                                            <div class="foot-user">总金额：￥18</div>
+                                        </td>
+                                        <td rowspan="2" class="td_style">
+                                            <div class="foot-users">已完成</div>
+                                        </td>
+                                        <td rowspan="2" class="td_style">
+                                            <div class="foot-users"><button type="button"
+                                                    class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="td_style">
+                                            <div class="foot-infrmation flex-between-d">
+                                                <div class="foot-img"><img src="../images/users/niupai.png" alt="">
+                                                </div>
+                                                <div class="foot-font">
+                                                    <div><span>M12级雪花牛排</span></div>
+                                                    <div><span>上等进口牛排</span></div>
+                                                    <div><span>半斤</span></div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                                <!-- <tbody>
+                                    <tr>
+                                        <td colspan="6">
+                                            <div class="tabel_grup">
+                                                <section class="tabel_grup_top flex-between-b">
+                                                    <div>
+                                                        <label class="form-check-label m_left">时间：2019-11-11
+                                                            08:12:12</label>
+                                                        <label class="form-check-label m_left">订单号：20154541450</label>
+                                                    </div>
+                                                    <div class="tabel_grup_cle">
+                                                        <button type="button"
+                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
+                                                    </div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <div class="tabel_grup">
+                                                <section class="tabel_grup_top flex-between-b">
+                                                    <div>
+                                                        <input class="top_check" type="checkbox">
+                                                        <label class="form-check-label m_left">时间：2019-11-11
+                                                            08:12:12</label>
+                                                        <label class="form-check-label m_left">订单号：20154541450</label>
+                                                    </div>
+                                                    <div class="tabel_grup_cle">
+                                                        <button type="button"
+                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
+                                                    </div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-check"><input type="checkbox">
+                                                    </div>
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-check"><input type="checkbox">
+                                                    </div>
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <div class="tabel_grup">
+                                                <section class="tabel_grup_top flex-between-b">
+                                                    <div>
+                                                        <input class="top_check" type="checkbox">
+                                                        <label class="form-check-label m_left">时间：2019-11-11
+                                                            08:12:12</label>
+                                                        <label class="form-check-label m_left">订单号：20154541450</label>
+                                                    </div>
+                                                    <div class="tabel_grup_cle">
+                                                        <button type="button"
+                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
+                                                    </div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-check"><input type="checkbox">
+                                                    </div>
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-check"><input type="checkbox">
+                                                    </div>
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody> -->
                             </table>
                         </div>
                         <!-- 待发货 -->
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <table class="table">
+                            <table class="table tabs_style">
                                 <thead class="thead-light">
                                     <tr>
                                         <th scope="col">
                                             <div class="flex-between-d">
-                                                <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                    <label class="form-check-label" for="exampleCheck1">全选</label>
-                                                </div>
                                                 <div class="m_left">
                                                     <select class="form-control" id="inputOneaddress">
                                                         <option>近三天</option>
@@ -422,164 +502,263 @@
                                         <th scope="col">操作</th>
                                     </tr>
                                 </thead>
+                                <tbody class="foot-grups">
+                                    <tr class="ont_tr">
+                                        <td colspan="6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6" class="td_style">
+                                            <section class="tabel_grup_top flex-between-b">
+                                                <div>
+                                                    <span>时间：2019-11-11
+                                                        08:12:12</span>
+                                                    <span class="m_left">订单号：20154541450</span>
+                                                </div>
+                                                <div class="tabel_grup_cle">
+                                                    <button type="button"
+                                                        class="btn btn-outline-dark btn-sm m_right del_btn">删除</button>
+                                                </div>
+                                            </section>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="td_style">
+                                            <div class="foot-infrmation flex-between-d">
+                                                <div class="foot-img"><img src="../images/users/niupai.png" alt="">
+                                                </div>
+                                                <div class="foot-font">
+                                                    <div><span>M12级雪花牛排</span></div>
+                                                    <div><span>上等进口牛排</span></div>
+                                                    <div><span>半斤</span></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="td_style">
+                                            <div class="foot-user">李某某</div>
+                                        </td>
+                                        <td class="td_style">
+                                            <div class="foot-user">总金额：￥18</div>
+                                        </td>
+                                        <td class="td_style">
+                                            <div class="foot-users">已完成</div>
+                                        </td>
+                                        <td class="td_style">
+                                            <div class="foot-users"><button type="button"
+                                                    class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
                                 <tbody>
+                                    <tr class="ont_tr">
+                                        <td colspan="6"></td>
+                                    </tr>
                                     <tr>
-                                        <td colspan="6">
-                                            <div class="tabel_grup">
-                                                <section class="tabel_grup_top flex-between-b">
-                                                    <div>
-                                                        <input class="top_check" type="checkbox">
-                                                        <label class="form-check-label m_left">时间：2019-11-11
-                                                            08:12:12</label>
-                                                        <label class="form-check-label m_left">订单号：20154541450</label>
-                                                    </div>
-                                                    <div class="tabel_grup_cle">
-                                                        <button type="button"
-                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
-                                                    </div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">待发货</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">查看信息</button></div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">待发货</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">查看信息</button></div>
-                                                </section>
+                                        <td colspan="6" class="td_style">
+                                            <section class="tabel_grup_top flex-between-b">
+                                                <div>
+                                                    <label class="form-check-label m_left">时间：2019-11-11
+                                                        08:12:12</label>
+                                                    <label class="form-check-label m_left">订单号：20154541450</label>
+                                                </div>
+                                                <div class="tabel_grup_cle">
+                                                    <button type="button"
+                                                        class="btn btn-outline-dark btn-sm m_right">删除</button>
+                                                </div>
+                                            </section>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="td_style">
+                                            <div class="foot-infrmation flex-between-d">
+                                                <div><img src="../images/users/niupai.png" alt=""></div>
+                                                <div class="foot-font">
+                                                    <div><span>M12级雪花牛排</span></div>
+                                                    <div><span>上等进口牛排</span></div>
+                                                    <div><span>半斤</span></div>
+                                                </div>
                                             </div>
+                                        </td>
+                                        <td rowspan="2" class="td_style">
+                                            <div class="foot-user">李某某</div>
+                                        </td>
+                                        <td rowspan="2" class="td_style">
+                                            <div class="foot-user">总金额：￥18</div>
+                                        </td>
+                                        <td rowspan="2" class="td_style">
+                                            <div class="foot-users">已完成</div>
+                                        </td>
+                                        <td rowspan="2" class="td_style">
+                                            <div class="foot-users"><button type="button"
+                                                    class="btn btn-outline-dark btn-sm">再次购买</button></div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="6">
-                                            <div class="tabel_grup">
-                                                <section class="tabel_grup_top flex-between-b">
-                                                    <div>
-                                                        <input class="top_check" type="checkbox">
-                                                        <label class="form-check-label m_left">时间：2019-11-11
-                                                            08:12:12</label>
-                                                        <label class="form-check-label m_left">订单号：20154541450</label>
-                                                    </div>
-                                                    <div class="tabel_grup_cle">
-                                                        <button type="button"
-                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
-                                                    </div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">已完成</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">已完成</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
-                                                </section>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6">
-                                            <div class="tabel_grup">
-                                                <section class="tabel_grup_top flex-between-b">
-                                                    <div>
-                                                        <input class="top_check" type="checkbox">
-                                                        <label class="form-check-label m_left">时间：2019-11-11
-                                                            08:12:12</label>
-                                                        <label class="form-check-label m_left">订单号：20154541450</label>
-                                                    </div>
-                                                    <div class="tabel_grup_cle">
-                                                        <button type="button"
-                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
-                                                    </div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">已完成</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
-                                                </section>
-                                                <section class="tabel_grup_bottom flex-between-d">
-                                                    <div class="foot-check"><input type="checkbox">
-                                                    </div>
-                                                    <div class="foot-infrmation flex-between-d">
-                                                        <div><img src="../images/users/niupai.png" alt=""></div>
-                                                        <div class="foot-font">
-                                                            <div><span>M12级雪花牛排</span></div>
-                                                            <div><span>上等进口牛排</span></div>
-                                                            <div><span>半斤</span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="foot-user">李某某</div>
-                                                    <div class="foot-user">总金额：￥18</div>
-                                                    <div class="foot-users">已完成</div>
-                                                    <div class="foot-users"><button type="button"
-                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
-                                                </section>
+                                        <td colspan="2" class="td_style">
+                                            <div class="foot-infrmation flex-between-d">
+                                                <div><img src="../images/users/niupai.png" alt=""></div>
+                                                <div class="foot-font">
+                                                    <div><span>M12级雪花牛排</span></div>
+                                                    <div><span>上等进口牛排</span></div>
+                                                    <div><span>半斤</span></div>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
                                 </tbody>
+                                <!-- <tbody>
+                                    <tr>
+                                        <td colspan="6">
+                                            <div class="tabel_grup">
+                                                <section class="tabel_grup_top flex-between-b">
+                                                    <div>
+                                                        <label class="form-check-label m_left">时间：2019-11-11
+                                                            08:12:12</label>
+                                                        <label class="form-check-label m_left">订单号：20154541450</label>
+                                                    </div>
+                                                    <div class="tabel_grup_cle">
+                                                        <button type="button"
+                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
+                                                    </div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <div class="tabel_grup">
+                                                <section class="tabel_grup_top flex-between-b">
+                                                    <div>
+                                                        <input class="top_check" type="checkbox">
+                                                        <label class="form-check-label m_left">时间：2019-11-11
+                                                            08:12:12</label>
+                                                        <label class="form-check-label m_left">订单号：20154541450</label>
+                                                    </div>
+                                                    <div class="tabel_grup_cle">
+                                                        <button type="button"
+                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
+                                                    </div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-check"><input type="checkbox">
+                                                    </div>
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-check"><input type="checkbox">
+                                                    </div>
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <div class="tabel_grup">
+                                                <section class="tabel_grup_top flex-between-b">
+                                                    <div>
+                                                        <input class="top_check" type="checkbox">
+                                                        <label class="form-check-label m_left">时间：2019-11-11
+                                                            08:12:12</label>
+                                                        <label class="form-check-label m_left">订单号：20154541450</label>
+                                                    </div>
+                                                    <div class="tabel_grup_cle">
+                                                        <button type="button"
+                                                            class="btn btn-outline-dark btn-sm m_right">删除</button>
+                                                    </div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-check"><input type="checkbox">
+                                                    </div>
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                                <section class="tabel_grup_bottom flex-between-d">
+                                                    <div class="foot-check"><input type="checkbox">
+                                                    </div>
+                                                    <div class="foot-infrmation flex-between-d">
+                                                        <div><img src="../images/users/niupai.png" alt=""></div>
+                                                        <div class="foot-font">
+                                                            <div><span>M12级雪花牛排</span></div>
+                                                            <div><span>上等进口牛排</span></div>
+                                                            <div><span>半斤</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot-user">李某某</div>
+                                                    <div class="foot-user">总金额：￥18</div>
+                                                    <div class="foot-users">已完成</div>
+                                                    <div class="foot-users"><button type="button"
+                                                            class="btn btn-outline-dark btn-sm">再次购买</button></div>
+                                                </section>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody> -->
                             </table>
                         </div>
                         <!-- 待收货 -->
@@ -1330,6 +1509,60 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                </div>
+                <div class="user_colletion">
+                    <div class="order_comment_div">
+                        <section class="row_comment"><span class="comment_title">订单评价</span></section>
+                        <section class="row_comment row_two"><span class="comment_desc">描述相符:</span>
+                            <div class="comment_star flex-between-c hsxf"><span class="star_s"></span><span
+                                    class="star_s"></span><span class="star_s"></span><span class="star_s"></span><span
+                                    class="star_s"></span></div>
+                        </section>
+                        <section class="row_comment row_two"><span class="comment_desc">物流服务:</span>
+                            <div class="comment_star flex-between-c wlfw"><span class="star_s"></span><span
+                                    class="star_s"></span><span class="star_s"></span><span class="star_s"></span><span
+                                    class="star_s"></span></div>
+                        </section>
+                        <section class="row_comment row_two"><span class="comment_desc">服务态度:</span>
+                            <div class="comment_star flex-between-c fwtd"><span class="star_s"></span><span
+                                    class="star_s"></span><span class="star_s"></span><span class="star_s"></span><span
+                                    class="star_s"></span></div>
+                        </section>
+                        <section class="row_comment row_two">
+                            <textarea name="" id="" cols="60" rows="10" placeholder="最多输入200个字"
+                                class="comment_font"></textarea>
+                        </section>
+                        <section class="row_comment row_two">
+                            <button type="button" class="btn btn-danger btn-lg fbpl">发表评论</button>
+                        </section>
+                    </div>
+                </div>
+                <div class="order_comment">
+                    <div class="order_comment_div">
+                        <section class="row_comment"><span class="comment_title">订单评价</span></section>
+                        <section class="row_comment row_two"><span class="comment_desc">描述相符:</span>
+                            <div class="comment_star flex-between-c hsxf"><span class="star_s"></span><span
+                                    class="star_s"></span><span class="star_s"></span><span class="star_s"></span><span
+                                    class="star_s"></span></div>
+                        </section>
+                        <section class="row_comment row_two"><span class="comment_desc">物流服务:</span>
+                            <div class="comment_star flex-between-c wlfw"><span class="star_s"></span><span
+                                    class="star_s"></span><span class="star_s"></span><span class="star_s"></span><span
+                                    class="star_s"></span></div>
+                        </section>
+                        <section class="row_comment row_two"><span class="comment_desc">服务态度:</span>
+                            <div class="comment_star flex-between-c fwtd"><span class="star_s"></span><span
+                                    class="star_s"></span><span class="star_s"></span><span class="star_s"></span><span
+                                    class="star_s"></span></div>
+                        </section>
+                        <section class="row_comment row_two">
+                            <textarea name="" id="" cols="60" rows="10" placeholder="最多输入200个字"
+                                class="comment_font"></textarea>
+                        </section>
+                        <section class="row_comment row_two">
+                            <button type="button" class="btn btn-danger btn-lg fbpl">发表评论</button>
+                        </section>
                     </div>
                 </div>
             </div>

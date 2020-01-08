@@ -7,5 +7,16 @@ module.exports = {
   Menu_Page: "./src/js/Menu_Page.js",
   orderPages: "./src/js/order-pages.js",
   commodity: "./src/js/commodity.js",
+<<<<<<< HEAD
   Menu_Details: "./src/js/Menu_Details.js",
+=======
+  user_info: './src/js/user_info.js',
+  user_order: './src/js/user_order.js',
+  user_order_evau: './src/js/user_order_evau.js',
+  user_collection: './src/js/user_collection.js',
+  shopping_cart: './src/js/shopping_cart.js',
+  order_list: './src/js/order_list.js',
+  payment_page:'./src/js/payment_page.js'
+  
+>>>>>>> 9679c10e27aea29a7301e6339acb8a3c8916556e
 };

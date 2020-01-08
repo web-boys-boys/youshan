@@ -25,6 +25,7 @@
     background-size: 100%;
 }
 
+@ys_color: #FF416C;
 //选择菜单的颜色
 .active {
     color: blue !important;
@@ -39,7 +40,7 @@
 
         span {
             font: bold 36px/46px 'Microsoft YaHei';
-            color: #FF416C;
+            color: @ys_color;
             cursor: none;
             position: relative;
             left: 50px;
@@ -63,7 +64,7 @@
             a {
                 font: bold 20px/46px 'Microsoft YaHei';
                 letter-spacing: 0.2em;
-                color: #FF416C;
+                color: @ys_color;
             }
         }
     }
@@ -92,11 +93,12 @@
             background: #FFFFFF;
             box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
             border-radius: 16px;
-
+            .se1:last-child{
+                margin: 70px auto;
+            }
             .se1 {
                 width: 232px;
-                border: 1px solid pink;
-                margin: 40px auto;
+                margin: 50px auto;
 
                 .star {
                     color: orange;
@@ -105,7 +107,7 @@
 
                 img {
                     width: 194px;
-                    margin: 20px 9px 0 10px;
+                    margin: 30px 9px 0 10px;
 
                 }
 
@@ -113,7 +115,7 @@
                     font: bold 20px/46px 'Microsoft YaHei';
                     text-align: center;
                     letter-spacing: 0.2em;
-                    color: #FF416C;
+                    color: @ys_color;
                     margin-bottom: 11px;
                 }
 
@@ -126,7 +128,7 @@
                 h3 {
                     margin-top: 15px;
                     font: normal bold 20px/26px 'Microsoft YaHei UI';
-                    color: #FF416C;
+                    color:@ys_color;
                     text-align: center;
 
                 }
@@ -144,7 +146,7 @@
                 font: bold 20px/18px 'Microsoft YaHei UI';
                 letter-spacing: 0.1em;
                 text-align: center;
-                color: #FF416C;
+                color: @ys_color;
                 margin-top: 35px;
                 margin-bottom: 20px;
             }
@@ -221,9 +223,8 @@
 
     ul {
         float: right;
-
         li:nth-child(3) {
-            color: #FF416C;
+            color:@ys_color;
         }
 
         li {
