@@ -25,7 +25,6 @@ $(".introduction-onclick").on("click", function() {
 // console.log($(".tab-choice-head").children(), 123);
 //点击更换页面
 $.each($(".tab-choice-head").children(), (index, item) => {
-
   $(item).data("index", index);
 });
 
@@ -42,4 +41,73 @@ $(".tab-choice-head")
       }
     });
   });
-//
+
+//食材明细加减按钮
+//jia
+$(".jia").each(function() {
+  $(this).click(function() {
+    let count = parseFloat(
+      $(this)
+        .siblings(".num")
+        .html()
+    );
+    count++;
+    $(this)
+      .siblings(".num")
+      .html(count);
+
+    zongjia_fun();
+  });
+});
+
+//jian
+$(".jian").each(function() {
+  $(this).click(function() {
+    let count = parseFloat(
+      $(this)
+        .siblings(".num")
+        .html()
+    );
+    count--;
+    if (count < 1) {
+      return;
+    }
+    $(this)
+      .siblings(".num")
+      .html(count);
+    zongjia_fun() ;
+  });
+});
+
+function zongjia_fun() {
+  let zongjia = 0;
+  let danjia = 10;
+  $.each($(".shicai"), (index, item) => {
+    console.log(
+      $(item)
+        .find(".num")
+        .html()
+    );
+    zongjia +=
+      $(item)
+        .find(".num")
+        .html() * danjia;
+    console.log(zongjia);
+  });
+  $(".price").html(zongjia.toFixed(2));
+}
+
+
+// 错误示例，同学们，要细心哦
+// // 给每样食材10元单价
+// function jisuan() {
+//   let danjia = 10;
+//   // 总价
+//   let zongjia = Number($(".price").text()); 【这里的zongjia=0 ，不要写成zongjia = Number($(".price").text());不然加或者减都会遍历它的哦】
+//   // console.log(zongjia);
+//   $.each($ 【这里的$不要忘记】 (".shicai"),
+//     (index, item) => {
+//       zongjia += Number($(item).find(".num").html()) * danjia;【这里单价和html不要放反了，先取值在相乘】
+//     });
+//     $(".price").html(zongjia.toFixed(2));
+// }

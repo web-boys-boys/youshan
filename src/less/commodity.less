@@ -101,12 +101,13 @@ a {
 
             .range {
               img {
-                width: 3vw;
+                width: 3vw;  
+                cursor: pointer;             
               }
 
               .num {
                 font-size: 1.46vw;
-                vertical-align: 1.1vw;
+                vertical-align: -0.1vw;
                 font-family: Microsoft YaHei UI;
                 font-style: normal;
                 font-weight: bold;
@@ -133,6 +134,7 @@ a {
               width: 4.48vw;
               height: 4.48vw;
               border-radius: 50%;
+              cursor: pointer;
               background: linear-gradient(
                 265.92deg,
                 #ff416c -1.95%,
@@ -146,6 +148,8 @@ a {
               img {
                 width: 2.08vw;
                 margin-top: 1.12vw;
+              
+
               }
             }
 
@@ -159,10 +163,12 @@ a {
               color: #fff;
               height: 4.48vw;
               border-radius: 2.24vw;
+              cursor: pointer;
               background: linear-gradient(
                 140.41deg,
                 #fbb245 -1.67%,
                 #fdc767 97.42%
+                
               );
               box-shadow: 4px 4px 12px #fdc767;
 
@@ -221,7 +227,7 @@ a {
           font-size: 1.04vw;
           line-height: 2em;
           .jieshao{
-            display: block;
+            display: none;
             .tab-main-container-top {
               width: 100%;
               display: flex;
@@ -288,7 +294,7 @@ a {
             }
           }
           .yonghu {
-            display: block;
+            // display: none;
             .yonghu-head {
               width: 100%;
 
@@ -349,6 +355,11 @@ a {
                     line-height: 40px;
                     letter-spacing: 0.1em;
                     text-align: center;
+                  }
+                  .commentator{
+                    background-color:#ff416c ;
+                    color: white;
+                    border-radius: 10px;
                   }
                 }
               }

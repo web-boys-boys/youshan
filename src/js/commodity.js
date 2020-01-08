@@ -17,6 +17,7 @@ import "bootstrap/dist/css/bootstrap.css";
 //点击增加按钮
 $(".jia").each(function() {
   $(this).on("click", function() {
+
     let count = parseFloat(
       $(this)
         .siblings(".num")
