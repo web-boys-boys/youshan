@@ -29,10 +29,20 @@ $('.shows').click(function(){
     
 })
 
+//生成时间戳
+function timeDown() {
+let start = Date.now();
+console.log(start);
+$('.order_timer').html(start)
+ }
+timeDown()
+
+
+
 //加载头部尾部
 import {
     fun_header,
     fun_footer
 } from "./JsHtml"
-fun_header("./static/pages/");
+fun_header("./");
 fun_footer();
