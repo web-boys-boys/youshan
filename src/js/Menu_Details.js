@@ -83,13 +83,7 @@ function zongjia_fun() {
   let zongjia = 0;
   let danjia = 10;
   $.each($(".shicai"), (index, item) => {
-    // console.log(
-    //   $(item)
-    //     .find(".num")
-    //     .html()
-    // );
-    zongjia +=
-      $(item)
+    zongjia +=$(item)
         .find(".num")
         .html() * danjia;
     console.log(zongjia);
@@ -97,6 +91,8 @@ function zongjia_fun() {
   $(".price").html(zongjia.toFixed(2));
 }
 
+// 點擊切換評論頁
+import './comment.js';
 
 // 错误示例，同学们，要细心哦
 // // 给每样食材10元单价
