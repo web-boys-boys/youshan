@@ -53,11 +53,14 @@ $('.jian').click(function () {
 $(".del").click(function () {
     $(this).parents(".list").remove();
     // console.log();
+    jishuan();
 })
 //删除全部
 $('.All_del').click(function () {
+    alert('是否要全部删除')
     $('.list').remove();
-  })
+    jishuan();
+})
 
 console.log($('input[type="checkbox"]'))
 let zongjia; //总价
@@ -66,14 +69,21 @@ $('input[type="checkbox"]').click(function () {
     jishuan();
 })
 
+
 function jishuan() {
     zongjia = 0;
+    let gou_count = 0;
     $.each($('.footlist input[type="checkbox"]:checked'), (index, item) => {
         console.log($(item).parent().siblings(".tot_price").children("#tot_price").html());
         zongjia += Number($(item).parent().siblings(".tot_price").children("#tot_price").html());
+        // jishuan();
+        gou_count++;
+        console.log(gou_count);
     })
     $("#Alltot_price").html(zongjia);
     // console.log(zongjia);
+    $(".gou_count").html(gou_count);
+    count_fun();
 }
 
 $('#Alltot_price')
@@ -81,10 +91,11 @@ let danjia = $('#d_price').text()
 console.log(danjia);
 
 //统计全部商品
-(function(){
+function count_fun() {
     $('.counts').html($('.list .img').length)
     console.log($('.list .img').length);
-  })();
+};
+count_fun();
 //统计已选商品数量
 
 

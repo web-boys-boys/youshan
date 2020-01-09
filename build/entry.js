@@ -13,7 +13,7 @@ module.exports = {
   user_collection: './src/js/user_collection.js',
   shopping_cart: './src/js/shopping_cart.js',
   order_list: './src/js/order_list.js',
-  payment_page:'./src/js/payment_page.js',
+  payment_page: './src/js/payment_page.js',
   Menu_Details: "./src/js/Menu_Details.js",
-  
+  success_page: './src/js/success_page.js',
 };

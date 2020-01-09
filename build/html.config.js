@@ -92,7 +92,6 @@ module.exports = [
       removeEmptyAttributes: true
     }
   }),
-
   // —> 所以订单页面
   new HtmlWebpackPlugin({
     // 模板文件
@@ -111,7 +110,6 @@ module.exports = [
       removeEmptyAttributes: true
     }
   }),
-
   // —> 商品详情
   new HtmlWebpackPlugin({
     // 模板文件
@@ -201,44 +199,6 @@ module.exports = [
       removeAttributeQuotes: true,
       removeEmptyAttributes: true
     }
-  })
-  ,
-
-  // —> 所以订单页面
-  new HtmlWebpackPlugin({
-    // 模板文件
-    template: "./src/pages/order-pages.html",
-    // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
-    filename: "static/pages/order-pages.html",
-    // 静态资源位置
-    inject: "body",
-    // 指定输出文件所依赖的入口文件（*.js）的[name]
-    chunks: ["orderPages"],
-    // 控制压缩
-    minify: {
-      collapseWhitespace: false,
-      removeComments: true,
-      removeAttributeQuotes: true,
-      removeEmptyAttributes: true
-    }
-  }),
-  // —> 所以订单页面
-  new HtmlWebpackPlugin({
-    // 模板文件
-    template: "./src/pages/user_info.html",
-    // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
-    filename: "static/pages/user_info.html",
-    // 静态资源位置
-    inject: "body",
-    // 指定输出文件所依赖的入口文件（*.js）的[name]
-    chunks: ["user_info"],
-    // 控制压缩
-    minify: {
-      collapseWhitespace: false,
-      removeComments: true,
-      removeAttributeQuotes: true,
-      removeEmptyAttributes: true
-    }
   }),
   // —> shopping cart
   new HtmlWebpackPlugin({
@@ -258,7 +218,7 @@ module.exports = [
       removeEmptyAttributes: true
     }
   }),
-  // —> shopping cart
+  // —> order_list
   new HtmlWebpackPlugin({
     // 模板文件
     template: "./src/pages/order_list.html",
@@ -277,7 +237,6 @@ module.exports = [
     }
   }),
   //payment_page
-  // —> shopping cart
   new HtmlWebpackPlugin({
     // 模板文件
     template: "./src/pages/payment_page.html",
@@ -287,6 +246,24 @@ module.exports = [
     inject: "body",
     // 指定输出文件所依赖的入口文件（*.js）的[name]
     chunks: ["payment_page"],
+    // 控制压缩
+    minify: {
+      collapseWhitespace: false,
+      removeComments: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true
+    }
+  }),
+  // —> success_page
+  new HtmlWebpackPlugin({
+    // 模板文件
+    template: "./src/pages/success_page.html",
+    // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
+    filename: "static/pages/success_page.html",
+    // 静态资源位置
+    inject: "body",
+    // 指定输出文件所依赖的入口文件（*.js）的[name]
+    chunks: ["success_page"],
     // 控制压缩
     minify: {
       collapseWhitespace: false,

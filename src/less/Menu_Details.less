@@ -78,6 +78,7 @@ a {
                   .range {
                     img {
                       width: 3vw;
+                      cursor: pointer;
                     }
 
                     .num {
@@ -122,6 +123,7 @@ a {
                 width: 86px;
                 height: 86px;
                 border-radius: 50%;
+                cursor: pointer;
                 background: linear-gradient(
                   265.92deg,
                   #ff416c -1.95%,
@@ -148,6 +150,7 @@ a {
                 color: #fff;
                 height: 86px;
                 border-radius: 43px;
+                cursor: pointer;
                 background: linear-gradient(
                   140.41deg,
                   #fbb245 -1.67%,
@@ -209,7 +212,7 @@ a {
           position: relative;
           ul,
           .jieshao {
-            display: none;
+            display: block;
             li {
               margin-bottom: 4.58vw;
               img {
@@ -227,7 +230,7 @@ a {
           }
 
           .yonghu {
-            display: block;
+            display: none;
             .yonghu-head {
               width: 100%;
 
@@ -276,11 +279,11 @@ a {
                 }
               }
               .yonghu-head-bottom {
-                background-color: #F8F8F8;
-                    border-radius: 20px;
-                    height: 40px;
-                    margin-top: 20px;
-                    color: #7e7d7d;
+                background-color: #f8f8f8;
+                border-radius: 20px;
+                height: 40px;
+                margin-top: 20px;
+                color: #7e7d7d;
                 .row {
                   div {
                     font-size: 16px;
@@ -288,7 +291,72 @@ a {
                     letter-spacing: 0.1em;
                     text-align: center;
                   }
-                  
+                }
+              }
+            }
+            .yonghu-main-pinglun {
+              margin-bottom: 100px;
+              max-height: 1200px;
+              overflow: scroll;
+              .evaluate {
+                display: flex;
+                margin: 100px 0;
+                .comment-area {
+                  margin-left: 40px;
+                  .five-pointed {
+                    margin-bottom: 12px;
+                    .five-pointed-star {
+                      display: inline-block;
+                      width: 20px;
+                      margin-right: -6px;
+                    }
+                    img {
+                      width: 100%;
+                    }
+                  }
+                  .comment-text {
+                    font-size: 20px;
+                    line-height: 26px;
+                    color: #333333;
+                    font-family: Microsoft YaHei UI;
+                    font-style: normal;
+                    font-weight: normal;
+                    margin-bottom: 12px;
+                  }
+                  .comment-img {
+                    .comment-photo {
+                      display: inline-block;
+                      width: 100px;
+                      margin: 0 20px 20px 0;
+                      img {
+                        width: 100%;
+                      }
+                    }
+                  }
+                  .report {
+                    display: flex;
+                    justify-content: space-between;
+                    font-family: Microsoft YaHei UI;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: #666666;
+                    .report-time {
+                      .vegetable {
+                        margin-right: 50px;
+                      }
+                    }
+                    .report-inf {
+                      .jubao {
+                        margin-right: 60px;
+                      }
+                      .report-inf-quit {
+                        font-size: 12px;
+                        vertical-align: -5px;
+                      }
+                    }
+                  }
                 }
               }
             }
