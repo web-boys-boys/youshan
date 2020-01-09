@@ -40,16 +40,18 @@ $(".svg-img").click(function () {
 $("#submit").click(function () {
   swal({
     title: "注册成功！",
-    // text: "You will not be able to recover this imaginary file!",
+    text: "2秒后自动前往首页",
     type: "success",
     showCancelButton: true,
     confirmButtonColor: "#DD6B55",
     confirmButtonText: "Yes, delete it!",
     closeOnConfirm: false
-  },
+  }
+    ,
     function () {
       swal("Deleted!", "Your imaginary file has been deleted.", "success");
-    });
+    }
+  );
 
   let a = false;
   let reg;
