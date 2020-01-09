@@ -272,50 +272,7 @@ module.exports = [
       removeEmptyAttributes: true
     }
   }),
-<<<<<<< HEAD
-  //payment_page
-    // —> shopping cart
-    new HtmlWebpackPlugin({
-      // 模板文件
-      template: "./src/pages/payment_page.html",
-      // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
-      filename: "static/pages/payment_page.html",
-      // 静态资源位置
-      inject: "body",
-      // 指定输出文件所依赖的入口文件（*.js）的[name]
-      chunks: ["payment_page"],
-      // 控制压缩
-      minify: {
-        collapseWhitespace: false,
-        removeComments: true,
-        removeAttributeQuotes: true,
-        removeEmptyAttributes: true
-      }
-    }),
-      //payment_page
-    // —> shopping cart
-    new HtmlWebpackPlugin({
-      // 模板文件
-      template: "./src/pages/success_page.html",
-      // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
-      filename: "static/pages/success_page.html",
-      // 静态资源位置
-      inject: "body",
-      // 指定输出文件所依赖的入口文件（*.js）的[name]
-      chunks: ["success_page"],
-      // 控制压缩
-      minify: {
-        collapseWhitespace: false,
-        removeComments: true,
-        removeAttributeQuotes: true,
-        removeEmptyAttributes: true
-      }
-    }),
-
-    // —> 菜谱详情
-=======
   // —> 菜谱详情
->>>>>>> a94debd5b6c9919ede8f2c9a29832091337853db
   new HtmlWebpackPlugin({
     // 模板文件
     template: "./src/pages/Menu_Details.html",
@@ -332,9 +289,5 @@ module.exports = [
       removeAttributeQuotes: true,
       removeEmptyAttributes: true
     }
-<<<<<<< HEAD
-  }),
-=======
   })
->>>>>>> a94debd5b6c9919ede8f2c9a29832091337853db
 ];
