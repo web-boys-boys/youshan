@@ -360,7 +360,7 @@ ol li {
 ol li p {
   margin-bottom: 10px;
 }
-
+/* 
 table {
   width: 700px;
   font-size: 14px;
@@ -433,7 +433,7 @@ table td:last-child {
   table td b {
     font-size: 13px;
   }
-}
+} */
 
 footer {
   margin-top: 100px;
