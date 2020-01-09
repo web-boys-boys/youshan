@@ -83,11 +83,11 @@ function zongjia_fun() {
   let zongjia = 0;
   let danjia = 10;
   $.each($(".shicai"), (index, item) => {
-    console.log(
-      $(item)
-        .find(".num")
-        .html()
-    );
+    // console.log(
+    //   $(item)
+    //     .find(".num")
+    //     .html()
+    // );
     zongjia +=
       $(item)
         .find(".num")
