@@ -165,7 +165,7 @@ function fun_click() {
 
 import Swiper from "swiper";
 import "swiper/css/swiper.css";
-var swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper('.swiper2', {
     loop: true,
     // 一行显示slider的个数
     slidesPerView: 5,
@@ -174,7 +174,7 @@ var swiper = new Swiper('.swiper-container', {
 
     // 分页
     pagination: {
-        el: '.swiper-pagination',
+        el: '.swp2',
 
         // 设为true, 点击分页器的指示点分页器会控制Swiper切换
         clickable: true,
