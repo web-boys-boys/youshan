@@ -13,5 +13,5 @@ import {
     fun_header,
     fun_footer
 } from "./JsHtml"
-fun_header("./static/pages/");
+fun_header("./");
 fun_footer();

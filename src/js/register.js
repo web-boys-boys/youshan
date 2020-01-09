@@ -5,6 +5,7 @@ import "./sweet-alert.js";
 import "../css/sweet-alert.css";
 import "../css/example.css";
 
+
 $("input").on("change", function () {
   //表单验证
   let reg = new RegExp($(this).data("reg"));
@@ -38,21 +39,6 @@ $(".svg-img").click(function () {
 
 //点击注册
 $("#submit").click(function () {
-  swal({
-    title: "注册成功！",
-    text: "2秒后自动前往首页",
-    type: "success",
-    showCancelButton: true,
-    confirmButtonColor: "#DD6B55",
-    confirmButtonText: "Yes, delete it!",
-    closeOnConfirm: false
-  }
-    ,
-    function () {
-      swal("Deleted!", "Your imaginary file has been deleted.", "success");
-    }
-  );
-
   let a = false;
   let reg;
   $.each([...$("input")], function (index, element) {
@@ -96,15 +82,35 @@ $("#submit").click(function () {
   // console.log($("svg"));
   console.log($(".svg-img>path").attr("fill"));
   if ($(".svg-img>path").attr("fill") == "#FF416C") {
-    console.log("我是粉色");
+    // console.log("我是粉色");
     b = true;
   } else {
-    console.log("我是灰色");
+    // console.log("我是灰色");
+    swal("请您阅读后勾选用户同意协议!")
     b = false;
   }
 
   if (a && b) {
+<<<<<<< HEAD
   
+=======
+
+    // console.log("全是ture");
+    // var def = {
+    //   content: "欢迎来到A5素材!",
+    //   time: 1000
+    // }
+    // $.Prompt(def);
+
+    // setTimeout(function () {
+    //   location.href = "../../index.html";
+    // }, 1500)
+
+    // register_ajax($("#username").val(), $("#email").val(), $("#password").val());
+
+    // location.href = "./login.html";
+    // alert("注册成功");
+>>>>>>> dd694b5c35b9a3e26b7d9f3441d931e9a6d9ffa9
   } else {
     
   }
@@ -141,10 +147,30 @@ function register_ajax(username, email, password) {
     // processData: false,
     // contentType: false,
     success: function (response_data) {
-      alert(response_data);
+      // alert(response_data);
       // console.info('22222');
       sessionStorage.setItem("userinfo", JSON.stringify(datas));
 
+<<<<<<< HEAD
+=======
+      swal({
+        title: "注册成功！",
+        text: "2秒后自动跳转首页",
+        type: "success",
+        // showCancelButton: true,
+        // confirmButtonColor: "#DD6B55",
+        confirmButtonText: "立即跳转",
+        // cancelButtonText: "No, cancel plx!",
+        closeOnConfirm: false,
+        // closeOnCancel: false
+      },
+        function () {
+          location.href = "../../index.html";
+        });
+      setTimeout(function () {
+        location.href = "../../index.html";
+      }, 2000)
+>>>>>>> dd694b5c35b9a3e26b7d9f3441d931e9a6d9ffa9
     },
     error: function (response_data) {
       console.log(response_data.responseJSON);

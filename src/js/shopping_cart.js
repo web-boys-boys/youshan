@@ -32,8 +32,6 @@ $(".All_del").click(function () {
 
 
 
-
-
 //上边全选
 $('.trr th input').click(function () {
     let checkValue = $(this).prop('checked');
@@ -95,14 +93,10 @@ function dels() {
             del(item);
         }
     })
-    // $('.All_del').click(function () {
-    // console.log($('.list li input').prop('checked'));
-    // })
+   
 }
 
-// $('.All_del').click(function () {
-//     dels()
-// })
+
 
 console.log($('input[type="checkbox"]'))
 let zongjia; //总价
@@ -149,5 +143,5 @@ import {
     fun_header,
     fun_footer
 } from "./JsHtml"
-fun_header("./static/pages/");
+fun_header("./");
 fun_footer();

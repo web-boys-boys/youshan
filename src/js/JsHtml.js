@@ -62,7 +62,6 @@ let fun_header = function (page_url) {
     })
 }
 let fun_banner = function (page_url) {
-    get_list()
     let htmlone = `<div class="banner">
 <div class="swiper-container swiper1">
     <div class="swiper-wrapper">
@@ -252,11 +251,34 @@ let fun_banner = function (page_url) {
                 </div>
             </div>
         </section>
-        <!-- <section class="menu_grop_s">12</section>
+        <section class="menu_grop_s"><div>
+        <span class="menu_two">家常菜谱</span>
+        <div class="menu_two_s">
+            <section>
+                <p>你的大实话</p>
+                <p>123</p>
+                <p>123</p>
+                <p>123sadsadsa</p>
+                <p>123</p>
+                <p>123</p>
+                <p>123</p>
+                <p>123</p>
+                <p>123</p>
+                <p>123</p>
+                <p>123</p>
+            </section>
+            <section>
+                <p>123</p>
+                <p>123</p>
+                <p>123</p>
+                <p>123</p>
+            </section>
+        </div>
+    </div></section>
         <section class="menu_grop_s">123</section>
         <section class="menu_grop_s">1234</section>
         <section class="menu_grop_s">12345</section>
-        <section class="menu_grop_s">123456</section> -->
+        <section class="menu_grop_s">123456</section>
     </div>
 </div>
 </div>`;
@@ -294,7 +316,7 @@ let fun_footer = function () {
         <span>15282222222</span>
     </section>
     <section class="tub_two footer_bottom_tub flex-between-c">
-        <img src="${require('../images/QQimg.svg')}" alt="">
+    <img src="${require('../images/wecatimg.svg')}" alt="">
         <img src="${require('../images/wecatimg.svg')}" alt="">
         <img src="${require('../images/weiboimg.svg')}" alt="">
     </section>
@@ -410,10 +432,11 @@ setTimeout(function () {
             opacity: "1",
             zIndex: "10"
         });
-        // $(".menu_grop_s").css({opacity: "0" });
-        // let index = $(this).data("id");
-        // $($(".menu_grop_s")[index]).css({opacity: "1" });
-        //    $(".menu_grop_s").html($(this).data("id"));
+        console.log($(".menu_grop_s")[$(this).index()])
+        $(".menu_grop_s").hide();
+        let index = $(this).data("id");
+        $($(".menu_grop_s")[index]).show();
+        // $(".menu_grop_s").html($(this).data("id"));
     })
     $(".menu_bar").mouseleave(function () {
         $(".menu_bottom").css({
@@ -443,39 +466,55 @@ function get_list() {
         success: function (response_data) {
             console.log(response_data);
             console.log($(".menu_grop"));
-
-
-            $.each(response_data, (index, item) => {
-                console.log(item);
-                if (item.menu_parent == 1) {
-                    caipu.push(item);
-                }
-                let caipuhtml = ``;
-                $.each(caipu, (index, item) => {
-                    caipuhtml += `<div>
-                                    <span class="menu_two">${item.menu_name}</span>
-                                </div>`;
-                })
-                // $(".menu_grop_s").html(caipuhtml);
-                console.log($(".menu_two"));
-                $.each($(".menu_grop_s"), (index, item) => {
-                    let html = `<div class="menu_two_s">
-                    <section>
-                        <p>你的大实话</p>
-                        <p>123</p>
-                        <p>123</p>
-                        <p>123sadsadsa</p>
-                        <p>123</p>
-                        <p>123</p>
-                        <p>123</p>
-                        <p>123</p>
-                        <p>123</p>
-                        <p>123</p>
-                        <p>123</p>
-                    </section>
-                </div>`;
+            let erjihtml = ``;
+            $.each($(".menu_grop"), (index, item) => {
+                erjihtml += `<section class="menu_grop_s" jicount="${index + 1}"></section>`;
+            })
+            $(".menu_bottom").html(erjihtml);
+            $.each($('.menu_grop_s'), (index, item) => {
+                $.each(response_data, (index_s, item_s) => {
+                    if (item_s.menu_parent == index + 1) {
+                        let html = `<div>
+                        <span class="menu_two">${
+                            item_s.menu_name
+                            }</span>
+                        <div class="menu_two_s"></div>
+                        </div>`;
+                        $(item).append(html);
+                    }
                 })
             })
+            // $.each(response_data, (index, item) => {
+            //     console.log(item);
+            //     if (item.menu_parent == 1) {
+            //         caipu.push(item);
+            //     }
+            //     let caipuhtml = ``;
+            //     $.each(caipu, (index, item) => {
+            //         caipuhtml += `<div>
+            //                         <span class="menu_two">${item.menu_name}</span>
+            //                     </div>`;
+            //     })
+            //     // $(".menu_grop_s").html(caipuhtml);
+            //     console.log($(".menu_two"));
+            //     $.each($(".menu_grop_s"), (index, item) => {
+            //         let html = `<div class="menu_two_s">
+            //         <section>
+            //             <p>你的大实话</p>
+            //             <p>123</p>
+            //             <p>123</p>
+            //             <p>123sadsadsa</p>
+            //             <p>123</p>
+            //             <p>123</p>
+            //             <p>123</p>
+            //             <p>123</p>
+            //             <p>123</p>
+            //             <p>123</p>
+            //             <p>123</p>
+            //         </section>
+            //     </div>`;
+            //     })
+            // })
         },
         error: function (response_data) {
             console.log(response_data);
