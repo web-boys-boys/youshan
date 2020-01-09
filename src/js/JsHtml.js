@@ -62,6 +62,7 @@ let fun_header = function (page_url) {
     })
 }
 let fun_banner = function (page_url) {
+    get_list()
     let htmlone = `<div class="banner">
 <div class="swiper-container swiper1">
     <div class="swiper-wrapper">
@@ -259,8 +260,8 @@ let fun_banner = function (page_url) {
     </div>
 </div>
 </div>`;
-
     $(".main").prepend(htmlone);
+    get_list();
 }
 let fun_footer = function () {
     let htmltwo = `<div class="footer_content">
@@ -303,9 +304,12 @@ let fun_footer = function () {
 </section>
 </div>`;
     $(".footer").prepend(htmltwo);
-
 }
-export { fun_header, fun_banner, fun_footer }
+export {
+    fun_header,
+    fun_banner,
+    fun_footer
+}
 let fun_user = function (count_h) {
     let text_h = "";
     let text_html = ``;
@@ -315,7 +319,7 @@ let fun_user = function (count_h) {
         <section class="user_meau_font"><a class="user_link" href="./user_order.html">我的<br>订单</a></section>
         <section class="user_meau_font"><a class="user_link" href="./user_collection.html">我的<br>收藏</a>
         </section>
-        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>` ;
+        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>`;
     }
     if (count_h == 1) {
         text_h = "我的订单";
@@ -323,7 +327,7 @@ let fun_user = function (count_h) {
         <section class="user_meau_font user_meau_dis"><a class="user_link" href="./user_order.html">我的<br>订单</a></section>
         <section class="user_meau_font"><a class="user_link" href="./user_collection.html">我的<br>收藏</a>
         </section>
-        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>` ;
+        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>`;
     }
     if (count_h == 2) {
         text_h = "我的收藏";
@@ -331,7 +335,7 @@ let fun_user = function (count_h) {
         <section class="user_meau_font"><a class="user_link" href="./user_order.html">我的<br>订单</a></section>
         <section class="user_meau_font user_meau_dis"><a class="user_link" href="./user_collection.html">我的<br>收藏</a>
         </section>
-        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>` ;
+        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>`;
     }
     if (count_h == 3) {
         text_h = "订单评价";
@@ -339,7 +343,7 @@ let fun_user = function (count_h) {
         <section class="user_meau_font user_meau_dis"><a class="user_link" href="./user_order.html">我的<br>订单</a></section>
         <section class="user_meau_font"><a class="user_link" href="./user_collection.html">我的<br>收藏</a>
         </section>
-        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>` ;
+        <section class="user_meau_font"><a class="user_link">退出<br>登录</a></section>`;
     }
     let html = `<div class="user_ban areasize flex-between-b">
                             <section class="flex-between-a">
@@ -362,10 +366,12 @@ let fun_user = function (count_h) {
     <div class="user_meau_fonts">
         ${text_html}
     </div>
-</div>`
-        ; $(".user_content").prepend(html_left);
+</div>`;
+    $(".user_content").prepend(html_left);
 }
-export { fun_user }
+export {
+    fun_user
+}
 
 
 import Swiper from "swiper";
@@ -400,19 +406,79 @@ setTimeout(function () {
     })
 
     $(".menu_grop").mouseenter(function () {
-        $(".menu_bottom").css({ opacity: "1", zIndex: "10" });
+        $(".menu_bottom").css({
+            opacity: "1",
+            zIndex: "10"
+        });
         // $(".menu_grop_s").css({opacity: "0" });
         // let index = $(this).data("id");
         // $($(".menu_grop_s")[index]).css({opacity: "1" });
         //    $(".menu_grop_s").html($(this).data("id"));
     })
     $(".menu_bar").mouseleave(function () {
-        $(".menu_bottom").css({ opacity: "0", zIndex: "-10" });
+        $(".menu_bottom").css({
+            opacity: "0",
+            zIndex: "-10"
+        });
     })
 
 }, 50)
 
+//拿分类列表
 
 
+function get_list() {
+    let caipu = [];
+    $.ajax({
+        url: "http://192.168.7.170:8000/menu/",
+        type: "get",
+        async: false, //异步请求关闭，就变为了同步
+        //传纯字符串表单
+        // data:$('#login_form').serialize(),  //序列化 ，serialize把对象转化为json
+        //传包含文件的表单
+        // data: new FormData($("login_form")[0]),
+        // cache: false,
+        // processData: false,
+        // contentType: false,
+        success: function (response_data) {
+            console.log(response_data);
+            console.log($(".menu_grop"));
 
 
+            $.each(response_data, (index, item) => {
+                console.log(item);
+                if (item.menu_parent == 1) {
+                    caipu.push(item);
+                }
+                let caipuhtml = ``;
+                $.each(caipu, (index, item) => {
+                    caipuhtml += `<div>
+                                    <span class="menu_two">${item.menu_name}</span>
+                                </div>`;
+                })
+                // $(".menu_grop_s").html(caipuhtml);
+                console.log($(".menu_two"));
+                $.each($(".menu_grop_s"), (index, item) => {
+                    let html = `<div class="menu_two_s">
+                    <section>
+                        <p>你的大实话</p>
+                        <p>123</p>
+                        <p>123</p>
+                        <p>123sadsadsa</p>
+                        <p>123</p>
+                        <p>123</p>
+                        <p>123</p>
+                        <p>123</p>
+                        <p>123</p>
+                        <p>123</p>
+                        <p>123</p>
+                    </section>
+                </div>`;
+                })
+            })
+        },
+        error: function (response_data) {
+            console.log(response_data);
+        }
+    }) //ajax就不等待
+}
