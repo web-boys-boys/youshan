@@ -33,7 +33,7 @@ module.exports = {
         port: 8081,
         open: true,
         inline: true,
-        hot: false // 热替换
+        hot: true // 热替换
     }
 }
 

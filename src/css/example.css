@@ -3,12 +3,9 @@
 body {
   background-color: #f2f4f6;
   font-family: 'Open Sans', sans-serif;
-  /* text-align: center; */
 }
 
 h1 {
-  /* background-image: url("images/logo_big.png"); */
-  /* background-image: -webkit-image-set(url("../images/logo_big.png") 1x, url("../images/logo_big@2x.png") 2x); */
   width: 385px;
   height: 81px;
   text-indent: -9999px;
@@ -121,19 +118,7 @@ p a.github {
   color: #323131;
 }
 
-button, .button {
-  background-color: #428BCA;
-  color: white;
-  border: none;
-  box-shadow: none;
-  font-size: 17px;
-  font-weight: 500;
-  font-weight: 600;
-  border-radius: 3px;
-  padding: 15px 35px;
-  margin: 26px 5px 0 5px;
-  cursor: pointer;
-}
+
 
 button:focus, .button:focus {
   outline: none;
@@ -247,8 +232,6 @@ pre .attr {
   height: 25px;
   margin-top: -3px;
   text-indent: -9999px;
-  /* background-image: url("images/logo_small.png"); */
-  /* background-image: -webkit-image-set(url("../images/logo_small.png") 1x, url("../images/logo_small@2x.png") 2x); */
 }
 
 .showcase h5 {
@@ -360,7 +343,7 @@ ol li {
 ol li p {
   margin-bottom: 10px;
 }
-
+/* 
 table {
   width: 700px;
   font-size: 14px;
@@ -433,7 +416,7 @@ table td:last-child {
   table td b {
     font-size: 13px;
   }
-}
+} */
 
 footer {
   margin-top: 100px;
@@ -456,7 +439,6 @@ footer .te-logo {
   width: 16px;
   display: inline-block;
   margin-right: 5px;
-  /* background-image: url("../images/te-logo-small.svg"); */
   position: absolute;
   left: -22px;
   top: 3px;

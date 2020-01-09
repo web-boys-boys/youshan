@@ -1,3 +1,7 @@
+//x0popup插件弹出框
+import "./sweet-alert.js";
+import "../css/sweet-alert.css";
+import "../css/example.css";
 
 import '../less/index.less';
 import '../less/util.less';
@@ -7,8 +11,24 @@ import '../less/shopping_cart.less';
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
-//x0popup插件弹出框
 
+
+$(".All_del").click(function () {
+    swal({
+        title: "是否删除所勾选的全部商品",
+        text: "购物车所勾选商品将会被清空!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, delete it!",
+        closeOnConfirm: false
+    }, function () {
+        swal("Deleted!",
+            "Your imaginary file has been deleted.",
+            "success");
+        dels()
+    });
+})
 
 
 
@@ -58,16 +78,31 @@ $('.jian').click(function () {
 
 //删除单个
 $(".del").click(function () {
-    $(this).parents(".list").remove();
+    del(this);
+})
+
+function del(el) {
+    $(el).parents(".list").remove();
     // console.log();
     jishuan();
-})
-//删除全部
-$('.All_del').click(function () {
-  
-    $('.list').remove();
-    jishuan();
-})
+}
+
+//批量删除
+function dels() {
+    $.each($('.footContent li input[type="checkbox"]'), (index, item) => {
+        console.log($(item).prop('checked'));
+        if ($(item).prop('checked')) {
+            del(item);
+        }
+    })
+    // $('.All_del').click(function () {
+    // console.log($('.list li input').prop('checked'));
+    // })
+}
+
+// $('.All_del').click(function () {
+//     dels()
+// })
 
 console.log($('input[type="checkbox"]'))
 let zongjia; //总价
