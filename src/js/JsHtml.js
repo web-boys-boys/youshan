@@ -329,7 +329,7 @@ let fun_footer = function () {
 }
 export {
     fun_header,
-    fun_banner,
+    fun_banner,     
     fun_footer
 }
 let fun_user = function (count_h) {
@@ -1012,6 +1012,7 @@ function get_list(url_s) {
         })
         $(item).append(html);
     })
+    //点击跳转列表页
     $('.thr_menu_pu').click(function () {
         console.log($(this).attr("menuId"));
         location.href = url_s + "Menu_Page.html?id=" + $(this).attr("menuId");

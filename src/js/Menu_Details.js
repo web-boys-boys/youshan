@@ -14,33 +14,8 @@ import "popper.js";
 import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
 
-// 点击商品详情和用户信息
-$(".introduction-onclick").on("click", function() {
-  // console.log($(this));
-  $(this)
-    .addClass("get-ellipse")
-    .siblings()
-    .removeClass("get-ellipse");
-});
-// console.log($(".tab-choice-head").children(), 123);
-//点击更换页面
-$.each($(".tab-choice-head").children(), (index, item) => {
-  $(item).data("index", index);
-});
-
-$(".tab-choice-head")
-  .children()
-  .click(function() {
-    let ch_index = $(this).data("index");
-    $.each($(".tab-main-container").children(), (index, item) => {
-      if (index == ch_index) {
-        $(item)
-          .show()
-          .siblings()
-          .hide();
-      }
-    });
-  });
+// 點擊切換評論頁
+import './comment.js';
 
 //食材明细加减按钮
 //jia
@@ -90,9 +65,6 @@ function zongjia_fun() {
   });
   $(".price").html(zongjia.toFixed(2));
 }
-
-// 點擊切換評論頁
-import './comment.js';
 
 // 错误示例，同学们，要细心哦
 // // 给每样食材10元单价
