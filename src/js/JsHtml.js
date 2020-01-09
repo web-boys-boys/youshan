@@ -307,7 +307,7 @@ let fun_footer = function () {
 }
 export {
     fun_header,
-    fun_banner,
+    fun_banner,     
     fun_footer
 }
 let fun_user = function (count_h) {

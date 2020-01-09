@@ -1,28 +1,55 @@
-//点击评论页面
-$.each($(".my-comment"), (index, item) => {
-    // 储存下标
-    $(item).data("index", index);
-    // 头部变色
-    $(item).on("click", function() {
-      $(this)
-        .addClass("commentator")
-        .siblings()
-        .removeClass("commentator");
+// 点击商品详情和用户信息
+$(".introduction-onclick").on("click", function() {
+  // console.log($(this));  
+  $(this)
+    .addClass("get-ellipse")
+    .siblings()
+    .removeClass("get-ellipse");
+});
+// console.log($(".tab-choice-head").children(), 123);
+//点击更换页面
+$.each($(".tab-choice-head").children(), (index, item) => {
+  $(item).data("index", index);
+});
+$(".tab-choice-head")
+  .children()
+  .click(function() {
+    let ch_index = $(this).data("index");
+    $.each($(".tab-main-container").children(), (index, item) => {
+      if (index == ch_index) {
+        $(item)
+          .show()
+          .siblings()
+          .hide();
+      }
     });
   });
 
-$(".my-comment").click(function() {
-    let el = $(this).attr("data-tab");
-    console.log(el);
-    yonghu(el);
+//点击评论页面
+$.each($(".my-comment"), (index, item) => {
+  // 储存下标
+  $(item).data("index", index);
+  // 头部变色
+  $(item).on("click", function() {
+    $(this)
+      .addClass("commentator")
+      .siblings()
+      .removeClass("commentator");
   });
-  
-  function yonghu(el) {
-    let html = `<section class="yonghu-main-pinglun">
-    <!-- pinglunxianq -->
+});
+
+//動態加載評論頁
+$(".my-comment").click(function() {
+  let el = $(this).attr("data-tab");
+  console.log(el);
+  yonghu(el);
+});
+
+function yonghu(el) {
+  let html = `<section class="yonghu-main-pinglun">
     <div class="evaluate">
       <div class="portrait">
-        <img src="${require("../images/details/touxiang.png")}" alt="" />
+      <img src="${require("../images/details/touxiang.png")}" alt="" />
       </div>
       <div class="comment-area">
         <div class="five-pointed">
@@ -43,13 +70,13 @@ $(".my-comment").click(function() {
         <div class="comment-img">
           <!-- photo -->
           <div class="comment-photo">
-          <img src="${require('../images/details/Rectangle 20.png')}"  alt=""/>
+          <img src="${require("../images/details/Rectangle 20.png")}"  alt=""/>
           </div>
           <div class="comment-photo">
-          <img src="${require('../images/details/Rectangle 20.png')}"  alt=""/>
+          <img src="${require("../images/details/Rectangle 20.png")}"  alt=""/>
           </div>
           <div class="comment-photo">
-          <img src="${require('../images/details/Rectangle 20.png')}"  alt=""/>
+          <img src="${require("../images/details/Rectangle 20.png")}"  alt=""/>
           </div>
         </div>
   
@@ -95,13 +122,13 @@ $(".my-comment").click(function() {
         <div class="comment-img">
           <!-- photo -->
           <div class="comment-photo">
-          <img src="${require('../images/details/Rectangle 20.png')}"  alt=""/>
+          <img src="${require("../images/details/Rectangle 20.png")}"  alt=""/>
           </div>
           <div class="comment-photo">
-          <img src="${require('../images/details/Rectangle 20.png')}"  alt=""/>
+          <img src="${require("../images/details/Rectangle 20.png")}"  alt=""/>
           </div>
           <div class="comment-photo">
-          <img src="${require('../images/details/Rectangle 20.png')}"  alt=""/>
+          <img src="${require("../images/details/Rectangle 20.png")}"  alt=""/>
           </div>
         </div>
   
@@ -147,13 +174,13 @@ $(".my-comment").click(function() {
         <div class="comment-img">
           <!-- photo -->
           <div class="comment-photo">
-          <img src="${require('../images/details/Rectangle 20.png')}"  alt=""/>
+          <img src="${require("../images/details/Rectangle 20.png")}"  alt=""/>
           </div>
           <div class="comment-photo">
-          <img src="${require('../images/details/Rectangle 20.png')}"  alt=""/>
+          <img src="${require("../images/details/Rectangle 20.png")}"  alt=""/>
           </div>
           <div class="comment-photo">
-            <img src="${require('../images/details/Rectangle 20.png')}"  alt=""/>
+            <img src="${require("../images/details/Rectangle 20.png")}"  alt=""/>
           </div>
         </div>
   
@@ -178,6 +205,7 @@ $(".my-comment").click(function() {
     </div>
     <!-- jiesu -->
   </section>`;
-    $(`#${el}`).html(html);
-  };
-  yonghu("home");
+  //字符串拼接
+  $('#home').html(html);
+}
+yonghu("qb");

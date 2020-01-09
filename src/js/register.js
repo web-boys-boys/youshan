@@ -104,26 +104,11 @@ $("#submit").click(function () {
   }
 
   if (a && b) {
-    // console.log("全是ture");
-    // var def = {
-    //   content: "欢迎来到A5素材!",
-    //   time: 1000
-    // }
-    // $.Prompt(def);
-
-    // setTimeout(function () {
-    //   location.href = "../../index.html";
-    // }, 1500)
-
-    // register_ajax($("#username").val(), $("#email").val(), $("#password").val());
-    // location.href = "./login.html";
-    // alert("注册成功");
+  
   } else {
-    // console.log("我是灰色");
-    // alert("注册失败");
+    
   }
 });
-
 
 
 function register_ajax(username, email, password) {
@@ -159,8 +144,6 @@ function register_ajax(username, email, password) {
       alert(response_data);
       // console.info('22222');
       sessionStorage.setItem("userinfo", JSON.stringify(datas));
-
-
 
     },
     error: function (response_data) {
