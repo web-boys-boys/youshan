@@ -7,6 +7,19 @@ import '../less/success_page.less';
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
+
+//获取订单支付时间
+
+function timeDown() {
+    let nowTime = new Date();
+    console.log(nowTime);
+        
+}
+
+
+
+
+
 //加载头部尾部
 import {
     fun_header,

@@ -1,7 +1,9 @@
 @ys_color: #FF416C;
-.user_title{
+
+.user_title {
     font-size: 2rem !important;
 }
+
 .main {
     margin-bottom: 80px;
 
@@ -149,15 +151,15 @@
 
         .table {
             width: 1140px;
-             margin: 10px auto;
-             margin-left: 60px;
-            
+            margin: 10px auto;
+            margin-left: 60px;
+
 
             .thead {
                 font-size: 1.2rem;
                 color: #333333;
                 background: #E3E3E3;
-               margin-left:10px ;
+                margin-left: 10px;
 
                 input[type="checkbox"] {
                     margin-left: -5px;
@@ -227,11 +229,11 @@
                 right: -103px;
 
                 .ipt {
-                    height: 37px;
+                    height: 35px;
                     width: 50px;
                     text-align: center;
-                    border-bottom: 1.7px solid #999999;
-                    border-top: 1.7px solid #999999;
+                    border-bottom: .7px solid #999999;
+                    border-top: .5px solid #999999;
                 }
 
             }
@@ -257,7 +259,7 @@
         }
 
         .pay {
-           margin-bottom: 180px;
+            margin-bottom: 180px;
             width: 100%;
             background: #E3E3E3;
             height: 80px;
@@ -269,19 +271,29 @@
             text-align: center;
             letter-spacing: 0.1em;
             color: #333333;
+            position: relative;
 
             input[type="checkbox"] {
                 position: relative;
                 left: 25px;
-           
+
             }
-            .del_checkbox{
-                visibility: hidden;
-            }
+
 
             .tot_price {
                 font-weight: bolder;
                 color: @ys_color;
+            }
+
+            .All_del {
+                background-color: white;
+
+                a {
+                    color: #e20606;
+                    padding: 11px;
+                   
+                }
+
             }
 
             li a {
@@ -289,6 +301,7 @@
                 list-style: none;
                 letter-spacing: 0.1em;
                 color: #333333;
+                padding: 11px;
             }
 
             .payment {
@@ -297,7 +310,13 @@
                 background: linear-gradient(262.89deg, #FF416C -1.95%, #FF4B2B 172.83%);
                 position: relative;
                 left: -19px;
-                padding: 30px;
+                padding: 23px;
+               border-radius: 5px;
+                a{
+                    color: white;
+
+                    
+                }
             }
 
         }
