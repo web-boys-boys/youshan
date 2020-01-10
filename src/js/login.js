@@ -3,7 +3,7 @@ import "../less/reset.less";
 
 import "./sweet-alert.js";
 import "../css/sweet-alert.css";
-import "../css/example.css";
+// import "../css/example.css";
 
 $("input").on("change", function () {
   //表单验证
@@ -40,7 +40,7 @@ $(".svg-img").click(function () {
 
 //点击登录
 $("#submit").click(function () {
-  login_ajax($("#username").val(), $("#password").val());
+  // login_ajax($("#username").val(), $("#password").val());
   // swal({
   //   title: "用户名或密码不正确!",
   //   type: "error",
