@@ -5,7 +5,7 @@ module.exports = {
   register: "./src/js/register.js",
   Product_Page: "./src/js/Product_Page.js",
   Menu_Page: "./src/js/Menu_Page.js",
-  orderPages: "./src/js/order-pages.js",
+  // orderPages: "./src/js/order-pages.js",
   commodity: "./src/js/commodity.js",
   user_info: './src/js/user_info.js',
   user_order: './src/js/user_order.js',

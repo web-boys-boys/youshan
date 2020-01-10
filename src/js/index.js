@@ -2,7 +2,11 @@ import '../less/index.less';
 import '../less/util.less';
 import './JsHtml.js';
 //加载头部尾部
-import { fun_header, fun_banner, fun_footer } from "./JsHtml"
+import {
+    fun_header,
+    fun_banner,
+    fun_footer
+} from "./JsHtml"
 fun_header("./static/pages/");
 fun_banner("./static/pages/");
 fun_footer();
@@ -10,8 +14,7 @@ fun_footer();
 console.log($(".item").children());
 
 // $(".item").children().attr("href", "./static/pages/commodity.html?id=13");
-let list = [
-    {
+let list = [{
         id: 1,
         img: "./images/menu_one.png",
         title: " 好吃的的1",
@@ -62,11 +65,12 @@ $.each(list, (index, item) => {
 })
 
 get_list();
+
 function get_list() {
     let caipu = [];
     // http://192.168.7.170:8000/mainrecipes/
     $.ajax({
-        url: "http://192.168.7.170:8000/singlerecipe/4/",
+        url: "http://192.168.7.170:8000/mainrecipes/",
         type: "get",
         async: false, //异步请求关闭，就变为了同步
         // dataType: "json",
@@ -79,15 +83,19 @@ function get_list() {
         // contentType: false,
         success: function (response_data) {
             console.log(response_data);
-            // $.each(response_data, (index, item) => {
-            //     let one_el = $($(".item").children()[index]);
-            //     // console.log(index);
-            //     // let imgs = item.img;
-            //     // console.log(imgs);
-            //     one_el.attr("href", "./static/pages/commodity.html?id=" + item.id);
-            //     $(one_el.children()[0]).attr("src", item.recipe_icon);
-            // })
-            // console.log($(".menu_grop"));
+            $.each(response_data, (index, item) => {
+                let one_el = $($(".item").children()[index]);
+                // console.log(index);
+                // let imgs = item.img;
+                console.log(one_el);
+                one_el.attr("href", "./static/pages/commodity.html?id=" + item.id);
+                // $(one_el.children()[0]).attr("src", item.recipe_icon);
+                console.log()
+                $($(one_el.children()[1]).find(".layer_text_title")).html(item.recipe_name);
+                $($(one_el.children()[1]).find("._price")).html(`￥ ${item.gtype}`);
+                $($(one_el).find(".text_content")).html(item.recipe_title);
+            })
+            console.log($(".menu_grop"));
         },
         error: function (response_data) {
             console.log(response_data);
