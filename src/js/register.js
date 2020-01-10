@@ -91,9 +91,6 @@ $("#submit").click(function () {
   }
 
   if (a && b) {
-<<<<<<< HEAD
-  
-=======
 
     // console.log("全是ture");
     // var def = {
@@ -110,7 +107,6 @@ $("#submit").click(function () {
 
     // location.href = "./login.html";
     // alert("注册成功");
->>>>>>> dd694b5c35b9a3e26b7d9f3441d931e9a6d9ffa9
   } else {
     
   }
@@ -151,8 +147,6 @@ function register_ajax(username, email, password) {
       // console.info('22222');
       sessionStorage.setItem("userinfo", JSON.stringify(datas));
 
-<<<<<<< HEAD
-=======
       swal({
         title: "注册成功！",
         text: "2秒后自动跳转首页",
@@ -170,7 +164,6 @@ function register_ajax(username, email, password) {
       setTimeout(function () {
         location.href = "../../index.html";
       }, 2000)
->>>>>>> dd694b5c35b9a3e26b7d9f3441d931e9a6d9ffa9
     },
     error: function (response_data) {
       console.log(response_data.responseJSON);

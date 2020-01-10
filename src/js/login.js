@@ -20,8 +20,6 @@ $("input").on("change", function () {
   }
 });
 
-
-
 //记住用户名按钮
 let isf = 0;
 $(".svg-img").click(function () {

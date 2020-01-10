@@ -1,6 +1,6 @@
 // 点击商品详情和用户信息
 $(".introduction-onclick").on("click", function() {
-  // console.log($(this));  
+  // console.log($(this));
   $(this)
     .addClass("get-ellipse")
     .siblings()
@@ -46,6 +46,13 @@ $(".my-comment").click(function() {
 });
 
 function yonghu(el) {
+  // ren.type = el;
+  // let liet = [];
+  // $.each(ren, function(index, item) {
+  //   if (item.type == el) {
+  //     liet.push(item);
+  //   }
+  // });
   let html = `<section class="yonghu-main-pinglun">
     <div class="evaluate">
       <div class="portrait">
@@ -93,7 +100,8 @@ function yonghu(el) {
               ><img src="${require("../images/details/pinglun.png")}"  alt=""/><span class="report-inf-quit">10</span></span
             >
             <span
-              > <img src="${require("../images/details/dianzan.png")}" alt="" /><span class="report-inf-quit">10</span></span
+              > <img src="${require("../images/details/dianzan.png")}" alt="" /><span class="report-inf-quit">9
+  </span></span
             >
           </div>
         </div>
@@ -206,6 +214,6 @@ function yonghu(el) {
     <!-- jiesu -->
   </section>`;
   //字符串拼接
-  $('#home').html(html);
+  $("#home").html(html);
 }
 yonghu("qb");
