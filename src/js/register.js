@@ -3,7 +3,7 @@ import "../less/reset.less";
 
 import "./sweet-alert.js";
 import "../css/sweet-alert.css";
-import "../css/example.css";
+// import "../css/example.css";
 
 
 $("input").on("change", function () {

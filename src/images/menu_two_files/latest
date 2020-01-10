@@ -1,0 +1,55 @@
+/**/simple_call({
+  "meta": {
+    "Content-Type": "application/javascript; charset=utf-8",
+    "X-RateLimit-Limit": "60",
+    "X-RateLimit-Remaining": "59",
+    "X-RateLimit-Reset": "1578636424",
+    "Cache-Control": "public, max-age=60, s-maxage=60",
+    "Vary": "Accept",
+    "ETag": "\"8c69a5abbc2bbbda4ae32a27ff6087c2\"",
+    "Last-Modified": "Thu, 26 Dec 2019 09:19:33 GMT",
+    "X-GitHub-Media-Type": "github.v3; format=json",
+    "status": 200
+  },
+  "data": {
+    "url": "https://api.github.com/repos/newpanjing/simpleui/releases/22464258",
+    "assets_url": "https://api.github.com/repos/newpanjing/simpleui/releases/22464258/assets",
+    "upload_url": "https://uploads.github.com/repos/newpanjing/simpleui/releases/22464258/assets{?name,label}",
+    "html_url": "https://github.com/newpanjing/simpleui/releases/tag/3.9",
+    "id": 22464258,
+    "node_id": "MDc6UmVsZWFzZTIyNDY0MjU4",
+    "tag_name": "3.9",
+    "target_commitish": "master",
+    "name": "3.9",
+    "draft": false,
+    "author": {
+      "login": "newpanjing",
+      "id": 13655483,
+      "node_id": "MDQ6VXNlcjEzNjU1NDgz",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/13655483?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/newpanjing",
+      "html_url": "https://github.com/newpanjing",
+      "followers_url": "https://api.github.com/users/newpanjing/followers",
+      "following_url": "https://api.github.com/users/newpanjing/following{/other_user}",
+      "gists_url": "https://api.github.com/users/newpanjing/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/newpanjing/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/newpanjing/subscriptions",
+      "organizations_url": "https://api.github.com/users/newpanjing/orgs",
+      "repos_url": "https://api.github.com/users/newpanjing/repos",
+      "events_url": "https://api.github.com/users/newpanjing/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/newpanjing/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "prerelease": false,
+    "created_at": "2019-12-26T09:18:57Z",
+    "published_at": "2019-12-26T09:19:33Z",
+    "assets": [
+
+    ],
+    "tarball_url": "https://api.github.com/repos/newpanjing/simpleui/tarball/3.9",
+    "zipball_url": "https://api.github.com/repos/newpanjing/simpleui/zipball/3.9",
+    "body": "Remove default \"favicon.ico\""
+  }
+})

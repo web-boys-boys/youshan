@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p><span style="font-size:22px"><em><strong>第一步：先1</strong></em></span><span style="font-size:22px"><em><strong><img
+                        alt="" src="/media/uploads/2020/01/10/frame7.png"
+                        style="height:212px; width:332px" /></strong></em></span></p>
+
+    <p><span style="font-size:22px"><em><strong>第二步：先2<img alt="" src="/media/uploads/2020/01/10/frame8_cW9bwWy.png"
+                        style="height:212px; width:332px" /></strong></em></span></p>
+</body>
+
+</html>
+<script>
+    document.querySelectorAll("img").forEach((item, index) => {
+        let itemsrc = item.getAttribute("src");
+        item.setAttribute("src", "http://192.168.7.170:8000" + itemsrc);
+    })
+</script>
