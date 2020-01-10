@@ -66,7 +66,7 @@ $("#submit").click(function () {
   // });
 
   // if (a) {
-  //   login_ajax($("#username").val(), $("#password").val());
+    login_ajax($("#username").val(), $("#password").val());
   //   // let obj = {};
   //   // obj.id = $("input").val();
   //   // sessionStorage.setItem($("input").val(), JSON.stringify(obj));
@@ -80,6 +80,7 @@ function login_ajax(username, userpass) {
     "username": username,
     "password": userpass,
   }
+  // 192.168.110.43
   $.ajax({
     url: "http://192.168.7.170:8000/login/",
     type: "post",
@@ -99,7 +100,7 @@ function login_ajax(username, userpass) {
       // obj.id = $("input").val();
       sessionStorage.setItem("userinfo", JSON.stringify(data));
       swal({
-        title: "注册成功！",
+        title: "登录成功！",
         text: "2秒后自动跳转首页",
         type: "success",
         // showCancelButton: true,

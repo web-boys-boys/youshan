@@ -110,44 +110,7 @@
 
         }
 
-        input[type="checkbox"] {
-            margin: 10px;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 10%;
-            display: inline-block;
-            text-align: center;
-            vertical-align: middle;
-            line-height: 18px;
-            position: relative;
-        }
 
-        input[type="checkbox"]::before {
-            content: "";
-            position: absolute;
-            border-radius: 10%;
-            top: 0;
-            left: 0;
-            background-color: @ys_color;
-            width: 100%;
-            height: 100%;
-            border: 1px solid @ys_color
-        }
-
-        input[type="checkbox"]:checked::before {
-            content: "\2713";
-            border-radius: 10%;
-            background-color: @ys_color;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            border: 1px solid ys_color;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-        }
 
         .table {
             width: 1140px;
@@ -160,7 +123,7 @@
                 color: #333333;
                 background: #E3E3E3;
                 margin-left: 10px;
-
+            
                 input[type="checkbox"] {
                     margin-left: -5px;
                 }
@@ -173,23 +136,62 @@
             overflow-y: scroll;
         }
 
-        .list:nth-child(even) {
-            background: #FFFFFF;
-            box-shadow: 3.5625px 0px 17.8125px rgba(0, 0, 0, 0.1);
-            border-radius: 3.5625px;
+
+        .footlist {
+            input[type="checkbox"] {
+                margin: 10px;
+                appearance: none;
+                width: 20px;
+                height: 20px;
+                border-radius: 10%;
+                display: inline-block;
+                text-align: center;
+                vertical-align: middle;
+                line-height: 18px;
+                position: relative;
+            }
+
+            input[type="checkbox"]::before {
+                content: "\2713";
+                position: absolute;
+                border-radius: 10%;
+                top: 0;
+                left: 0;
+                color: white;
+                background-color: #E3E3E3;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #E3E3E3;
+            }
+
+            input[type="checkbox"]:checked::before {
+                content: "\2713";
+                border-radius: 10%;
+                background-color: @ys_color;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                border: 1px solid @ys_color;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+            }
         }
 
         .list {
             width: 1140px;
             height: 180px;
             margin: 0 auto;
-            background: #FFC8CA;
+            background: #FFFFFF;
             box-shadow: 3.5625px 0px 17.8125px rgba(0, 0, 0, 0.1);
             border-radius: 3.5625px;
             margin-top: 30px;
             display: flex;
             align-items: center;
             position: relative;
+
+
 
             .butn {
 
@@ -202,8 +204,6 @@
 
             li {
                 float: left;
-
-
             }
 
 
@@ -258,6 +258,12 @@
 
         }
 
+        .listchecked {
+            background: pink;
+            // box-shadow: 3.5625px 0px 17.8125px rgba(0, 0, 0, 0.1);
+            // border-radius: 3.5625px;
+        }
+
         .pay {
             margin-bottom: 180px;
             width: 100%;
@@ -273,11 +279,7 @@
             color: #333333;
             position: relative;
 
-            input[type="checkbox"] {
-                position: relative;
-                left: 25px;
-
-            }
+           
 
 
             .tot_price {
@@ -286,12 +288,17 @@
             }
 
             .All_del {
-                background-color: white;
+                margin-left: 15px;
+                background-color: #E3E3E3;
 
                 a {
-                    color: #e20606;
-                    padding: 11px;
-                   
+                    text-decoration: none;
+                    list-style: none;
+                    letter-spacing: 0.2em;
+                    color: #333333;
+                    padding: 15px;
+                    font-weight: 400;
+
                 }
 
             }
@@ -311,11 +318,12 @@
                 position: relative;
                 left: -19px;
                 padding: 23px;
-               border-radius: 5px;
-                a{
+                border-radius: 5px;
+
+                a {
                     color: white;
 
-                    
+
                 }
             }
 
@@ -324,4 +332,52 @@
 
     }
 
+}
+
+//全选删除解决单个背景颜色问题
+#top_Alldel,#bto_Alldel{
+    input[type="checkbox"] {
+        margin: 10px;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 10%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 18px;
+        position: relative;
+    }
+
+    input[type="checkbox"]::before {
+        content: "\2713";
+        position: absolute;
+        border-radius: 10%;
+        top: 0;
+        left: 0;
+        color: white;
+        background-color: rgb(155, 155, 155);
+        width: 100%;
+        height: 100%;
+        border: 1px solid #E3E3E3;
+    }
+
+    input[type="checkbox"]:checked::before {
+        content: "\2713";
+        border-radius: 10%;
+        background-color: @ys_color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border: 1px solid @ys_color;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+#bto_Alldel{
+    position: absolute;
+    left: 20px;
 }

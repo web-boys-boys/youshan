@@ -68,7 +68,7 @@ get_list();
 
 function get_list() {
     let caipu = [];
-    // http://192.168.7.170:8000/mainrecipes/
+    // http://192.168.110.43:8000/mainrecipes/
     $.ajax({
         url: "http://192.168.7.170:8000/mainrecipes/",
         type: "get",
