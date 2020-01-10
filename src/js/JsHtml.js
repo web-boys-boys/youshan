@@ -88,8 +88,8 @@ let fun_banner = function (page_url) {
             <img class="search_img" src="${require('../images/search.svg')}" alt="">
             <input class="search_input" type="text">
             <select class="search_list" name="" id="">
-                <option value="">搜索菜谱</option>
-                <option value="">搜索商品</option>
+                <option value="recipes  ·1">搜索菜谱</option>
+                <option value="goods">搜索商品</option>
             </select>
             <img class="list_img" src="${require('../images/list.svg')}" alt="">
         </span>
@@ -447,509 +447,514 @@ setTimeout(function () {
 
 }, 50)
 
-//拿分类列表
-// let response_data = [
-//     {
-//         "id": 1,
-//         "menu_name": "精选菜谱",
-//         "menu_type": 1,
-//         "menu_sort": 0,
-//         "menu_parent": null
-//     },
-//     {
-//         "id": 2,
-//         "menu_name": "蔬菜蛋品",
-//         "menu_type": 1,
-//         "menu_sort": 0,
-//         "menu_parent": null
-//     },
-//     {
-//         "id": 3,
-//         "menu_name": "精选肉类",
-//         "menu_type": 1,
-//         "menu_sort": 0,
-//         "menu_parent": null
-//     },
-//     {
-//         "id": 4,
-//         "menu_name": "海鲜水产",
-//         "menu_type": 1,
-//         "menu_sort": 0,
-//         "menu_parent": null
-//     },
-//     {
-//         "id": 5,
-//         "menu_name": "新鲜瓜果",
-//         "menu_type": 1,
-//         "menu_sort": 0,
-//         "menu_parent": null
-//     },
-//     {
-//         "id": 6,
-//         "menu_name": "冷饮冻食",
-//         "menu_type": 1,
-//         "menu_sort": 0,
-//         "menu_parent": null
-//     },
-//     {
-//         "id": 7,
-//         "menu_name": "家常菜谱",
-//         "menu_type": 2,
-//         "menu_sort": 0,
-//         "menu_parent": 1
-//     },
-//     {
-//         "id": 8,
-//         "menu_name": "中华菜系",
-//         "menu_type": 2,
-//         "menu_sort": 0,
-//         "menu_parent": 1
-//     },
-//     {
-//         "id": 9,
-//         "menu_name": "各地小吃",
-//         "menu_type": 2,
-//         "menu_sort": 0,
-//         "menu_parent": 1
-//     },
-//     {
-//         "id": 10,
-//         "menu_name": "国外菜谱",
-//         "menu_type": 2,
-//         "menu_sort": 0,
-//         "menu_parent": 1
-//     },
-//     {
-//         "id": 11,
-//         "menu_name": "烘焙菜谱",
-//         "menu_type": 2,
-//         "menu_sort": 0,
-//         "menu_parent": 1
-//     },
-//     {
-//         "id": 12,
-//         "menu_name": "家常菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 13,
-//         "menu_name": "私家菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 14,
-//         "menu_name": "凉菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 15,
-//         "menu_name": "海鲜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 16,
-//         "menu_name": "热菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 17,
-//         "menu_name": "热粥",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 18,
-//         "menu_name": "素食",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 19,
-//         "menu_name": "酱料",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 20,
-//         "menu_name": "蘸料",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 21,
-//         "menu_name": "微波炉",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 22,
-//         "menu_name": "火锅底料",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 23,
-//         "menu_name": "甜品点心",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 24,
-//         "menu_name": "糕点",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 25,
-//         "menu_name": "主食",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 26,
-//         "menu_name": "干果制作",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 27,
-//         "menu_name": "卤酱",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 28,
-//         "menu_name": "时尚饮品",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 7
-//     },
-//     {
-//         "id": 29,
-//         "menu_name": "川菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 30,
-//         "menu_name": "湘菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 31,
-//         "menu_name": "粤菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 32,
-//         "menu_name": "东北菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 33,
-//         "menu_name": "鲁菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 34,
-//         "menu_name": "浙菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 35,
-//         "menu_name": "京菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 36,
-//         "menu_name": "湖北菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 37,
-//         "menu_name": "徽菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 38,
-//         "menu_name": "豫菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 39,
-//         "menu_name": "西北菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 40,
-//         "menu_name": "云贵菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 41,
-//         "menu_name": "江西菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 42,
-//         "menu_name": "山西菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 43,
-//         "menu_name": "广西菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 44,
-//         "menu_name": "港台菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 45,
-//         "menu_name": "其他菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 8
-//     },
-//     {
-//         "id": 46,
-//         "menu_name": "四川",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 47,
-//         "menu_name": "广东",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 48,
-//         "menu_name": "北京",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 49,
-//         "menu_name": "陕西",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 50,
-//         "menu_name": "山东",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 51,
-//         "menu_name": "山西",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 52,
-//         "menu_name": "湖南",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 53,
-//         "menu_name": "河南",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 54,
-//         "menu_name": "上海",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 55,
-//         "menu_name": "江苏",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 56,
-//         "menu_name": "湖北",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 57,
-//         "menu_name": "重庆",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 58,
-//         "menu_name": "天津",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 59,
-//         "menu_name": "河北",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 60,
-//         "menu_name": "浙江",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 61,
-//         "menu_name": "新疆",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 62,
-//         "menu_name": "江西",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 64,
-//         "menu_name": "福建",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 9
-//     },
-//     {
-//         "id": 65,
-//         "menu_name": "叶菜类",
-//         "menu_type": 2,
-//         "menu_sort": 0,
-//         "menu_parent": 2
-//     },
-//     {
-//         "id": 66,
-//         "menu_name": "根茎类",
-//         "menu_type": 2,
-//         "menu_sort": 0,
-//         "menu_parent": 2
-//     },
-//     {
-//         "id": 67,
-//         "menu_name": "鲜菌菇",
-//         "menu_type": 2,
-//         "menu_sort": 0,
-//         "menu_parent": 2
-//     },
-//     {
-//         "id": 68,
-//         "menu_name": "生菜",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 65
-//     },
-//     {
-//         "id": 69,
-//         "menu_name": "菜心",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 65
-//     },
-//     {
-//         "id": 70,
-//         "menu_name": "西兰花",
-//         "menu_type": 3,
-//         "menu_sort": 0,
-//         "menu_parent": 65
-//     },
-//     {
-//         "id": 71,
-//         "menu_name": "新鲜肉类",
-//         "menu_type": 2,
-//         "menu_sort": 0,
-//         "menu_parent": 3
-//     },
-//     {
-//         "id": 72,
-//         "menu_name": "新",
-//         "menu_type": 71,
-//         "menu_sort": 0,
-//         "menu_parent": 65
-//     }
-// ]
+// 拿分类列表
+let response_data = [
+    {
+        "id": 1,
+        "menu_name": "精选菜谱",
+        "menu_type": 1,
+        "menu_sort": 0,
+        "menu_parent": null
+    },
+    {
+        "id": 2,
+        "menu_name": "蔬菜蛋品",
+        "menu_type": 1,
+        "menu_sort": 0,
+        "menu_parent": null
+    },
+    {
+        "id": 3,
+        "menu_name": "精选肉类",
+        "menu_type": 1,
+        "menu_sort": 0,
+        "menu_parent": null
+    },
+    {
+        "id": 4,
+        "menu_name": "海鲜水产",
+        "menu_type": 1,
+        "menu_sort": 0,
+        "menu_parent": null
+    },
+    {
+        "id": 5,
+        "menu_name": "新鲜瓜果",
+        "menu_type": 1,
+        "menu_sort": 0,
+        "menu_parent": null
+    },
+    {
+        "id": 6,
+        "menu_name": "冷饮冻食",
+        "menu_type": 1,
+        "menu_sort": 0,
+        "menu_parent": null
+    },
+    {
+        "id": 7,
+        "menu_name": "家常菜谱",
+        "menu_type": 2,
+        "menu_sort": 0,
+        "menu_parent": 1
+    },
+    {
+        "id": 8,
+        "menu_name": "中华菜系",
+        "menu_type": 2,
+        "menu_sort": 0,
+        "menu_parent": 1
+    },
+    {
+        "id": 9,
+        "menu_name": "各地小吃",
+        "menu_type": 2,
+        "menu_sort": 0,
+        "menu_parent": 1
+    },
+    {
+        "id": 10,
+        "menu_name": "国外菜谱",
+        "menu_type": 2,
+        "menu_sort": 0,
+        "menu_parent": 1
+    },
+    {
+        "id": 11,
+        "menu_name": "烘焙菜谱",
+        "menu_type": 2,
+        "menu_sort": 0,
+        "menu_parent": 1
+    },
+    {
+        "id": 12,
+        "menu_name": "家常菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 13,
+        "menu_name": "私家菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 14,
+        "menu_name": "凉菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 15,
+        "menu_name": "海鲜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 16,
+        "menu_name": "热菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 17,
+        "menu_name": "热粥",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 18,
+        "menu_name": "素食",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 19,
+        "menu_name": "酱料",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 20,
+        "menu_name": "蘸料",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 21,
+        "menu_name": "微波炉",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 22,
+        "menu_name": "火锅底料",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 23,
+        "menu_name": "甜品点心",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 24,
+        "menu_name": "糕点",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 25,
+        "menu_name": "主食",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 26,
+        "menu_name": "干果制作",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 27,
+        "menu_name": "卤酱",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 28,
+        "menu_name": "时尚饮品",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 7
+    },
+    {
+        "id": 29,
+        "menu_name": "川菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 30,
+        "menu_name": "湘菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 31,
+        "menu_name": "粤菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 32,
+        "menu_name": "东北菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 33,
+        "menu_name": "鲁菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 34,
+        "menu_name": "浙菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 35,
+        "menu_name": "京菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 36,
+        "menu_name": "湖北菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 37,
+        "menu_name": "徽菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 38,
+        "menu_name": "豫菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 39,
+        "menu_name": "西北菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 40,
+        "menu_name": "云贵菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 41,
+        "menu_name": "江西菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 42,
+        "menu_name": "山西菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 43,
+        "menu_name": "广西菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 44,
+        "menu_name": "港台菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 45,
+        "menu_name": "其他菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 8
+    },
+    {
+        "id": 46,
+        "menu_name": "四川",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 47,
+        "menu_name": "广东",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 48,
+        "menu_name": "北京",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 49,
+        "menu_name": "陕西",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 50,
+        "menu_name": "山东",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 51,
+        "menu_name": "山西",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 52,
+        "menu_name": "湖南",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 53,
+        "menu_name": "河南",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 54,
+        "menu_name": "上海",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 55,
+        "menu_name": "江苏",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 56,
+        "menu_name": "湖北",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 57,
+        "menu_name": "重庆",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 58,
+        "menu_name": "天津",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 59,
+        "menu_name": "河北",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 60,
+        "menu_name": "浙江",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 61,
+        "menu_name": "新疆",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 62,
+        "menu_name": "江西",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 64,
+        "menu_name": "福建",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 9
+    },
+    {
+        "id": 65,
+        "menu_name": "叶菜类",
+        "menu_type": 2,
+        "menu_sort": 0,
+        "menu_parent": 2
+    },
+    {
+        "id": 66,
+        "menu_name": "根茎类",
+        "menu_type": 2,
+        "menu_sort": 0,
+        "menu_parent": 2
+    },
+    {
+        "id": 67,
+        "menu_name": "鲜菌菇",
+        "menu_type": 2,
+        "menu_sort": 0,
+        "menu_parent": 2
+    },
+    {
+        "id": 68,
+        "menu_name": "生菜",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 65
+    },
+    {
+        "id": 69,
+        "menu_name": "菜心",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 65
+    },
+    {
+        "id": 70,
+        "menu_name": "西兰花",
+        "menu_type": 3,
+        "menu_sort": 0,
+        "menu_parent": 65
+    },
+    {
+        "id": 71,
+        "menu_name": "新鲜肉类",
+        "menu_type": 2,
+        "menu_sort": 0,
+        "menu_parent": 3
+    },
+    {
+        "id": 72,
+        "menu_name": "新",
+        "menu_type": 71,
+        "menu_sort": 0,
+        "menu_parent": 65
+    }
+]
+
+import "../js/sweet-alert.js";
+import "../css/sweet-alert.css";
 
 function get_list(url_s) {
+
     // let caipu = [];
+<<<<<<< HEAD
     // http://192.168.110.43:8000/menu/
     $.ajax({
         url: "http://192.168.110.43:8000/menu/",
@@ -980,90 +985,150 @@ function get_list(url_s) {
                     // console.log(index);
                     // console.log(item_s.menu_parent);
                     if (item_s.menu_parent == index + 1) {
+=======
+    // http://192.168.7.170:8000/menu/
+    // $.ajax({
+    //     url: "node.json",
+    //     type: "get",
+    //     async: false, //异步请求关闭，就变为了同步
+    //     // dataType: "json",
+    //     //传纯字符串表单
+    //     // data:$('#login_form').serialize(),  //序列化 ，serialize把对象转化为json
+    //     //传包含文件的表单
+    //     // data: new FormData($("login_form")[0]),
+    //     // cache: false,
+    //     // processData: false,
+    //     // contentType: false,
+    //     success: function (response_data) {
+    //         console.log(response_data);
+    //         console.log($(".menu_grop"));
+    let erjihtml = ``;
+    // 一级菜单
+    $.each($(".menu_grop"), (index, item) => {
+        erjihtml += `<section class="menu_grop_s" data-jicount="${index + 1}"></section>`;
+    })
+    $(".menu_bottom").html(erjihtml);
+    //二级菜单
 
-                        let shtml = ``;
-                        let ercount = 0;//计算三级菜单的个数
-                        //三级菜单
-                        $.each(response_data, (index_rs, item_rs) => {
-                            // console.log(index_rs);
-                            if (item_rs.menu_parent == item_s.id) {
-                                ercount++;
-                                let tml = ``;
-                                if (ercount == 10) {
-                                    tml = `</section>
+    $.each($('.menu_grop_s'), (index, item) => {
+        let cpid = [1];//菜谱菜单
+        // console.log(item);
+        let html = ``;
+        $.each(response_data, (index_s, item_s) => {
+
+            // console.log(index);
+            // console.log(item_s.menu_parent);
+            if (item_s.menu_parent == 1) {
+                cpid.push(item_s.id);
+            }
+            if (item_s.menu_parent == index + 1) {
+>>>>>>> c54a00e7bccbecd36bb28f59efe44d59aaf53970
+
+                let shtml = ``;
+                let ercount = 0;//计算三级菜单的个数
+                //三级菜单
+                $.each(response_data, (index_rs, item_rs) => {
+
+                    // console.log(index_rs);
+                    if (item_rs.menu_parent == item_s.id) {
+                        ercount++;
+                        let tml = ``;
+                        let btn_ty = "";
+                        if ($.inArray(item_s.menu_parent, cpid) >= 0) {
+                            btn_ty = "cp_btn";
+                        }
+                        else {
+                            btn_ty = "sp_btn";
+                        }
+                        if (ercount == 10) {
+                            tml = `</section>
                             <section>
-                                <p class="thr_menu_pu" menuId="${item_rs.id}">${item_rs.menu_name}</p>`;
-                                }
-                                else {
-                                    tml = `<p class="thr_menu_pu" menuId="${item_rs.id}">${item_rs.menu_name}</p>`;
-                                }
-                                shtml += tml;
-                            }
-                        })
-                        // console.log(item_s);
-                        let erhrml = `<section>${shtml}</section>`;
-                        html += `<div>
-                            <span class="menu_two thr_menu_pu" menuid="${item_s.id}">${item_s.menu_name}</span>
+                                <p class="thr_menu_pu ${btn_ty}" menuId="${item_rs.id}">${item_rs.menu_name}</p>`;
+                        }
+                        else {
+                            tml = `<p class="thr_menu_pu ${btn_ty}" menuId="${item_rs.id}">${item_rs.menu_name}</p>`;
+                        }
+                        shtml += tml;
+                    }
+                })
+                // console.log(item_s);
+                let erhrml = `<section>${shtml}</section>`;
+                if ($.inArray(item_s.menu_parent, cpid) >= 0) {
+                    html += `<div>
+                            <span class="menu_two thr_menu_pu cp_btn" menuid="${item_s.id}">${item_s.menu_name}</span>
                             <div class="menu_two_s">
                                 ${erhrml}
                             </div>
                         </div>`;
-                    }
-                })
-                $(item).append(html);
-            })
-            //点击跳转列表页
-            $('.thr_menu_pu').click(function () {
-                console.log($(this).attr("menuId"));
-                location.href = url_s + "Menu_Page.html?id=" + $(this).attr("menuId");
-            })
-            // $.each($('.menu_grop_s'), (index, item) => {
-            //     $.each(response_data, (index_s, item_s) => {
-            //         if (item_s.menu_parent == index + 1) {
-            //             let html = `<div>
-            //             <span class="menu_two">${
-            //                 item_s.menu_name
-            //                 }</span>
-            //             <div class="menu_two_s"></div>
-            //             </div>`;
-            //             $(item).append(html);
-            //         }
-            //     })
-            // })
-            // $.each(response_data, (index, item) => {
-            //     console.log(item);
-            //     if (item.menu_parent == 1) {
-            //         caipu.push(item);
+                } else {
+                    html += `<div>
+                            <span class="menu_two thr_menu_pu sp_btn" menuid="${item_s.id}">${item_s.menu_name}</span>
+                            <div class="menu_two_s">
+                                ${erhrml}
+                            </div>
+                        </div>`;
+                }
+            }
+        })
+        console.log(cpid);
+        $(item).append(html);
+    })
+    //点击跳转列表页
+    $('.sp_btn').click(function () {
+        console.log($(this).text());
+        location.href = url_s + "Product_Page.html?id=" + $(this).text();
+    })
+    $('.cp_btn').click(function () {
+        console.log($(this).text());
+        location.href = url_s + "Menu_Page.html?id=" + $(this).text();
+    })
+    //     },
+    //     error: function (response_data) {
+    //         console.log(response_data);
+    //     }
+    // }) //ajax就不等待
+
+
+    $(".search_img").click(function () {
+        console.log(this);
+        let seach = $(".search_input").val();
+        console.log($(".search_list").val());
+        // let types = "";
+
+        if (seach.trim() != "" && seach != undefined && seach != null) {
+            if ($(".search_list").val() == "goods") {
+                // types = "goods";
+                location.href = url_s + "Product_Page.html?id=" + seach.trim();
+            }
+            else {
+                // types = "recipes";
+                location.href = url_s + "Menu_Page.html?id=" + seach.trim();
+            }
+            // console.log(seach);
+            // $.ajax({
+            //     url: `http://192.168.7.170:8000/${types}/?search=` + seach.trim(),
+            //     type: "get",
+            //     async: false, //异步请求关闭，就变为了同步
+            //     success: function (response_data) {
+            //         console.log(response_data);
+            //         location.href = url_s + "Menu_Page.html?id=" + $(this).attr("menuId");
+            //     },
+            //     error: function (response_data) {
+            //         console.log(response_data);
+            //         swal({
+            //             title: "服务器异常，稍后再试!",
+            //             type: "error",
+            //             timer: 2000
+            //         });
             //     }
-            //     let caipuhtml = ``;
-            //     $.each(caipu, (index, item) => {
-            //         caipuhtml += `<div>
-            //                         <span class="menu_two">${item.menu_name}</span>
-            //                     </div>`;
-            //     })
-            //     // $(".menu_grop_s").html(caipuhtml);
-            //     console.log($(".menu_two"));
-            //     $.each($(".menu_grop_s"), (index, item) => {
-            //         let html = `<div class="menu_two_s">
-            //         <section>
-            //             <p>你的大实话</p>
-            //             <p>123</p>
-            //             <p>123</p>
-            //             <p>123sadsadsa</p>
-            //             <p>123</p>
-            //             <p>123</p>
-            //             <p>123</p>
-            //             <p>123</p>
-            //             <p>123</p>
-            //             <p>123</p>
-            //             <p>123</p>
-            //         </section>
-            //     </div>`;
-            //     })
-            // })
-        },
-        error: function (response_data) {
-            console.log(response_data);
+            // }) //ajax就不等待
         }
-    }) //ajax就不等待
+        else {
+            swal({
+                title: "请输入正确的搜索内容!",
+                type: "error",
+                timer: 2000
+            });
+        }
+    })
 }

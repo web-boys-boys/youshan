@@ -64,7 +64,7 @@ $.each(list, (index, item) => {
     // $(one_el.children()[0]).attr("src", item.img);
 })
 
-get_list();
+// get_list();
 
 function get_list() {
     let caipu = [];

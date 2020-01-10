@@ -15,56 +15,60 @@ import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
 
 // 點擊切換評論頁
-import './comment.js';
+import "./comment.js";
 
 //跳轉交錢頁面
-import './apply.js';
+import "./apply.js";
 
-//食材明细加减按钮
-//jia
-$(".jia").each(function() {
-  $(this).click(function() {
-    let count = parseFloat(
+function totalPrice() {
+  //食材明细加减按钮
+  //jia
+  $(".jia").each(function() {
+    $(this).click(function() {
+      let count = parseFloat(
+        $(this)
+          .siblings(".num")
+          .html()
+      );
+      count++;
       $(this)
         .siblings(".num")
-        .html()
-    );
-    count++;
-    $(this)
-      .siblings(".num")
-      .html(count);
+        .html(count);
 
-    zongjia_fun();
+      zongjia_fun();
+    });
   });
-});
 
-//jian
-$(".jian").each(function() {
-  $(this).click(function() {
-    let count = parseFloat(
+  //jian
+  $(".jian").each(function() {
+    $(this).click(function() {
+      let count = parseFloat(
+        $(this)
+          .siblings(".num")
+          .html()
+      );
+      count--;
+      if (count < 1) {
+        return;
+      }
       $(this)
         .siblings(".num")
-        .html()
-    );
-    count--;
-    if (count < 1) {
-      return;
-    }
-    $(this)
-      .siblings(".num")
-      .html(count);
-    zongjia_fun() ;
+        .html(count);
+      zongjia_fun();
+    });
   });
-});
+}
+totalPrice();
 
 function zongjia_fun() {
   let zongjia = 0;
   let danjia = 10;
   $.each($(".shicai"), (index, item) => {
-    zongjia +=$(item)
+    zongjia +=
+      $(item)
         .find(".num")
         .html() * danjia;
-    console.log(zongjia);
+    // console.log(zongjia);
   });
   $(".price").html(zongjia.toFixed(2));
 }
@@ -82,3 +86,46 @@ function zongjia_fun() {
 //     });
 //     $(".price").html(zongjia.toFixed(2));
 // }
+
+// ============前后端交互==================
+$.ajax({
+  url: `http://192.168.7.170:8000/singlerecipe/2/`,
+  //数据格式
+  dataType: "json"
+})
+  .done(res => {
+    console.log(res);
+    $(".main-top-left-img-text").html(res.recipe_name);
+    $(".com-introduce").attr("src", res.recipe_icon);
+    $(".jieshao").html(res.recipe_detail);
+    $(".jieshao img").each((index, item) => {
+      let img_url = $(item).attr("src");
+      $(item).attr("src", "http://192.168.7.170:8000" + img_url);
+      console.log(item);
+    });
+    let html = ``;
+    $(res.recipegoodsr_set).each((index, item) => {
+      // console.log(item)
+      html += ` <section class="shicai yutou">
+      <div class="shicai-text">${item.goods.goods_name}<span>${item.goods.goods_unit}</span></div>
+      <div class="range">
+        <img
+          class="jia"
+          src="${require('../images/commodity/jia.png')}"
+          alt="loding"
+        />
+        <span class="num">1</span>
+        <img
+          class="jian"
+          src="${require('../images/commodity/jian.png')}"
+          alt="loding"
+        />
+      </div>
+    </section> `;
+    });
+    $(".ingredients-details-inf").html(html);
+    totalPrice();
+  })
+  .fail(err => {
+    console.log(err);
+  });
