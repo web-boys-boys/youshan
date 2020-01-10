@@ -15,14 +15,14 @@ import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
 
 // 點擊切換評論頁
-import './comment.js';
+import "./comment.js";
 
 //跳轉交錢頁面
-import './apply.js';
+import "./apply.js";
 
 //
-import '../css/animation.css';
-import './lazy_load.js';
+import "../css/animation.css";
+import "./lazy_load.js";
 
 //点击增加按钮
 $(".jia").each(function() {
@@ -63,31 +63,24 @@ $(".jian").each(function() {
 let danjia = Number($(".price").text());
 // console.log(danjia);
 
-
+console.log(location.search);
 
 $.ajax({
-  url: `http://192.168.7.170:8000/singlegoods/2/`,
+  url: `http://192.168.7.170:8000/singlegoods/3/`,
   //数据格式
   dataType: "json"
 })
   .done(res => {
-    let detailPage = document.querySelector(".main-center");
-  
-    let htmlStr = "";
-    res.data.forEach(items => {detailPage
-      htmlStr += `
-     
-    `;
-    });
-
-    detailPage.innerHTML = htmlStr;
+    console.log(res);
+    $(".com-title").html(res.goods_name);
+    $(".com-introduce").html(res.goods_title);
+    $(".com-specification .fen").html(res.goods_unit);
+    // $('.main-top-left img').attr("src",res.goods_icon);
+    // $().html();
   })
   .fail(err => {
     console.log(err);
   });
-
-
-
 
 // //原生 get
 // //创建对象
@@ -109,6 +102,3 @@ $.ajax({
 //     console.log(`XMLHttpRequest_ERROR_STATUS: ${detailPage.status}`);
 //   }
 // }
-
-
-
