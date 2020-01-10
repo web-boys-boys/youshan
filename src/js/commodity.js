@@ -17,6 +17,13 @@ import "bootstrap/dist/css/bootstrap.css";
 // 點擊切換評論頁
 import './comment.js';
 
+//跳轉交錢頁面
+import './apply.js';
+
+//
+import '../css/animation.css';
+import './lazy_load.js';
+
 //点击增加按钮
 $(".jia").each(function() {
   $(this).on("click", function() {
@@ -56,14 +63,52 @@ $(".jian").each(function() {
 let danjia = Number($(".price").text());
 // console.log(danjia);
 
-//点击到购物车
-$(".shopping-buy-left").on("click", function() {
-  // location.href = ' ';
-});
 
-//点击到购买页面
-$(".shopping-buy-right").on("click", function() {
-  // location.href = ' ';
-});
+
+$.ajax({
+  url: `http://192.168.7.170:8000/singlegoods/2/`,
+  //数据格式
+  dataType: "json"
+})
+  .done(res => {
+    let detailPage = document.querySelector(".main-center");
+  
+    let htmlStr = "";
+    res.data.forEach(items => {detailPage
+      htmlStr += `
+     
+    `;
+    });
+
+    detailPage.innerHTML = htmlStr;
+  })
+  .fail(err => {
+    console.log(err);
+  });
+
+
+
+
+// //原生 get
+// //创建对象
+// let detailPage = new XMLHttpRequest();
+// //配置
+// detailPage.open("GET","http://www.",true);
+// //设置相应类型
+// detailPage.responseType = 'json';
+// //超时时间
+// detailPage.timeout = 10000;
+// //发送
+// detailPage.send();
+// //事件监听
+// detailPage.onload = function(){
+//   if(detailPage.readyState == 4 && detailPage.status == 200){
+//     //打印
+//     console.log(detailPage.response);
+//   }else{
+//     console.log(`XMLHttpRequest_ERROR_STATUS: ${detailPage.status}`);
+//   }
+// }
+
 
 

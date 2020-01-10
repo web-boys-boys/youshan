@@ -17,6 +17,9 @@ import "bootstrap/dist/css/bootstrap.css";
 // 點擊切換評論頁
 import './comment.js';
 
+//跳轉交錢頁面
+import './apply.js';
+
 //食材明细加减按钮
 //jia
 $(".jia").each(function() {
