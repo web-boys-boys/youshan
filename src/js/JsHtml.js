@@ -949,10 +949,11 @@ setTimeout(function () {
 // ]
 
 function get_list(url_s) {
+
     // let caipu = [];
     // http://192.168.7.170:8000/menu/
     $.ajax({
-        url: "http://192.168.7.170:8000/menu/",
+        url: "node.json",
         type: "get",
         async: false, //异步请求关闭，就变为了同步
         // dataType: "json",
@@ -1066,4 +1067,9 @@ function get_list(url_s) {
             console.log(response_data);
         }
     }) //ajax就不等待
+
+
+    // $(".search_img").click(function () {
+    //     console.log(this);
+    // })
 }
