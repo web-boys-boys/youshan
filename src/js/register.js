@@ -128,7 +128,7 @@ function register_ajax(username, email, password) {
   // sessionStorage.removeItem("userinfo");
   sessionStorage.setItem("userinfo", JSON.stringify(datas));
   $.ajax({
-    url: "http://192.168.110.43:8000/register/",
+    url: "http://print.oicp.vip/register/",
     type: "post",
     // async: true, //异步请求关闭，就变为了同步
     // contentType: "application/json",
@@ -148,16 +148,16 @@ function register_ajax(username, email, password) {
       sessionStorage.setItem("userinfo", JSON.stringify(datas));
 
       swal({
-          title: "注册成功！",
-          text: "2秒后自动跳转首页",
-          type: "success",
-          // showCancelButton: true,
-          // confirmButtonColor: "#DD6B55",
-          confirmButtonText: "立即跳转",
-          // cancelButtonText: "No, cancel plx!",
-          closeOnConfirm: false,
-          // closeOnCancel: false
-        },
+        title: "注册成功！",
+        text: "2秒后自动跳转首页",
+        type: "success",
+        // showCancelButton: true,
+        // confirmButtonColor: "#DD6B55",
+        confirmButtonText: "立即跳转",
+        // cancelButtonText: "No, cancel plx!",
+        closeOnConfirm: false,
+        // closeOnCancel: false
+      },
         function () {
           location.href = "../../index.html";
         });
@@ -167,7 +167,7 @@ function register_ajax(username, email, password) {
     },
     error: function (response_data) {
       console.log(response_data.responseJSON);
-      swal(response_data.responseJSON.username[0]);
+      swal(response_data.responseJSON);
       // alert(response_data.responseJSON.username[0]);
     }
     // beforeSend: function (xhr) {

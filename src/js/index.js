@@ -73,20 +73,10 @@ function get_list() {
         url: "http://192.168.7.170:8000/mainrecipes/",
         type: "get",
         async: false, //异步请求关闭，就变为了同步
-        // dataType: "json",
-        //传纯字符串表单
-        // data:$('#login_form').serialize(),  //序列化 ，serialize把对象转化为json
-        //传包含文件的表单
-        // data: new FormData($("login_form")[0]),
-        // cache: false,
-        // processData: false,
-        // contentType: false,
         success: function (response_data) {
             console.log(response_data);
             $.each(response_data, (index, item) => {
                 let one_el = $($(".item").children()[index]);
-                // console.log(index);
-                // let imgs = item.img;
                 console.log(one_el);
                 one_el.attr("href", "./static/pages/commodity.html?id=" + item.id);
                 // $(one_el.children()[0]).attr("src", item.recipe_icon);

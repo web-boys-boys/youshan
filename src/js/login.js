@@ -82,7 +82,7 @@ function login_ajax(username, userpass) {
   }
   // 192.168.110.43
   $.ajax({
-    url: "http://192.168.7.170:8000/login/",
+    url: "http://print.oicp.vip/login/",
     type: "post",
     async: false, //异步请求关闭，就变为了同步
     data: data,
