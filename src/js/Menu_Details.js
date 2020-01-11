@@ -89,7 +89,7 @@ function zongjia_fun() {
 
 // ============前后端交互==================
 $.ajax({
-  url: `http://192.168.7.170:8000/singlerecipe/2/`,
+  url: `http://print.oicp.vip/singlerecipe/2/`,
   //数据格式
   dataType: "json"
 })

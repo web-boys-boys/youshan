@@ -24,6 +24,7 @@ import "./apply.js";
 import "../css/animation.css";
 import "./lazy_load.js";
 
+function allPrice() {
 //点击增加按钮
 $(".jia").each(function() {
   $(this).on("click", function() {
@@ -58,15 +59,18 @@ $(".jian").each(function() {
     $(".price").text((danjia * count).toFixed(2));
   });
 });
+}
+// allPrice();
+
 
 //单价
 let danjia = Number($(".price").text());
-// console.log(danjia);
+console.log(danjia);
 
 console.log(location.search);
 
 $.ajax({
-  url: `http://192.168.7.170:8000/singlegoods/3/`,
+  url: `http://print.oicp.vip/singlegoods/3/`,
   //数据格式
   dataType: "json"
 })
@@ -75,8 +79,14 @@ $.ajax({
     $(".com-title").html(res.goods_name);
     $(".com-introduce").html(res.goods_title);
     $(".com-specification .fen").html(res.goods_unit);
-    // $('.main-top-left img').attr("src",res.goods_icon);
-    // $().html();
+    $('.main-top-left img').attr("src",res.goods_icon);
+    $('.price').html(res.goods_price);
+//单价
+let danjia = Number(res.goods_price);
+console.log(danjia);
+
+allPrice();
+
   })
   .fail(err => {
     console.log(err);
