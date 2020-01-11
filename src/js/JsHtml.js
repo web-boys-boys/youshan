@@ -952,40 +952,7 @@ import "../js/sweet-alert.js";
 import "../css/sweet-alert.css";
 
 function get_list(url_s) {
-
     // let caipu = [];
-<<<<<<< HEAD
-    // http://192.168.110.43:8000/menu/
-    $.ajax({
-        url: "http://192.168.110.43:8000/menu/",
-        type: "get",
-        async: false, //异步请求关闭，就变为了同步
-        // dataType: "json",
-        //传纯字符串表单
-        // data:$('#login_form').serialize(),  //序列化 ，serialize把对象转化为json
-        //传包含文件的表单
-        // data: new FormData($("login_form")[0]),
-        // cache: false,
-        // processData: false,
-        // contentType: false,
-        success: function (response_data) {
-            console.log(response_data);
-            console.log($(".menu_grop"));
-            let erjihtml = ``;
-            // 一级菜单
-            $.each($(".menu_grop"), (index, item) => {
-                erjihtml += `<section class="menu_grop_s" data-jicount="${index + 1}"></section>`;
-            })
-            $(".menu_bottom").html(erjihtml);
-            //二级菜单
-            $.each($('.menu_grop_s'), (index, item) => {
-                // console.log(item);
-                let html = ``;
-                $.each(response_data, (index_s, item_s) => {
-                    // console.log(index);
-                    // console.log(item_s.menu_parent);
-                    if (item_s.menu_parent == index + 1) {
-=======
     // http://192.168.7.170:8000/menu/
     // $.ajax({
     //     url: "node.json",
@@ -1022,7 +989,6 @@ function get_list(url_s) {
                 cpid.push(item_s.id);
             }
             if (item_s.menu_parent == index + 1) {
->>>>>>> c54a00e7bccbecd36bb28f59efe44d59aaf53970
 
                 let shtml = ``;
                 let ercount = 0;//计算三级菜单的个数
@@ -1104,24 +1070,6 @@ function get_list(url_s) {
                 // types = "recipes";
                 location.href = url_s + "Menu_Page.html?id=" + seach.trim();
             }
-            // console.log(seach);
-            // $.ajax({
-            //     url: `http://192.168.7.170:8000/${types}/?search=` + seach.trim(),
-            //     type: "get",
-            //     async: false, //异步请求关闭，就变为了同步
-            //     success: function (response_data) {
-            //         console.log(response_data);
-            //         location.href = url_s + "Menu_Page.html?id=" + $(this).attr("menuId");
-            //     },
-            //     error: function (response_data) {
-            //         console.log(response_data);
-            //         swal({
-            //             title: "服务器异常，稍后再试!",
-            //             type: "error",
-            //             timer: 2000
-            //         });
-            //     }
-            // }) //ajax就不等待
         }
         else {
             swal({
