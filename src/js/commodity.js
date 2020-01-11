@@ -25,47 +25,48 @@ import "../css/animation.css";
 import "./lazy_load.js";
 
 function allPrice() {
-//点击增加按钮
-$(".jia").each(function() {
-  $(this).on("click", function() {
-    let count = parseFloat(
+  //单价
+  let danjia = Number($(".price").text());
+  console.log(danjia);
+  //点击增加按钮
+  $(".jia").each(function () {
+    $(this).on("click", function () {
+      let count = parseFloat(
+        $(this)
+          .siblings(".num")
+          .html()
+      );
+      count++;
       $(this)
         .siblings(".num")
-        .html()
-    );
-    count++;
-    $(this)
-      .siblings(".num")
-      .html(count);
-    $(".price").text((danjia * count).toFixed(2));
+        .html(count);
+      $(".price").text((danjia * count).toFixed(2));
+    });
   });
-});
 
-// 点击减少按钮
-$(".jian").each(function() {
-  $(this).on("click", function() {
-    let count = parseFloat(
+  // 点击减少按钮
+  $(".jian").each(function () {
+    $(this).on("click", function () {
+      let count = parseFloat(
+        $(this)
+          .siblings(".num")
+          .html()
+      );
+      count--;
+      if (count < 1) {
+        return;
+      }
       $(this)
         .siblings(".num")
-        .html()
-    );
-    count--;
-    if (count < 1) {
-      return;
-    }
-    $(this)
-      .siblings(".num")
-      .html(count);
-    $(".price").text((danjia * count).toFixed(2));
+        .html(count);
+      $(".price").text((danjia * count).toFixed(2));
+    });
   });
-});
 }
-// allPrice();
+allPrice();
 
 
-//单价
-let danjia = Number($(".price").text());
-console.log(danjia);
+
 
 console.log(location.search);
 
@@ -79,13 +80,12 @@ $.ajax({
     $(".com-title").html(res.goods_name);
     $(".com-introduce").html(res.goods_title);
     $(".com-specification .fen").html(res.goods_unit);
-    $('.main-top-left img').attr("src",res.goods_icon);
+    $('.main-top-left img').attr("src", res.goods_icon);
     $('.price').html(res.goods_price);
-//单价
-let danjia = Number(res.goods_price);
-console.log(danjia);
-
-allPrice();
+    // //单价
+    // let danjia = Number(res.goods_price);
+    // console.log(danjia);
+    allPrice();
 
   })
   .fail(err => {
