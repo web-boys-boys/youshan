@@ -10,22 +10,23 @@
 }
 
 .iconfont {
-    font-family: "iconfont" !important;
-    font-size: 20px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
+    font-family              : "iconfont" !important;
+    font-size                : 20px;
+    font-style               : normal;
+    -webkit-font-smoothing   : antialiased;
     -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing  : grayscale;
 }
 
 .bg {
-    background-image: url('../images/product_page/BG.jpg');
+    background-image   : url('../images/product_page/BG.jpg');
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-repeat  : no-repeat;
+    background-size    : 100%;
 }
 
 @ys_color: #FF416C;
+
 //选择菜单的颜色
 .active {
     color: blue !important;
@@ -35,36 +36,36 @@
     margin-top: 90px;
 
     .fl_menu {
-        width: 144px;
+        width : 144px;
         height: 46px;
 
         span {
-            font: bold 36px/46px 'Microsoft YaHei';
-            color: @ys_color;
-            cursor: none;
+            font    : bold 36px/46px 'Microsoft YaHei';
+            color   : @ys_color;
+            cursor  : none;
             position: relative;
-            left: 50px;
+            left    : 50px;
         }
     }
 
     .fr_menu {
         margin-left: 277px;
-        width: 730px;
-        height: 46px;
+        width      : 730px;
+        height     : 46px;
 
         li {
-            margin-left: 25px;
-            width: 170px;
-            height: 46px;
-            background: linear-gradient(255.22deg, #E5E2FA -1.95%, #E3E3E3 172.83%);
-            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            margin-left  : 25px;
+            width        : 170px;
+            height       : 46px;
+            background   : linear-gradient(255.22deg, #E5E2FA -1.95%, #E3E3E3 172.83%);
+            box-shadow   : 2px 2px 6px rgba(0, 0, 0, 0.2);
             border-radius: 50px;
-            text-align: center;
+            text-align   : center;
 
             a {
-                font: bold 20px/46px 'Microsoft YaHei';
+                font          : bold 20px/46px 'Microsoft YaHei';
                 letter-spacing: 0.2em;
-                color: @ys_color;
+                color         : @ys_color;
             }
         }
     }
@@ -76,59 +77,61 @@
 
 
     .list {
-        display: grid;
+        display              : grid;
         grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows   : repeat(4, 1fr);
 
         li {
-            background: #FFFFFF;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+            background   : #FFFFFF;
+            box-shadow   : 2px 2px 8px rgba(0, 0, 0, 0.15);
             border-radius: 16px;
-            margin: 20px;
+            margin       : 20px;
         }
 
         .ad {
-            grid-column: 1;
-            grid-row: 1 / span 5;
-            background: #FFFFFF;
-            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+            grid-column  : 1;
+            grid-row     : 1 / span 5;
+            background   : #FFFFFF;
+            box-shadow   : 2px 4px 8px rgba(0, 0, 0, 0.15);
             border-radius: 16px;
-            .se1:last-child{
+
+            .se1:last-child {
                 margin: 70px auto;
             }
+
             .se1 {
-                width: 232px;
+                width : 232px;
                 margin: 50px auto;
 
                 .star {
-                    color: orange;
+                    color     : orange;
                     transition: all .6s
                 }
 
                 img {
-                    width: 194px;
+                    width : 194px;
                     margin: 30px 9px 0 10px;
 
                 }
 
                 h2 {
-                    font: bold 20px/46px 'Microsoft YaHei';
-                    text-align: center;
+                    font          : bold 20px/46px 'Microsoft YaHei';
+                    text-align    : center;
                     letter-spacing: 0.2em;
-                    color: @ys_color;
-                    margin-bottom: 11px;
+                    color         : @ys_color;
+                    margin-bottom : 11px;
                 }
 
                 span {
-                    font: 15px/16px 'Microsoft YaHei UI';
+                    font          : 15px/16px 'Microsoft YaHei UI';
                     letter-spacing: 0.1em;
-                    color: #333333;
+                    color         : #333333;
                 }
 
                 h3 {
                     margin-top: 15px;
-                    font: normal bold 20px/26px 'Microsoft YaHei UI';
-                    color:@ys_color;
+                    font      : normal bold 20px/26px 'Microsoft YaHei UI';
+                    color     : @ys_color;
                     text-align: center;
 
                 }
@@ -137,36 +140,36 @@
         }
 
         .item {
-            grid-row: 1 / 2;
-            cursor: pointer;
-            overflow: hidden;
+            grid-row  : 1 / 2;
+            cursor    : pointer;
+            overflow  : hidden;
             transition: all .4s ease-in-out;
 
             h2 {
-                font: bold 20px/18px 'Microsoft YaHei UI';
+                font          : bold 20px/18px 'Microsoft YaHei UI';
                 letter-spacing: 0.1em;
-                text-align: center;
-                color: @ys_color;
-                margin-top: 35px;
-                margin-bottom: 20px;
+                text-align    : center;
+                color         : @ys_color;
+                margin-top    : 35px;
+                margin-bottom : 20px;
             }
 
             .star {
-                color: orange;
+                color     : orange;
                 transition: all .6s
             }
 
             .desc {
-                font: 15px/16px 'Microsoft YaHei UI';
+                font          : 15px/16px 'Microsoft YaHei UI';
                 letter-spacing: 0.1em;
-                text-indent: 2em;
-                color: #333333;
+                text-indent   : 2em;
+                color         : #333333;
 
             }
 
             .goods_img img {
-                width: 100%;
-                overflow: hidden;
+                width     : 100%;
+                overflow  : hidden;
                 transition: all 1s;
 
                 &:hover {
@@ -175,9 +178,9 @@
             }
 
             &:hover {
-                z-index: 2;
+                z-index   : 2;
                 box-shadow: 0px 5px 8px rgba(255, 65, 108, 0.5);
-                transform: translate3d(0, -2px, 0);
+                transform : translate3d(0, -2px, 0);
             }
         }
 
@@ -190,53 +193,54 @@
 
 .paination {
     /* background-color: rgb(167, 85, 85); */
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    padding-right: 100px;
-    margin: 80px 80px 80px;
+    font-size          : 14px;
+    color              : #333;
+    box-sizing         : border-box;
+    padding-right      : 100px;
+    margin             : 80px 80px 80px;
 
 
     p {
-        float: right;
+        float      : right;
         line-height: 26px;
 
         input {
-            width: 50px;
-            height: 30px;
+            width  : 50px;
+            height : 30px;
             outline: none;
-            border: 1px solid gray;
+            border : 1px solid gray;
         }
 
         button {
-            width: 66px;
-            height: 24px;
-            cursor: pointer;
-            font-size: 16px;
-            color: #FFFFFF;
-            line-height: 20px;
+            width         : 66px;
+            height        : 24px;
+            cursor        : pointer;
+            font-size     : 16px;
+            color         : #FFFFFF;
+            line-height   : 20px;
             letter-spacing: 0.2em;
-            background: linear-gradient(258.9deg, #FF416C -1.95%, #FF4B2B 172.83%);
-            border-radius: 12px;
+            background    : linear-gradient(258.9deg, #FF416C -1.95%, #FF4B2B 172.83%);
+            border-radius : 12px;
         }
     }
 
     ul {
         float: right;
+
         li:nth-child(3) {
-            color:@ys_color;
+            color: @ys_color;
         }
 
         li {
-            float: left;
-            border: 1px solid black;
-            padding: 5px;
-            cursor: pointer;
+            float       : left;
+            border      : 1px solid black;
+            padding     : 5px;
+            cursor      : pointer;
             margin-right: 15px;
 
             &:hover {
                 background-color: rgb(44, 44, 44);
-                color: white;
+                color           : white;
             }
 
         }

@@ -952,6 +952,7 @@ import "../js/sweet-alert.js";
 import "../css/sweet-alert.css";
 
 function get_list(url_s) {
+
     // let caipu = [];
     // http://192.168.7.170:8000/menu/
     // $.ajax({
@@ -1070,6 +1071,7 @@ function get_list(url_s) {
                 // types = "recipes";
                 location.href = url_s + "Menu_Page.html?id=" + seach.trim();
             }
+
         }
         else {
             swal({
