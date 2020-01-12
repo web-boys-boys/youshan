@@ -43,7 +43,7 @@ let fun_header = function (page_url) {
             <section class="car_div flex-between-b">
                 <span><img src="${require('../images/shopping_car.png')}" alt="" sizes="" srcset=""></span>
                 <span class="user_car">
-                    <span><a href="${page_url}user_info.html">我的购物车</a></span>
+                    <span><a href="${page_url}shopping_cart.html">我的购物车</a></span>
                 </span>
             </section>
         </div>
@@ -82,7 +82,7 @@ let fun_banner = function (page_url) {
         <span class="text_car _car flex-between-c">
             <img class="car_img" src="${require('../images/v_car.svg')}" alt="">
             <span><a href="${page_url}shopping_cart.html">我的购物车</a></span>
-            <section class="car_num flex-between-c"><span>2</span></section>
+            <section class="car_num flex-between-c"><span id="cartnum">2</span></section>
         </span>
         <span class="banner_search_div flex-between-b">
             <img class="search_img" src="${require('../images/search.svg')}" alt="">
@@ -332,7 +332,7 @@ export {
     fun_banner,
     fun_footer
 }
-let fun_user = function (count_h) {
+let fun_user = function (count_h, page_url) {
     let text_h = "";
     let text_html = ``;
     if (count_h == 0) {
@@ -376,12 +376,16 @@ let fun_user = function (count_h) {
                                     <span class="user_text_car _car flex-between-c">
                                         <img class="user_car_img" src="${require('../images/v_car.svg')}" alt="">
                                             <span>我的购物车</span>
-                                            <section class="user_car_num flex-between-c"><span>2</span></section>
+                                            <section class="user_car_num flex-between-c"><span class="jia_cart">2</span></section>
         </span>
     </section>
 </div>
                                 <div class="hrs"></div>`;
     $(".main").prepend(html);
+    $(".user_text_car._car").click(function () {
+        location.href = `${page_url}shopping_cart.html`
+    })
+    jiazai_a();
     let html_left = `<div class="user_meau">
     <section><span class="user_content_title">用户中心</span></section>
     <section class="user_hr"></section>
@@ -950,8 +954,9 @@ setTimeout(function () {
 
 import "../js/sweet-alert.js";
 import "../css/sweet-alert.css";
-import { BASE_URL } from './BASE_URL'
-
+import { BASE_URL } from './BASE_URL';
+import { b } from './ajax';
+b();
 function get_list(url_s) {
 
     // let caipu = [];
@@ -969,8 +974,8 @@ function get_list(url_s) {
         // processData: false,
         // contentType: false,
         success: function (response_data) {
-            console.log(response_data);
-            console.log($(".menu_grop"));
+            // console.log(response_data);
+            // console.log($(".menu_grop"));
             let erjihtml = ``;
             // 一级菜单
             $.each($(".menu_grop"), (index, item) => {
@@ -1055,6 +1060,8 @@ function get_list(url_s) {
             console.log(response_data);
         }
     }) //ajax就不等待
+    jiazai_a();
+    //加载购物车数量
 
 
     $(".search_img").click(function () {
@@ -1082,4 +1089,13 @@ function get_list(url_s) {
             });
         }
     })
+}
+function jiazai_a() {
+    $.myAjaxGet("/carts/", callback_get)
+
+    function callback_get(response_data) {
+        console.log(response_data);
+        $('#cartnum').html(response_data.length);
+        $('.jia_cart').html(response_data.length);
+    }
 }

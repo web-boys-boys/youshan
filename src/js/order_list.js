@@ -27,10 +27,17 @@ b();
 //================================地址动态加载数据=====================================
 function getadd_one() {
     $.myAjaxGet("/address/", callback_get)
-
+    let asd = false;
     function callback_get(response_data) {
         console.log(response_data);
-        let s = ` <label class="det" for="name">收&nbsp;&nbsp;货&nbsp;&nbsp;人：</label>
+        if (response_data.length == 0) {
+            $(".modf a").html("添加收货地址")
+            asd = false;
+        }
+        else {
+            $(".modf a").html("修改收货地址")
+            asd = true;
+            let s = ` <label class="det" for="name">收&nbsp;&nbsp;货&nbsp;&nbsp;人：</label>
     <span class="receiver" renid="${response_data[0].id}">${response_data[0].name}</span><br>
     <label class="det" for="tel">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</label>
     <span class="re_tel">${response_data[0].tell}</span><br>
@@ -38,21 +45,20 @@ function getadd_one() {
     <span class="re_add">${response_data[0].area.area_name}</span><br>
     <label class="det" for="dqs">详情地址：</label>
     <span class="re_adds">${response_data[0].detail}</span>`
-        $('.uer_info').html(s)
-        //修改框拿到值
-        $('#inputusername').val(response_data[0].name);
-        $('#inputYTel').val(response_data[0].tell);
-        $('#inputdq').val(response_data[0].area.area_name);
-        $('#inputdqs').val(response_data[0].detail);
-        //动态加载区域
-        $('#address').html(response_data[0].area.area_name)
-
-
-        get_add(response_data[0].area.id);
+            $('.uer_info').html(s)
+            //修改框拿到值
+            $('#inputusername').val(response_data[0].name);
+            $('#inputYTel').val(response_data[0].tell);
+            $('#inputdq').val(response_data[0].area.area_name);
+            $('#inputdqs').val(response_data[0].detail);
+            //动态加载区域
+            $('#address').html(response_data[0].area.area_name)
+            get_add(response_data[0].area.id);
+        }
+        top_add(asd);
     }
 }
 getadd_one();
-
 function get_add(area_id) {
     $.myAjaxGet("/area/", callbacks_s);
 
@@ -89,25 +95,28 @@ $.myAjaxGet("/carts/", callback_get2)
 function callback_get2(response_data) {
     console.log(response_data);
     let list = ""
+    let zocun = 0;
     // console.log(JSON.parse(sessionStorage.getItem("goodscart")))
     $.each(response_data, (index, item) => {
         $.each(JSON.parse(sessionStorage.getItem("goodscart")), (index, items) => {
             if (items.cartid == item.id) {
+                zocun += item.goods.goods_price * items.quantity;
                 list += `<div class="col-sm-4">${item.goods.goods_name}</div>
-                <div class="col-sm-2 t_price">${ (item.goods.goods_price *item.quantity)
-                    .toFixed(2)}</div>
-                <div class="col-sm-2">2盒一斤/盒</div>
+                <div class="col-sm-2 t_price">${ (item.goods.goods_price * item.quantity)
+                        .toFixed(2)}</div>
+                <div class="col-sm-2">${items.quantity}</div>
                 <div class="col-sm-2">￥0.00</div>
-                <div class="col-sm-2">￥${ (item.goods.goods_price *item.quantity)
-                    .toFixed(2)}</div>
+                <div class="col-sm-2">￥${ (item.goods.goods_price * items.quantity)
+                        .toFixed(2)}</div>
                 `
             }
         })
     })
     $(".row_content").html(list);
     //清单加载总价
-
-
+    $(".counts").html(JSON.parse(sessionStorage.getItem("goodscart")).length)
+    $(".price.word").html(zocun.toFixed(2));
+    $(".zredc").html(zocun.toFixed(2));
     //   $('.price word').html( (item.goods.goods_price *item.quantity)
     //   .toFixed(2))
 }
@@ -175,29 +184,41 @@ $('.modf').click(function () {
     // $('.define_modf').show(500)
 
 })
-$('.define_modf').click(function () {
-    $('.uer_info,.modf').show(500).siblings(".uerinfo_modify,.define_modf").hide(500);
-    let inputusername = $("#inputusername").val();
-    let inputYTel = $("#inputYTel").val();
-    let addressthree = $("#addressthree").val();
-    let inputdqs = $("#inputdqs").val();
-    console.log($("#inputusername").val(), $("#inputYTel").val(), $("#addressthree").val(), $("#inputdqs").val());
-    let ren_data = {
-        "name": inputusername,
-        "tell": inputYTel,
-        "area_id": addressthree,
-        "detail": inputdqs
+function top_add(asd) {
+    $('.define_modf').click(function () {
+        $('.uer_info,.modf').show(500).siblings(".uerinfo_modify,.define_modf").hide(500);
+        let inputusername = $("#inputusername").val();
+        let inputYTel = $("#inputYTel").val();
+        let addressthree = $("#addressthree").val();
+        let inputdqs = $("#inputdqs").val();
+        console.log($("#inputusername").val(), $("#inputYTel").val(), $("#addressthree").val(), $("#inputdqs").val());
+        let ren_data = {
+            "name": inputusername,
+            "tell": inputYTel,
+            "area_id": addressthree,
+            "detail": inputdqs
 
+        }
+        if (asd) {
+            upadd(ren_data);
+        }
+        else {
+            addadd(ren_data)
+        }
+
+    })
+
+    function addadd(data) {
+        // let receiverid = $(".receiver").attr("renid");
+        $.myAjaxPost(`/address/`, data, callback_three);
     }
-    upadd(ren_data);
-})
+    function upadd(data) {
+        let receiverid = $(".receiver").attr("renid");
+        $.myAjaxPut(`/address/${receiverid}/`, data, callback_three);
+    }
 
-function upadd(data) {
-    let receiverid = $(".receiver").attr("renid");
-    $.myAjaxPut(`/address/${receiverid}/`, data, callback_three);
-}
-
-function callback_three(res) {
-    console.log(res);
-    getadd_one();
-}
+    function callback_three(res) {
+        console.log(res);
+        getadd_one();
+    }
+} 

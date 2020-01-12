@@ -156,24 +156,36 @@ function quanel() {
         del(this);
     })
     function del(el) {
-        $(el).parents(".list").remove();
-        // console.log();
-        jishuan();
+        del_el($(el).parents(".list").find(".goodscheck"));
     }
-
+    function del_el(el) {
+        console.log(el)
+        $.myAjaxDel(`/cart/${$(el).attr("cartid")}/`, es)
+        function es(res) {
+            if (res == 1) {
+                $(el).parents(".list").remove();
+                jishuan();
+            }
+            else {
+                swal({
+                    title: "服务器异常，稍后再试！",
+                    // text: "购物车所勾选商品将会被清空!",
+                    type: "warning"
+                })
+            }
+        }
+    }
     //批量删除
     function dels() {
         $.each($('.footContent li input[type="checkbox"]'), (index, item) => {
             console.log($(item).prop('checked'));
             if ($(item).prop('checked')) {
+                console.log($(item));
                 del(item);
             }
         })
 
     }
-
-
-
     console.log($('input[type="checkbox"]'));
     let zongjia; //总价
     $('input[type="checkbox"]').click(function () {
@@ -192,7 +204,7 @@ function quanel() {
             gou_count++;
             console.log(gou_count);
         })
-        $("#Alltot_price").html(zongjia);
+        $("#Alltot_price").html(zongjia.toFixed(2));
         // console.log(zongjia);
         $(".gou_count").html(gou_count);
         count_fun();
@@ -241,7 +253,7 @@ function callback_get(response_data) {
             </li>
             <li class="tot_price">￥ <span id="tot_price">${ (item.goods.goods_price * item.quantity)
                 .toFixed(2)}</span> </li>
-            <li class="del">删除</li>   
+            <li cat_id="${item.id}" class="del">删除</li>   
         </ul>
     `
     })

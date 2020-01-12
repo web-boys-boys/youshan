@@ -7,7 +7,7 @@ import { fun_header, fun_banner, fun_footer } from "./JsHtml"
 fun_header("");
 fun_footer();
 import { fun_user } from "./JsHtml";
-fun_user(0);
+fun_user(0,"./");
 import { BASE_URL } from './BASE_URL';
 import { b } from "./ajax"
 b()
@@ -184,6 +184,26 @@ function getareatwo(area) {
         // $(this).next().append(addone);
     })
 }
+$.ajax({
+    url: `${BASE_URL}/menu/`,
+    type: "get",
+    // type: "post",
+    async: false,
+    success: function (response_data) {
+        console.log(response_data);
+        let htmls = ``;
+        $.each(response_data, (index, item) => {
+            if (item.menu_type == 3) {
+                htmls += `<option value="${item.menu_name}">${item.menu_name}</option>`;
+            }
+        })
+        $("#Taste_list").html(htmls);
+    },
+    error: function (response_data) {
+
+        console.log(response_data);
+    }
+})
 
 // $.ajax({
 //     url: `${BASE_URL}/area/`,

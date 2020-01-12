@@ -7,7 +7,7 @@ import { fun_header, fun_banner, fun_footer } from "./JsHtml"
 fun_header("");
 fun_footer();
 import { fun_user } from "./JsHtml";
-fun_user(2);
+fun_user(2,"./");
 
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.js";

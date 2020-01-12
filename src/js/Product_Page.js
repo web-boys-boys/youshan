@@ -2,8 +2,10 @@ import '../less/index.less';
 import '../less/util.less';
 import '../less/Product_Page.less';
 import './JsHtml.js';
-import {BASE_URL} from './BASE_URL.js'
-
+import { BASE_URL } from './BASE_URL.js'
+//加入购物车
+import { b } from "./ajax.js";
+b();
 //选择菜单
 $('.fr_menu li').click(function () {
     $(this).children('a').addClass('active').parent().siblings().children('a').removeClass('active');
@@ -49,12 +51,27 @@ $.ajax({
                         <h2>${item.goods_name}</h2>
                         <div class="desc" >${item.goods_title}</div>
                         <h3 class="price">￥${item.goods_price}</h3>
-                        <div class="chart fr"><img src="${require("../images/product_page/Vector.png")}" alt=""></div>
+                        <div class="chart fr"><img class="img_cartbtn" _carid="${item.id}" src="${require("../images/product_page/Vector.png")}" alt=""></div>
                     </li>`;
         })
         // console.log(html)
         $(".list .ad").after(html);
-        
+        $(".img_cartbtn").click(function () {
+            console.log($(this).attr("_carid"))
+            let data = {
+                is_checked: false,
+                goods: $(this).attr("_carid"),
+                quantity: 1
+            };
+            $.myAjaxPost("/cart/", data, e);
+            function e(res) {
+                swal({
+                    title: res,
+                    type: "success",
+                    timer: 2000
+                });
+            }
+        })
         // .append(123);
     },
     error: function (response_data) {

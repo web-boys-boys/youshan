@@ -67,26 +67,57 @@ $.each(list, (index, item) => {
     // $(one_el.children()[0]).attr("src", item.img);
 })
 
-// get_list();
+get_list();
 
 function get_list() {
-    let caipu = [];
+    // let caipu = [];
     // http://192.168.110.43:8000/mainrecipes/
+    // $.ajax({
+    //     url: `${BASE_URL}/mainrecipes/`,
+    //     type: "get",
+    //     async: false, //异步请求关闭，就变为了同步
+    //     success: function (response_data) {
+    //         console.log(response_data);
+    //         $.each(response_data, (index, item) => {
+    //             let one_el = $($(".item").children()[index]);
+    //             console.log(one_el);
+    //             one_el.attr("href", "./static/pages/commodity.html?id=" + item.id);
+    //             // $(one_el.children()[0]).attr("src", item.recipe_icon);
+    //             console.log()
+    //             $($(one_el.children()[1]).find(".layer_text_title")).html(item.recipe_name);
+    //             $($(one_el.children()[1]).find("._price")).html(`￥ ${item.gtype}`);
+    //             $($(one_el).find(".text_content")).html(item.recipe_title);
+    //         })
+    //         console.log($(".menu_grop"));
+    //     },
+    //     error: function (response_data) {
+    //         console.log(response_data);
+    //     }
+    // }) //ajax就不等待
+
     $.ajax({
-        url: `${BASE_URL}/mainrecipes/`,
+        url: `${BASE_URL}/maingoods/`,
         type: "get",
         async: false, //异步请求关闭，就变为了同步
         success: function (response_data) {
             console.log(response_data);
+            let html_s = ``;
             $.each(response_data, (index, item) => {
-                let one_el = $($(".item").children()[index]);
-                console.log(one_el);
-                one_el.attr("href", "./static/pages/commodity.html?id=" + item.id);
-                // $(one_el.children()[0]).attr("src", item.recipe_icon);
-                console.log()
-                $($(one_el.children()[1]).find(".layer_text_title")).html(item.recipe_name);
-                $($(one_el.children()[1]).find("._price")).html(`￥ ${item.gtype}`);
-                $($(one_el).find(".text_content")).html(item.recipe_title);
+                html_s += `<li class="itme_s" good_ids="${item.id}">
+            <section class="foot_img_itme">
+                <img src="${item.goods_icon}" alt="">
+            </section>
+            <section class="foot_name_itme">
+                <span class="foot_name">${item.goods_name}
+                </span>
+            </section>
+        </li>`;
+
+            })
+            $(".container_s.shu_cai").html(html_s);
+            $('.shu_cai .itme_s').click(function () {
+                //    console.log($(this).index()) 
+                location.href = `./static/pages/commodity.html?id=${$(this).attr("good_ids")}`
             })
             console.log($(".menu_grop"));
         },
