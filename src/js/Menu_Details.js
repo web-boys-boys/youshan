@@ -19,7 +19,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./comment.js";
 
 //跳轉交錢頁面
-// import "./apply.js";
+import "./apply.js";
 
 function totalPrice() {
   //食材明细加减按钮
@@ -97,12 +97,19 @@ function zongjia_fun() {
 //获取参数
 function geturlparam() {
   let params = location.search;
+  console.log(params);
   let paramarry = params.slice(1).split("&");
+  // console.log(paramarry)
   let sparam = {};
+
   paramarry.forEach(item => {
     let itmes = item.split("=");
+    console.log(itmes);
+    //对象表达式 id:3
     sparam[itmes[0]] = decodeURI(itmes[1]);
+    console.log(decodeURI(itmes[1]));
   });
+  console.log(sparam);
   return sparam;
 }
 let a = geturlparam();
@@ -110,7 +117,7 @@ let searchid = "";
 if (a.id) {
   searchid = a.id;
 }
-console.log(searchid);
+// console.log(searchid);
 // ============前后端交互==================
 $.ajax({
   url: `${BASE_URL}/singlerecipe/${searchid}/`,
@@ -131,8 +138,8 @@ $.ajax({
     $(res.recipegoodsr_set).each((index, item) => {
       // let danjia = $(item)[0].goods.goods_price;
       // console.log(danjia)
-      html += ` <section class="shicai yutou">
-      <div class="shicai-text" data-price=${$(item)[0].goods.goods_price}>${
+      html += ` <section class="shicai yutou" data-goods=${item.goods.id}}>
+      <div class="shicai-text" data-price=${item.goods.goods_price}>${
         item.goods.goods_name
       }<span>${item.goods.goods_unit}</span></div>
       <div class="range">
@@ -157,3 +164,43 @@ $.ajax({
   .fail(err => {
     console.log(err);
   });
+
+//加入购物车
+//
+import { b } from "./ajax.js";
+b();
+
+$(".shopping-buy-left").click(function() {
+  console.log($(this).data("id"));
+  let isture = false;
+  $(".shicai").each((index, item) => {
+    let data = {
+      is_checked: false,
+      goods: $(this).data("goods"),
+      quantity: $(this)
+        .children(".num")
+        .html()
+    };
+    $.myAjaxPost("/cart/", data, e);
+    function e(res) {
+      isture = true;
+      console.log(res);
+    }
+    if(index== $(".shicai").length-1){
+      swal({
+        title: "添加成功，可前往查看",
+        type: "success",
+        timer: 2000
+      });
+    }
+  });
+  // console.log(isture);
+  // if (isture) {
+    
+  // }
+  // let data = {
+  //   is_checked: false,
+  //   goods: $(this).data("id")
+  //   // console.log(goods)0
+  // };
+});
