@@ -138,6 +138,7 @@
             cursor    : pointer;
             overflow  : hidden;
             transition: all .4s ease-in-out;
+            position  : relative;
 
             .xin {
                 margin    : 10px 12px;
@@ -172,22 +173,26 @@
                 font      : normal bold 20px/26px 'Microsoft YaHei UI';
                 text-align: left;
                 color     : #FF416C;
-                position  : relative;
-                top       : 36px;
-                right     : -5px;
+                position  : absolute;
+                bottom    : 6px;
+                left      : 5px;
 
             }
 
             .goods_img {
-                padding         : 10px;
-                // overflow     : hidden;
+                height  : 188px;
+                width   : 188px;
+                overflow: hidden;
+                margin: 0 auto;
+                
             }
 
             .goods_img img {
-                // margin    : 30px;
-                width        : 100%;
-                overflow     : hidden;
-                transition   : all 1s;
+               
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: all 1s;
 
                 &:hover {
                     transform: scale(1.2);
@@ -195,8 +200,8 @@
             }
 
             .chart img {
-                position: relative;
-                top     : 6.5px;
+                position: absolute;
+                bottom  : 6.5px;
                 right   : 11px;
 
             }

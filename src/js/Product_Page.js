@@ -2,6 +2,8 @@ import '../less/index.less';
 import '../less/util.less';
 import '../less/Product_Page.less';
 import './JsHtml.js';
+import {BASE_URL} from './BASE_URL.js'
+
 //选择菜单
 $('.fr_menu li').click(function () {
     $(this).children('a').addClass('active').parent().siblings().children('a').removeClass('active');
@@ -32,7 +34,7 @@ if (a.id) {
 // console.log(a.id);
 
 $.ajax({
-    url: "http://print.oicp.vip/goods/?search=" + searchid,
+    url: `${BASE_URL}/goods/?search=${searchid}`,
     type: "get",
     async: false, //异步请求关闭，就变为了同步
     success: function (response_data) {
@@ -63,4 +65,5 @@ $.ajax({
             timer: 2000
         });
     }
-}) //ajax就不等待
+})
+ //ajax就不等待
