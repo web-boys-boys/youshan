@@ -60,7 +60,7 @@ $.each(list, (index, item) => {
     // console.log(index);
     // let imgs = item.img;
     // console.log(imgs);
-    one_el.attr("href", "./static/pages/commodity.html?id=" + item.id);
+    one_el.attr("href", "./static/pages/Menu_Details.html?id=" + item.id);
     // $(one_el.children()[0]).attr("src", item.img);
 })
 

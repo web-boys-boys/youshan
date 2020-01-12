@@ -1,6 +1,7 @@
 import "../less/index.less";
 import "../less/util.less";
 import "./JsHtml.js";
+import {BASE_URL} from './BASE_URL.js';
 //加载头部尾部
 import { fun_header, fun_banner, fun_footer } from "./JsHtml";
 fun_header("");
@@ -87,9 +88,26 @@ function zongjia_fun() {
 //     $(".price").html(zongjia.toFixed(2));
 // }
 
+//获取参数
+function geturlparam() {
+  let params = location.search;
+  let paramarry = params.slice(1).split("&");
+  let sparam = {};
+  paramarry.forEach(item => {
+      let itmes = item.split('=');
+      sparam[itmes[0]] = decodeURI(itmes[1]);
+  })
+  return sparam;
+}
+let a = geturlparam();
+let searchid = '';
+if (a.id) {
+  searchid = a.id;
+}
+console.log(searchid)
 // ============前后端交互==================
 $.ajax({
-  url: `http://print.oicp.vip/singlerecipe/2/`,
+  url: `${BASE_URL}/singlerecipe/${searchid}/`,
   //数据格式
   dataType: "json"
 })
@@ -100,7 +118,7 @@ $.ajax({
     $(".jieshao").html(res.recipe_detail);
     $(".jieshao img").each((index, item) => {
       let img_url = $(item).attr("src");
-      $(item).attr("src", "http://192.168.7.170:8000" + img_url);
+      $(item).attr("src", BASE_URL + img_url);
       console.log(item);
     });
     let html = ``;

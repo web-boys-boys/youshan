@@ -3,9 +3,10 @@ import "../less/reset.less";
 
 import "./sweet-alert.js";
 import "../css/sweet-alert.css";
+import { BASE_URL } from "./BASE_URL";
 // import "../css/example.css";
 
-$("input").on("change", function () {
+$("input").on("change", function() {
   //表单验证
   let reg = new RegExp($(this).data("reg"));
 
@@ -22,7 +23,7 @@ $("input").on("change", function () {
 
 //记住用户名按钮
 let isf = 0;
-$(".svg-img").click(function () {
+$(".svg-img").click(function() {
   if (!isf) {
     $(this)
       .children()
@@ -37,7 +38,7 @@ $(".svg-img").click(function () {
 });
 
 //点击登录
-$("#submit").click(function () {
+$("#submit").click(function() {
   // login_ajax($("#username").val(), $("#password").val());
   // swal({
   //   title: "用户名或密码不正确!",
@@ -66,7 +67,7 @@ $("#submit").click(function () {
   // });
 
   // if (a) {
-    login_ajax($("#username").val(), $("#password").val());
+  login_ajax($("#username").val(), $("#password").val());
   //   // let obj = {};
   //   // obj.id = $("input").val();
   //   // sessionStorage.setItem($("input").val(), JSON.stringify(obj));
@@ -77,49 +78,42 @@ $("#submit").click(function () {
 });
 function login_ajax(username, userpass) {
   let data = {
-    "username": username,
-    "password": userpass,
-  }
+    username: username,
+    password: userpass
+  };
   // 192.168.110.43
   $.ajax({
-    url: "http://print.oicp.vip/login/",
+    url: `${BASE_URL}/login/`,
     type: "post",
     async: false, //异步请求关闭，就变为了同步
     data: data,
-    //传纯字符串表单
-    // data:$('#login_form').serialize(),  //序列化 ，serialize把对象转化为json
-    //传包含文件的表单
-    // data: new FormData($("login_form")[0]),
-    // cache: false,
-    // processData: false,
-    // contentType: false,
-    success: function (response_data) {
+    success: function(response_data) {
       console.log(response_data);
       // alert("登陆成功");
       // let obj = data;
       // obj.id = $("input").val();
+      localStorage.setItem("access", response_data["access"]);
       sessionStorage.setItem("userinfo", JSON.stringify(data));
-      swal({
-        title: "登录成功！",
-        text: "2秒后自动跳转首页",
-        type: "success",
-        // showCancelButton: true,
-        // confirmButtonColor: "#DD6B55",
-        confirmButtonText: "立即跳转",
-        // cancelButtonText: "No, cancel plx!",
-        closeOnConfirm: false,
-        // closeOnCancel: false
-        timer: 1500
-      },
-        function () {
-          location.href = "../../index.html";
-        });
-      setTimeout(function () {
-        location.href = "../../index.html";
-      }, 2000)
-      // location.href = "../../index.html";
+      // swal({
+      //   title: "登录成功！",
+      //   text: "2秒后自动跳转首页",
+      //   type: "success",
+      //   // showCancelButton: true,
+      //   // confirmButtonColor: "#DD6B55",
+      //   confirmButtonText: "立即跳转",
+      //   // cancelButtonText: "No, cancel plx!",
+      //   closeOnConfirm: false,
+      //   // closeOnCancel: false
+      //   timer: 1500
+      // },
+      //   function () {
+      //     location.href = "../../index.html";
+      //   });
+      // setTimeout(function () {
+      //   location.href = "../../index.html";
+      // }, 2000)
     },
-    error: function (response_data) {
+    error: function(response_data) {
       console.log(response_data);
       swal({
         title: "用户名或密码不正确!",
@@ -138,7 +132,7 @@ function login_ajax(username, userpass) {
     //     return false;
     //   }
     // }
-  })//ajax就不等待
+  }); //ajax就不等待
 }
 //点击登录
 // $('.btn').click(function () {
