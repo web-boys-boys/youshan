@@ -233,18 +233,7 @@ $.ajax({
     }
 })
 
-// res.data.forEach(item => {
-//     htmlStr += `<li>
-//         <img src="${item.avatar}">
-//         <p>${item.name}</p>
-//         <p>${item.location}</p>
-//         <p>${item.position}</p>
-//     </li>`;
-// })
-// heros.innerHTML = htmlStr;
-// }).fail(err => {
-//     console.log(err);
-// });
+
 
 
 

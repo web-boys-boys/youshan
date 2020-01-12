@@ -1,28 +1,29 @@
 @ys_color: #FF416C;
 
 .container {
-    background: #FBFBFB;
-    margin-top: 80px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    background   : #FBFBFB;
+    margin-top   : 80px;
+    box-shadow   : 0px 0px 20px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    position: relative;
+    position     : relative;
 
     .modf a {
-        font-size: 20px;
+        font-size  : 20px;
         line-height: 26px;
-        position: absolute;
-        right: 35px;
-        top: 83px;
-        color: @ys_color;
+        position   : absolute;
+        right      : 35px;
+        top        : 83px;
+        color      : @ys_color;
     }
+
     .define_modf {
-        font-size: 20px;
+        font-size  : 20px;
         line-height: 26px;
-        position: absolute;
-        right: 35px;
-        top: 83px;
-        color: @ys_color;
-        display: none;
+        position   : absolute;
+        right      : 35px;
+        top        : 83px;
+        color      : @ys_color;
+        display    : none;
     }
 
     .aceept {
@@ -34,90 +35,90 @@
     }
 
     .uer_info {
-        width: 100%;
-        height: 250px;
+        width     : 100%;
+        height    : 250px;
         background: #FFFFFF;
-        border: 1.76px solid #E3E3E3;
+        border    : 1.76px solid #E3E3E3;
         box-sizing: border-box;
 
         .det {
-            margin-top: 20px;
-            font-size: 22px;
+            margin-top : 20px;
+            font-size  : 22px;
             line-height: 26px;
             font-weight: 500;
-            span{
-                font-size: 20px;
+
+            span {
+                font-size  : 20px;
                 line-height: 100px;
-                color: #333333;
+                color      : #333333;
             }
         }
 
     }
 
     .item {
-        font-size: 28px;
-        margin: 20px auto;
-        color: #333333;
+        font-size  : 28px;
+        margin     : 20px auto;
+        color      : #333333;
         line-height: 1.8;
     }
 
     .opt {
-        height: 140px;
-        font-size: 1.5rem;
+        height     : 140px;
+        font-size  : 1.5rem;
         line-height: 1.8;
-        color: #333333;
-        background: #FFFFFF;
-        border: 0.884666px solid #E3E3E3;
-        position: relative;
+        color      : #333333;
+        background : #FFFFFF;
+        border     : 0.884666px solid #E3E3E3;
+        position   : relative;
 
 
         .text {
             position: absolute;
-            top: 21px;
+            top     : 21px;
 
             input[type="checkbox"] {
-                margin: 10px;
-                appearance: none;
-                width: 20px;
-                height: 20px;
-                border-radius: 10%;
-                display: inline-block;
-                text-align: center;
+                margin        : 10px;
+                appearance    : none;
+                width         : 20px;
+                height        : 20px;
+                border-radius : 10%;
+                display       : inline-block;
+                text-align    : center;
                 vertical-align: middle;
-                line-height: 18px;
-                position: relative;
+                line-height   : 18px;
+                position      : relative;
             }
 
             input[type="checkbox"]::before {
-                content: "";
-                position: absolute;
-                border-radius: 10%;
-                top: 0;
-                left: 0;
+                content         : "";
+                position        : absolute;
+                border-radius   : 10%;
+                top             : 0;
+                left            : 0;
                 background-color: @ys_color;
-                width: 100%;
-                height: 100%;
-                border: 1px solid @ys_color
+                width           : 100%;
+                height          : 100%;
+                border          : 1px solid @ys_color
             }
 
             input[type="checkbox"]:checked::before {
-                content: "\2713";
-                border-radius: 10%;
+                content         : "\2713";
+                border-radius   : 10%;
                 background-color: @ys_color;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                // border: 1px solid ys_color;
-                color: white;
-                font-size: 20px;
-                font-weight: bold;
+                position        : absolute;
+                top             : 0;
+                left            : 0;
+                width           : 100%;
+                color           : white;
+                font-size       : 20px;
+                font-weight     : bold;
             }
         }
 
         .text2 {
             position: absolute;
-            top: 73px;
+            top     : 73px;
         }
 
         .desc {
@@ -126,8 +127,8 @@
 
         .tip {
             line-height: 140px;
-            font-size: 1.3rem;
-            color: #999;
+            font-size  : 1.3rem;
+            color      : #999;
         }
 
     }
@@ -135,91 +136,89 @@
 }
 
 
-
 .row {
-    height: 80px;
-    background: #FFFFFF;
-    border: 1.6px solid #E3E3E3;
+    height     : 80px;
+    background : #FFFFFF;
+    border     : 1.6px solid #E3E3E3;
     line-height: 80px;
 
 }
 
 .jiesuan {
-    height: 200px;
-    background: #FFFFFF;
-    border: 1.6px solid #E3E3E3;
+    height     : 200px;
+    background : #FFFFFF;
+    border     : 1.6px solid #E3E3E3;
     line-height: 50px;
 
 
     .fll {
-        width: 79.5%;
+        width : 79.5%;
         height: 100%;
 
         .youhuiquan {
             font-weight: bold;
-            font-size: 20px;
+            font-size  : 20px;
             line-height: 100px;
-            color: #333333;
+            color      : #333333;
 
         }
 
         .wuyouhui {
             font-size: 16px;
-            color: #666666;
+            color    : #666666;
 
         }
 
         input[type="checkbox"] {
-            margin: 10px;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 10%;
-            display: inline-block;
-            text-align: center;
+            margin        : 10px;
+            appearance    : none;
+            width         : 20px;
+            height        : 20px;
+            border-radius : 10%;
+            display       : inline-block;
+            text-align    : center;
             vertical-align: middle;
-            line-height: 18px;
-            position: relative;
+            line-height   : 18px;
+            position      : relative;
         }
 
         input[type="checkbox"]::before {
-            content: "";
-            position: absolute;
-            border-radius: 10%;
-            top: 0;
-            left: 0;
+            content         : "";
+            position        : absolute;
+            border-radius   : 10%;
+            top             : 0;
+            left            : 0;
             background-color: @ys_color;
-            width: 100%;
-            height: 100%;
-            border: 1px solid @ys_color
+            width           : 100%;
+            height          : 100%;
+            border          : 1px solid @ys_color
         }
 
         input[type="checkbox"]:checked::before {
-            content: "\271A";
-            border-radius: 10%;
+            content         : "\271A";
+            border-radius   : 10%;
             background-color: @ys_color;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            // border: 1px solid ys_color;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
+            position        : absolute;
+            top             : 0;
+            left            : 0;
+            width           : 100%;
+            color           : white;
+            font-size       : 20px;
+            font-weight     : bold;
         }
 
     }
 
     .frr {
-        width: 20%;
+        width : 20%;
         height: 100%;
 
         .word {
-            font-size: 16px;
-            line-height: 20px;
-            text-align: right;
+            font-size     : 16px;
+            line-height   : 20px;
+            text-align    : right;
             letter-spacing: 0.2em;
-            color: #333333;
+            color         : #333333;
 
         }
 
@@ -229,72 +228,71 @@
 
 .f_row {
     background-color: #f4f0f0;
-    box-sizing: border-box;
+    box-sizing      : border-box;
 }
 
 .payfor {
     margin-top: 80px;
-    height: 300px;
-   
+    height    : 300px;
+
     .paymand {
         margin-right: 20px;
-        margin-top: 80px;
-        font-size: 24px;
-        line-height: 30px;
-        text-align: right;
-        color: #333333;
+        margin-top  : 80px;
+        font-size   : 24px;
+        line-height : 30px;
+        text-align  : right;
+        color       : #333333;
 
     }
 
     .redc {
-
-        font-size: 32px;
+        font-size  : 32px;
         line-height: 40px;
-        text-align: right;
-        color: @ys_color;
+        text-align : right;
+        color      : @ys_color;
     }
 
     .btna {
         margin-right: 20px;
-        margin-top: 30px;
-        width: 240px;
-        height: 80px;
-        background: linear-gradient(257.92deg, #FF416C -1.95%, #FF4B2B 172.83%);
+        margin-top  : 30px;
+        width       : 240px;
+        height      : 80px;
+        background  : linear-gradient(257.92deg, #FF416C -1.95%, #FF4B2B 172.83%);
 
         a {
             text-decoration: none;
-            font-weight: bold;
-            font-size: 40px;
-            line-height: 50px;
-            color: #FFFFFF;
+            font-weight    : bold;
+            font-size      : 40px;
+            line-height    : 50px;
+            color          : #FFFFFF;
         }
     }
 
     .circle {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
+        width           : 20px;
+        height          : 20px;
+        border-radius   : 50%;
         background-color: @ys_color;
-        font-size: 16px;
-        line-height: 20px;
-        text-align: center;
-        color: white;
-        position: absolute;
-        bottom: 1px;
-        left: -25px;
+        font-size       : 16px;
+        line-height     : 20px;
+        text-align      : center;
+        color           : white;
+        position        : absolute;
+        bottom          : 1px;
+        left            : -25px;
 
 
     }
 
     .titles {
         position: relative;
-        top: 205px;
-        left: 18px;
+        top     : 205px;
+        left    : 18px;
     }
 
     .tit {
-        color: @ys_color;
-        font-size: 18px;
+        color      : @ys_color;
+        font-size  : 18px;
         line-height: 20px;
 
     }
