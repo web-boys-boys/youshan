@@ -11,49 +11,52 @@ fun_header("./static/pages/");
 fun_banner("./static/pages/");
 fun_footer();
 
+import { BASE_URL } from './BASE_URL'
+// b();
+
 console.log($(".item").children());
 
 // $(".item").children().attr("href", "./static/pages/commodity.html?id=13");
 let list = [{
-        id: 1,
-        img: "./images/menu_one.png",
-        title: " 好吃的的1",
-        price: "18.51",
-        content: "“这道美味一锅炖就像暖冬的能量煲。这道菜一共四个特点：美味、健康、营养、简单！",
-        food: "鸡蛋、青菜、面粉、青瓜、鸡蛋、青菜"
-    },
-    {
-        id: 2,
-        img: "./images/menu_two.png",
-        title: " 好吃的的2",
-        price: "18.52",
-        content: "“这道美味一锅炖就像暖冬的能量煲。这道菜一共四个特点：美味、健康、营养、简单！",
-        food: "鸡蛋、青菜、面粉、青瓜、鸡蛋、青菜"
-    },
-    {
-        id: 3,
-        img: "./images/menu_three.png",
-        title: " 好吃的的3",
-        price: "18.53",
-        content: "“这道美味一锅炖就像暖冬的能量煲。这道菜一共四个特点：美味、健康、营养、简单！",
-        food: "鸡蛋、青菜、面粉、青瓜、鸡蛋、青菜"
-    },
-    {
-        id: 4,
-        img: "./images/menu_four.png",
-        title: " 好吃的的4",
-        price: "18.5",
-        content: "“这道美味一锅炖就像暖冬的能量煲。这道菜一共四个特点：美味、健康、营养、简单！",
-        food: "鸡蛋、青菜、面粉、青瓜、鸡蛋、青菜"
-    },
-    {
-        id: 5,
-        img: "./images/menu_five.png",
-        title: " 好吃的的5",
-        price: "18.54",
-        content: "“这道美味一锅炖就像暖冬的能量煲。这道菜一共四个特点：美味、健康、营养、简单！",
-        food: "鸡蛋、青菜、面粉、青瓜、鸡蛋、青菜"
-    }
+    id: 1,
+    img: "./images/menu_one.png",
+    title: " 好吃的的1",
+    price: "18.51",
+    content: "“这道美味一锅炖就像暖冬的能量煲。这道菜一共四个特点：美味、健康、营养、简单！",
+    food: "鸡蛋、青菜、面粉、青瓜、鸡蛋、青菜"
+},
+{
+    id: 2,
+    img: "./images/menu_two.png",
+    title: " 好吃的的2",
+    price: "18.52",
+    content: "“这道美味一锅炖就像暖冬的能量煲。这道菜一共四个特点：美味、健康、营养、简单！",
+    food: "鸡蛋、青菜、面粉、青瓜、鸡蛋、青菜"
+},
+{
+    id: 3,
+    img: "./images/menu_three.png",
+    title: " 好吃的的3",
+    price: "18.53",
+    content: "“这道美味一锅炖就像暖冬的能量煲。这道菜一共四个特点：美味、健康、营养、简单！",
+    food: "鸡蛋、青菜、面粉、青瓜、鸡蛋、青菜"
+},
+{
+    id: 4,
+    img: "./images/menu_four.png",
+    title: " 好吃的的4",
+    price: "18.5",
+    content: "“这道美味一锅炖就像暖冬的能量煲。这道菜一共四个特点：美味、健康、营养、简单！",
+    food: "鸡蛋、青菜、面粉、青瓜、鸡蛋、青菜"
+},
+{
+    id: 5,
+    img: "./images/menu_five.png",
+    title: " 好吃的的5",
+    price: "18.54",
+    content: "“这道美味一锅炖就像暖冬的能量煲。这道菜一共四个特点：美味、健康、营养、简单！",
+    food: "鸡蛋、青菜、面粉、青瓜、鸡蛋、青菜"
+}
 ];
 $.each(list, (index, item) => {
     let one_el = $($(".item").children()[index]);
@@ -70,7 +73,7 @@ function get_list() {
     let caipu = [];
     // http://192.168.110.43:8000/mainrecipes/
     $.ajax({
-        url: "http://192.168.7.170:8000/mainrecipes/",
+        url: `${BASE_URL}/mainrecipes/`,
         type: "get",
         async: false, //异步请求关闭，就变为了同步
         success: function (response_data) {

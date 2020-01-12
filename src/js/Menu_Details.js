@@ -24,8 +24,8 @@ import "./comment.js";
 function totalPrice() {
   //食材明细加减按钮
   //jia
-  $(".jia").each(function() {
-    $(this).click(function() {
+  $(".jia").each(function () {
+    $(this).click(function () {
       let count = parseFloat(
         $(this)
           .siblings(".num")
@@ -40,8 +40,8 @@ function totalPrice() {
   });
 
   //jian
-  $(".jian").each(function() {
-    $(this).click(function() {
+  $(".jian").each(function () {
+    $(this).click(function () {
       // let danjia = Number($(this).data("price"));
       // console.log(danjia);
       let count = parseFloat(
@@ -104,17 +104,12 @@ function geturlparam() {
 
   paramarry.forEach(item => {
     let itmes = item.split("=");
-<<<<<<< HEAD
-    sparam[itmes[0]] = decodeURI(itmes[1]);
-  });
-=======
     console.log(itmes);
     //对象表达式 id:3
     sparam[itmes[0]] = decodeURI(itmes[1]);
     console.log(decodeURI(itmes[1]));
   });
   console.log(sparam);
->>>>>>> 298048dc0af53f3c999d54178bc49978f130f28b
   return sparam;
 }
 let a = geturlparam();
@@ -122,11 +117,7 @@ let searchid = "";
 if (a.id) {
   searchid = a.id;
 }
-<<<<<<< HEAD
-console.log(searchid);
-=======
 // console.log(searchid);
->>>>>>> 298048dc0af53f3c999d54178bc49978f130f28b
 // ============前后端交互==================
 $.ajax({
   url: `${BASE_URL}/singlerecipe/${searchid}/`,
@@ -147,15 +138,10 @@ $.ajax({
     $(res.recipegoodsr_set).each((index, item) => {
       // let danjia = $(item)[0].goods.goods_price;
       // console.log(danjia)
-<<<<<<< HEAD
-      html += ` <section class="shicai yutou">
-      <div class="shicai-text" data-price=${$(item)[0].goods.goods_price}>${
-=======
       html += ` <section class="shicai yutou" data-goods=${item.goods.id}}>
       <div class="shicai-text" data-price=${item.goods.goods_price}>${
->>>>>>> 298048dc0af53f3c999d54178bc49978f130f28b
         item.goods.goods_name
-      }<span>${item.goods.goods_unit}</span></div>
+        }<span>${item.goods.goods_unit}</span></div>
       <div class="range">
         <img
           class="jia"
@@ -184,7 +170,7 @@ $.ajax({
 import { b } from "./ajax.js";
 b();
 
-$(".shopping-buy-left").click(function() {
+$(".shopping-buy-left").click(function () {
   console.log($(this).data("id"));
   let isture = false;
   $(".shicai").each((index, item) => {
@@ -200,7 +186,7 @@ $(".shopping-buy-left").click(function() {
       isture = true;
       console.log(res);
     }
-    if(index== $(".shicai").length-1){
+    if (index == $(".shicai").length - 1) {
       swal({
         title: "添加成功，可前往查看",
         type: "success",
@@ -210,7 +196,7 @@ $(".shopping-buy-left").click(function() {
   });
   // console.log(isture);
   // if (isture) {
-    
+
   // }
   // let data = {
   //   is_checked: false,

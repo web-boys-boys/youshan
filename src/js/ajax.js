@@ -59,17 +59,6 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-<<<<<<< HEAD
-            data: {
-              refresh: localStorage.getItem("refresh")
-            },
-            success: function (rsp_data) {
-              localStorage.setItem("access", rsp_data["access"]);
-              $.myAjaxGet(url, callback);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-              window.location.href = "./static/pages/login.html";
-=======
             data: { refresh: sessionStorage.getItem("refresh") },
             success: function(rsp_data) {
               sessionStorage.setItem("access", rsp_data["access"]);
@@ -77,7 +66,6 @@ export let b = $.extend({
             },
             error: function(jqXHR, textStatus, errorThrown) {
               window.location.href = "../../../static/pages/login.html";
->>>>>>> 298048dc0af53f3c999d54178bc49978f130f28b
             }
           });
         }
@@ -137,17 +125,6 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-<<<<<<< HEAD
-            data: {
-              refresh: localStorage.getItem("refresh")
-            },
-            success: function (rsp_data) {
-              localStorage.setItem("access", rsp_data["access"]);
-              $.myAjaxGet(url, callback);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-              window.location.href = "../static/pages/login.html";
-=======
             data: { refresh: sessionStorage.getItem("refresh") },
             success: function(rsp_data) {
               sessionStorage.setItem("access", rsp_data["access"]);
@@ -155,7 +132,6 @@ export let b = $.extend({
             },
             error: function(jqXHR, textStatus, errorThrown) {
               window.location.href = "../../../static/pages/login.html";
->>>>>>> 298048dc0af53f3c999d54178bc49978f130f28b
             }
           });
         }
@@ -217,23 +193,12 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-<<<<<<< HEAD
-            data: {
-              refresh: localStorage.getItem("refresh")
-            },
-            success: function (rsp_data) {
-              localStorage.setItem("access", rsp_data["access"]);
-              $.myAjaxGet(url, callback);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-=======
             data: { refresh: sessionStorage.getItem("refresh") },
             success: function(rsp_data) {
               sessionStorage.setItem("access", rsp_data["access"]);
               $.myAjaxGet(url, callback);
             },
             error: function(jqXHR, textStatus, errorThrown) {
->>>>>>> 298048dc0af53f3c999d54178bc49978f130f28b
               window.location.href = "../../../static/pages/login.html";
             }
           });
@@ -296,17 +261,6 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-<<<<<<< HEAD
-            data: {
-              refresh: localStorage.getItem("refresh")
-            },
-            success: function (rsp_data) {
-              localStorage.setItem("access", rsp_data["access"]);
-              $.myAjaxGet(url, callback);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-              window.location.href = "../static/pages/login.html";
-=======
             data: { refresh: sessionStorage.getItem("refresh") },
             success: function(rsp_data) {
               sessionStorage.setItem("access", rsp_data["access"]);
@@ -314,7 +268,6 @@ export let b = $.extend({
             },
             error: function(jqXHR, textStatus, errorThrown) {
               window.location.href = "../../../static/pages/login.html";
->>>>>>> 298048dc0af53f3c999d54178bc49978f130f28b
             }
           });
         }

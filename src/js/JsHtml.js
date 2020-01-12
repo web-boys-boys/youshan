@@ -950,13 +950,14 @@ setTimeout(function () {
 
 import "../js/sweet-alert.js";
 import "../css/sweet-alert.css";
+import { BASE_URL } from './BASE_URL'
 
 function get_list(url_s) {
 
     // let caipu = [];
     // http://print.oicp.vip/menu/
     $.ajax({
-        url: "http://print.oicp.vip/menu/",
+        url: `${BASE_URL}/menu/`,
         type: "get",
         async: false, //异步请求关闭，就变为了同步
         // dataType: "json",

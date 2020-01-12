@@ -95,18 +95,23 @@ function quanel() {
         }
         if (sss) {
             if (goodsArr.length != 0) {
+                let ais = true;
                 $.each(goodsArr, (index, item) => {
+                    console.log(item);
                     if (item.cartid == $(el).attr("cartid")) {
-                        item.quantity = quantity;
-                    } else {
-                        goodsArr.push(data);
+                        goodsArr.splice(index, 1, data);
+                        ais = false;
+                        return;
                     }
                 })
+                if (ais) {
+                    goodsArr.push(data);
+                }
             } else {
                 goodsArr.push(data);
             }
         } else {
-            goodsArr.remove(data)
+            goodsArr.splice($.inArray(data, goodsArr), 1);
         }
         // console.log()
         // $.myAjaxPut(`/cart/${$(el).attr("cartid")}/`, data, callback)
@@ -234,7 +239,7 @@ function callback_get(response_data) {
                 <input class="ipt" type="text" value="${item.quantity}">
                 <button class="butn jian fr">-</button>
             </li>
-            <li class="tot_price">￥ <span id="tot_price">${ (item.goods.goods_price *item.quantity)
+            <li class="tot_price">￥ <span id="tot_price">${ (item.goods.goods_price * item.quantity)
                 .toFixed(2)}</span> </li>
             <li class="del">删除</li>   
         </ul>

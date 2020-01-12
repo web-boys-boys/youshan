@@ -2,7 +2,7 @@ import '../less/index.less';
 import '../less/util.less';
 import '../less/Menu_Page.less';
 import './JsHtml.js';
-import { BASE_URL } from "./BASE_URL.js";
+import { BASE_URL } from "./BASE_URL";
 
 //选择菜单
 $('.fr_menu li').click(function () {
@@ -18,7 +18,6 @@ import { fun_header, fun_banner, fun_footer } from "./JsHtml"
 fun_header("./");
 fun_banner("./");
 fun_footer();
-
 //加载list
 
 
@@ -40,7 +39,7 @@ if (a.id) {
 }
 // console.log(a.id);
 $.ajax({
-    url: "http://print.oicp.vip/recipes/?search=" + searchid,
+    url: `${BASE_URL}/recipes/?search=` + searchid,
     type: "get",
     async: false, //异步请求关闭，就变为了同步
     success: function (response_data) {
