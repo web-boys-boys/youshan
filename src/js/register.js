@@ -1,8 +1,10 @@
 import "../less/login-register.less";
 import "../less/reset.less";
 
+//x0popup插件弹出框
 import "./sweet-alert.js";
 import "../css/sweet-alert.css";
+
 import { BASE_URL } from "./BASE_URL";
 // import "../css/example.css";
 
@@ -160,8 +162,8 @@ function register_ajax(username, email, password) {
           // alert("登陆成功");
           // let obj = data;
           // obj.id = $("input").val();
-          localStorage.setItem("refresh", response_data["refresh"]);
-          localStorage.setItem("access", response_data["access"]);
+          sessionStorage.setItem("refresh", response_data["refresh"]);
+          sessionStorage.setItem("access", response_data["access"]);
           swal(
             {
               title: "注册成功！",
