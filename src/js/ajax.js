@@ -10,7 +10,7 @@ export let b = $.extend({
       url: BASE_URL + url,
       type: "get",
       headers: {
-        Authorization: "Bearer " + localStorage.getItem("access")
+        Authorization: "Bearer " + sessionStorage.getItem("access")
       },
       data: data,
       cache: false,
@@ -56,13 +56,13 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-            data: { refresh: localStorage.getItem("refresh") },
+            data: { refresh: sessionStorage.getItem("refresh") },
             success: function(rsp_data) {
-              localStorage.setItem("access", rsp_data["access"]);
+              sessionStorage.setItem("access", rsp_data["access"]);
               $.myAjaxGet(url, callback);
             },
             error: function(jqXHR, textStatus, errorThrown) {
-              window.location.href = "./static/pages/login.html";
+              window.location.href = "../../../static/pages/login.html";
             }
           });
         }
@@ -74,7 +74,7 @@ export let b = $.extend({
       url: BASE_URL + url,
       type: "post",
       headers: {
-        Authorization: "Bearer" + " " + localStorage.getItem("access")
+        Authorization: "Bearer" + " " + sessionStorage.getItem("access")
       },
       data: data,
       cache: false,
@@ -122,13 +122,13 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-            data: { refresh: localStorage.getItem("refresh") },
+            data: { refresh: sessionStorage.getItem("refresh") },
             success: function(rsp_data) {
-              localStorage.setItem("access", rsp_data["access"]);
+              sessionStorage.setItem("access", rsp_data["access"]);
               $.myAjaxGet(url, callback);
             },
             error: function(jqXHR, textStatus, errorThrown) {
-              window.location.href = "../static/pages/login.html";
+              window.location.href = "../../../static/pages/login.html";
             }
           });
         }
@@ -144,7 +144,7 @@ export let b = $.extend({
       url: BASE_URL + url,
       type: "put",
       headers: {
-        Authorization: "Bearer " + localStorage.getItem("access")
+        Authorization: "Bearer " + sessionStorage.getItem("access")
       },
       data: data,
       cache: false,
@@ -190,13 +190,13 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-            data: { refresh: localStorage.getItem("refresh") },
+            data: { refresh: sessionStorage.getItem("refresh") },
             success: function(rsp_data) {
-              localStorage.setItem("access", rsp_data["access"]);
+              sessionStorage.setItem("access", rsp_data["access"]);
               $.myAjaxGet(url, callback);
             },
             error: function(jqXHR, textStatus, errorThrown) {
-              window.location.href = "../static/pages/login.html";
+              window.location.href = "../../../static/pages/login.html";
             }
           });
         }
@@ -212,7 +212,7 @@ export let b = $.extend({
       url: BASE_URL + url,
       type: "delete",
       headers: {
-        Authorization: "Bearer " + localStorage.getItem("access")
+        Authorization: "Bearer " + sessionStorage.getItem("access")
       },
       data: data,
       cache: false,
@@ -258,13 +258,13 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-            data: { refresh: localStorage.getItem("refresh") },
+            data: { refresh: sessionStorage.getItem("refresh") },
             success: function(rsp_data) {
-              localStorage.setItem("access", rsp_data["access"]);
+              sessionStorage.setItem("access", rsp_data["access"]);
               $.myAjaxGet(url, callback);
             },
             error: function(jqXHR, textStatus, errorThrown) {
-              window.location.href = "../static/pages/login.html";
+              window.location.href = "../../../static/pages/login.html";
             }
           });
         }

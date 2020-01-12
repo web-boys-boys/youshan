@@ -22,11 +22,14 @@ import "./comment.js";
 //跳轉交錢頁面
 // import "./apply.js";
 
-//
+//懒加载
 import "../css/animation.css";
 import "./lazy_load.js";
+
+//
 import { b } from "./ajax.js";
 b();
+
 function allPrice() {
   //单价
   let danjia = Number($(".price").text());

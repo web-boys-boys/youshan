@@ -92,7 +92,8 @@ function login_ajax(username, userpass) {
       // alert("登陆成功");
       // let obj = data;
       // obj.id = $("input").val();
-      localStorage.setItem("access", response_data["access"]);
+      sessionStorage.setItem("refresh", response_data["refresh"]);
+      sessionStorage.setItem("access", response_data["access"]);
       sessionStorage.setItem("userinfo", JSON.stringify(data));
       // swal({
       //   title: "登录成功！",
