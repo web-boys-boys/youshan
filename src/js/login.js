@@ -94,24 +94,24 @@ function login_ajax(username, userpass) {
       // obj.id = $("input").val();
       localStorage.setItem("access", response_data["access"]);
       sessionStorage.setItem("userinfo", JSON.stringify(data));
-      // swal({
-      //   title: "登录成功！",
-      //   text: "2秒后自动跳转首页",
-      //   type: "success",
-      //   // showCancelButton: true,
-      //   // confirmButtonColor: "#DD6B55",
-      //   confirmButtonText: "立即跳转",
-      //   // cancelButtonText: "No, cancel plx!",
-      //   closeOnConfirm: false,
-      //   // closeOnCancel: false
-      //   timer: 1500
-      // },
-      //   function () {
-      //     location.href = "../../index.html";
-      //   });
-      // setTimeout(function () {
-      //   location.href = "../../index.html";
-      // }, 2000)
+      swal({
+        title: "登录成功！",
+        text: "2秒后自动跳转首页",
+        type: "success",
+        // showCancelButton: true,
+        // confirmButtonColor: "#DD6B55",
+        confirmButtonText: "立即跳转",
+        // cancelButtonText: "No, cancel plx!",
+        closeOnConfirm: false,
+        // closeOnCancel: false
+        timer: 1500
+      },
+        function () {
+          location.href = "../../index.html";
+        });
+      setTimeout(function () {
+        location.href = "../../index.html";
+      }, 2000)
     },
     error: function(response_data) {
       console.log(response_data);

@@ -1,7 +1,9 @@
-import { BASE_URL } from "./BASE_URL";
+import {
+  BASE_URL
+} from "./BASE_URL";
 export let b = $.extend({
   //全局封装，把函数直接封装到jquery的属性上
-  myAjaxGet: function(url, data, callback) {
+  myAjaxGet: function (url, data, callback) {
     if (callback == undefined) {
       callback = data;
       data = {};
@@ -14,10 +16,11 @@ export let b = $.extend({
       },
       data: data,
       cache: false,
-      success: function(rsp_data) {
+      success: function (rsp_data) {
+        // console.log(rsp_data)
         callback(rsp_data);
       },
-      error: function(jqXHR, textStatus, errorThrown) {
+      error: function (jqXHR, textStatus, errorThrown) {
         if (jqXHR.status == 400) {
           console.log(jqXHR);
           if ("non_field_errors" in JSON.parse(jqXHR.responseText)) {
@@ -56,12 +59,14 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-            data: { refresh: localStorage.getItem("refresh") },
-            success: function(rsp_data) {
+            data: {
+              refresh: localStorage.getItem("refresh")
+            },
+            success: function (rsp_data) {
               localStorage.setItem("access", rsp_data["access"]);
               $.myAjaxGet(url, callback);
             },
-            error: function(jqXHR, textStatus, errorThrown) {
+            error: function (jqXHR, textStatus, errorThrown) {
               window.location.href = "./static/pages/login.html";
             }
           });
@@ -69,7 +74,7 @@ export let b = $.extend({
       }
     });
   },
-  myAjaxPost: function(url, data, callback) {
+  myAjaxPost: function (url, data, callback) {
     $.ajax({
       url: BASE_URL + url,
       type: "post",
@@ -78,11 +83,11 @@ export let b = $.extend({
       },
       data: data,
       cache: false,
-      success: function(rsp_data) {
+      success: function (rsp_data) {
         console.log(rsp_data);
         callback("添加成功，可前往查看");
       },
-      error: function(jqXHR, textStatus, errorThrown) {
+      error: function (jqXHR, textStatus, errorThrown) {
         console.log(jqXHR);
         if (jqXHR.status == 400) {
           console.log(jqXHR);
@@ -122,12 +127,14 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-            data: { refresh: localStorage.getItem("refresh") },
-            success: function(rsp_data) {
+            data: {
+              refresh: localStorage.getItem("refresh")
+            },
+            success: function (rsp_data) {
               localStorage.setItem("access", rsp_data["access"]);
               $.myAjaxGet(url, callback);
             },
-            error: function(jqXHR, textStatus, errorThrown) {
+            error: function (jqXHR, textStatus, errorThrown) {
               window.location.href = "../static/pages/login.html";
             }
           });
@@ -135,7 +142,7 @@ export let b = $.extend({
       }
     });
   },
-  myAjaxPut: function(url, data, callback) {
+  myAjaxPut: function (url, data, callback) {
     if (callback == undefined) {
       callback = data;
       data = {};
@@ -148,10 +155,10 @@ export let b = $.extend({
       },
       data: data,
       cache: false,
-      success: function(rsp_data) {
+      success: function (rsp_data) {
         callback(rsp_data);
       },
-      error: function(jqXHR, textStatus, errorThrown) {
+      error: function (jqXHR, textStatus, errorThrown) {
         if (jqXHR.status == 400) {
           console.log(jqXHR);
           if ("non_field_errors" in JSON.parse(jqXHR.responseText)) {
@@ -190,12 +197,14 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-            data: { refresh: localStorage.getItem("refresh") },
-            success: function(rsp_data) {
+            data: {
+              refresh: localStorage.getItem("refresh")
+            },
+            success: function (rsp_data) {
               localStorage.setItem("access", rsp_data["access"]);
               $.myAjaxGet(url, callback);
             },
-            error: function(jqXHR, textStatus, errorThrown) {
+            error: function (jqXHR, textStatus, errorThrown) {
               window.location.href = "../static/pages/login.html";
             }
           });
@@ -203,7 +212,7 @@ export let b = $.extend({
       }
     });
   },
-  myAjaxDel: function(url, data, callback) {
+  myAjaxDel: function (url, data, callback) {
     if (callback == undefined) {
       callback = data;
       data = {};
@@ -216,10 +225,10 @@ export let b = $.extend({
       },
       data: data,
       cache: false,
-      success: function(rsp_data) {
+      success: function (rsp_data) {
         callback(rsp_data);
       },
-      error: function(jqXHR, textStatus, errorThrown) {
+      error: function (jqXHR, textStatus, errorThrown) {
         if (jqXHR.status == 400) {
           console.log(jqXHR);
           if ("non_field_errors" in JSON.parse(jqXHR.responseText)) {
@@ -258,12 +267,14 @@ export let b = $.extend({
           $.ajax({
             url: BASE_URL + "/api/token/refresh/",
             type: "post",
-            data: { refresh: localStorage.getItem("refresh") },
-            success: function(rsp_data) {
+            data: {
+              refresh: localStorage.getItem("refresh")
+            },
+            success: function (rsp_data) {
               localStorage.setItem("access", rsp_data["access"]);
               $.myAjaxGet(url, callback);
             },
-            error: function(jqXHR, textStatus, errorThrown) {
+            error: function (jqXHR, textStatus, errorThrown) {
               window.location.href = "../static/pages/login.html";
             }
           });

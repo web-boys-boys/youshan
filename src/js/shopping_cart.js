@@ -11,6 +11,20 @@ import '../less/shopping_cart.less';
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
+import {
+    BASE_URL
+} from './BASE_URL.js';
+//加载头部尾部
+import {
+    fun_header,
+    fun_footer
+} from "./JsHtml"
+fun_header("./");
+fun_footer();
+import {
+    b
+} from "./ajax";
+b();
 
 function quanel() {
     $(".All_del").click(function () {
@@ -151,87 +165,42 @@ function quanel() {
 /*=============================前后端交互=========================================*/
 //购物车动态加载数据
 
-// let BASE_URL = "http://192.168.7.170:8000/"
-// fetch(`${BASE_URL}carts/`).then(res => {
-//     return res.json();
-// }).then(data => {
-//     console.log(data)
-//     let s = ""
-//     $.each(data, (index, item) => {
-//         // console.log(item.goods.goods_icon)
-//         s += `<ul class="list footlist">
-//         <li>
-//             <input type="checkbox">
-//         </li>
-//         <li class="img">
-//             <img src="" alt="">
-//         </li>
-//         <li class="desc">
-//             ${item.goods.goods_name}
-//             <br>${item.goods.goods_name}
-//             <br>${item.goods.goods_title}
-//         </li>
-//         <li class="d_price">
-//             ￥<span id="d_price"> ${item.goods.goods_price}</span>
-//         </li>
-//         <li class="count">
-//             <button class="butn jia fl">+</button>
-//             <input class="ipt" type="text" value="${item.goods.goods_stock}">
-//             <button class="butn jian fr">-</button>
-//         </li>
-//         <li class="tot_price">￥ <span id="tot_price">${item.goods.goods_price}</span> </li>
-//         <li class="del">删除</li>   
-//     </ul>
-// `
-//     })
-//     $(".footContent").html(s);
-//     //  console.log(data.data)
+$.myAjaxGet("/carts/", callback_get)
 
-// })
-let BASE_URL = "http://192.168.7.170:8000/"
-$.ajax({
-    type: 'get',
-    url: `${BASE_URL}carts/`,
-    // 数据格式
-    dataType: "json",
-    success: function (response_data) {
-        console.log(response_data[0]);
-        let s = ""
-        // $.each(response_data, (index, item) => {
-
-        // console.log(item.goods.goods_icon)
-        s += `<ul class="list footlist">
-        <li>
-            <input type="checkbox">
-        </li>
-        <li class="img">
-            <img src="" alt="">
-        </li>
-        <li class="desc">
-            ${response_data[0].goods.goods_name}
-            <br>${response_data[0].goods.goods_name}
-            <br>${response_data[0].goods.goods_title}
-        </li>
-        <li class="d_price">
-            ￥<span id="d_price"> ${response_data[0].goods.goods_price}</span>
-        </li>
-        <li class="count">
-            <button class="butn jia fl">+</button>
-            <input class="ipt" type="text" value="${response_data[0].goods.goods_stock}">
-            <button class="butn jian fr">-</button>
-        </li>
-        <li class="tot_price">￥ <span id="tot_price">${response_data[0].goods.goods_price}</span> </li>
-        <li class="del">删除</li>   
-    </ul>
-`
-        // })
-        $(".footContent").html(s);
-        quanel();
-    },
-    error: function (err) {
-        console.log(err);
-    }
-})
+function callback_get(response_data) {
+    console.log(response_data);
+    let s = ""
+    $.each(response_data, (index, item) => {
+    // console.log(item.goods.goods_icon)
+    s += `<ul class="list footlist">
+            <li>
+                <input type="checkbox">
+            </li>
+            <li class="img">
+                <img src="${item.goods.goods_icon}" alt="">
+            </li>
+            <li class="desc">
+                ${item.goods.goods_name}
+                <br>${item.goods.goods_title}
+                
+            </li>
+            <li class="d_price">
+                ￥<span id="d_price"> ${item.goods.goods_price}</span>
+            </li>
+            <li class="count">
+                <button class="butn jia fl">+</button>
+                <input class="ipt" type="text" value="${item.quantity}">
+                <button class="butn jian fr">-</button>
+            </li>
+            <li class="tot_price">￥ <span id="tot_price">${ (item.goods.goods_price *item.quantity)
+                .toFixed(2)}</span> </li>
+            <li class="del">删除</li>   
+        </ul>
+    `
+    })
+    $(".footContent").html(s);
+    quanel();
+}
 
 
 
@@ -239,14 +208,3 @@ $.ajax({
 
 
 
-//加载头部尾部
-import {
-    fun_header,
-    fun_footer
-} from "./JsHtml"
-fun_header("./");
-fun_footer();
-
-//
-
-// $('#top_Alldel').css()
