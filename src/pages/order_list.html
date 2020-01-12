@@ -54,9 +54,9 @@
             <h1 class="aceept">收货人信息</h1>
             <div class="modf"><a href="#">修改</a></div>
             <div class="uer_info">
-               
+
             </div>
-           <div class="define_modf"><a href="#">确定修改</a></div>
+            <div class="define_modf"><a href="#">确定修改</a></div>
             <div class="uerinfo_modify">
                 <label for="inputusername">收货人：</label>
                 <div class="form-group ">
@@ -72,8 +72,23 @@
                 </div>
                 <div class="form-group ">
                     <label for="inputdq">所在地区：</label>
-                    <div>
-                        <input type="text" class="form-control" id="inputdq" placeholder="所在地区">
+                    <div class="form-group row">
+                        <div class="select_cai">
+                            <select class="form-control" id="addressone">
+                                <option>---请选择---</option>
+                                <!-- <option>重庆</option> -->
+                            </select>
+                        </div>
+                        <div class="select_cai">
+                            <select class="form-control" id="addresstwo">
+                                <option>---请选择---</option>
+                            </select>
+                        </div>
+                        <div class="select_cai">
+                            <select class="form-control" id="addressthree">
+                                <option>---请选择---</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group ">
@@ -92,7 +107,7 @@
                 </div>
                 <div class="text2">
                     <label for="">发货：</label>
-                    <span class="desc">现在提交订单、预计20分钟后送达，由<span>金牛区</span>仓库出货</span>
+                    <span class="desc">现在提交订单、预计20分钟后送达，由<span id="address"></span>仓库出货</span>
                 </div>
             </div>
 
@@ -103,22 +118,22 @@
 
             <h2 class="item">商品清单</h2>
             <div class="list_content">
-            <div class="row f_row">
-                <div class="col-sm-4">商品名称</div>
-                <div class="col-sm-2">平台价</div>
-                <div class="col-sm-2">数量</div>
-                <div class="col-sm-2">优惠金额</div>
-                <div class="col-sm-2">小计</div>
-            </div>
-           
-            <div class="row row_content">
-                <!-- <div class="col-sm-4">菲律宾无眼菠萝</div>
+                <div class="row f_row">
+                    <div class="col-sm-4">商品名称</div>
+                    <div class="col-sm-2">平台价</div>
+                    <div class="col-sm-2">数量</div>
+                    <div class="col-sm-2">优惠金额</div>
+                    <div class="col-sm-2">小计</div>
+                </div>
+
+                <div class="row row_content">
+                    <!-- <div class="col-sm-4">菲律宾无眼菠萝</div>
                 <div class="col-sm-2">￥30.00</div>
                 <div class="col-sm-2">2盒一斤/盒</div>
                 <div class="col-sm-2">￥15.00</div>
                 <div class="col-sm-2">￥45.00</div> -->
+                </div>
             </div>
-        </div>
             <h2 class="item">结算信息</h2>
 
             <div class=" jiesuan">
@@ -132,9 +147,25 @@
                 </div>
 
                 <div class="frr fr">
-                   
+                    <div id="t_price">总计：￥
+                        <span  class="price word"></span>
+                    </div>
+                    <div class="send ">
+                        运费：
+                        <span class="word">免运费</span>
+                    </div>
+                    <div class="youhui">
+                        优惠：￥
+                        <span class="word">0.00</span>
+                    </div>
+                    <div class="jifen">
+                        积分：
+                        <span class="word">-0.00</span>
+                    </div>
+                    
                 </div>
-               
+
+
             </div>
 
             <h2 class="item">备注：</h2>
@@ -149,10 +180,10 @@
                     <a href="../pages/payment_page.html">提交订单</a>
                 </button>
                 <div class="fr titles ">
-                    <div class="circle" >
+                    <div class="circle">
                         <span>!</span>
                     </div>
-                   <span class="tit fr"> 提交订单后尽快支付，商品才不会被别人抢走咯！ </span>
+                    <span class="tit fr"> 提交订单后尽快支付，商品才不会被别人抢走咯！ </span>
                 </div>
             </div>
         </div>

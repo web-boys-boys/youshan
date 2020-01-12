@@ -52,6 +52,7 @@ function quanel() {
         $('.list li input').prop('checked', checkValue)
         $.each($(".footlist input[type='checkbox']"), (index, item) => {
             danxuan(item);
+            sessionStorage.setItem("goodscart", JSON.stringify(goodsArr));
         })
     })
     //下边全选
@@ -66,14 +67,53 @@ function quanel() {
 
     $(".footlist input[type='checkbox']").click(function () {
         danxuan(this);
+        sessionStorage.setItem("goodscart", JSON.stringify(goodsArr));
     })
     //单选
+    let goodsArr = [];
+
     function danxuan(el) {
         if ($(el).prop('checked')) {
             $(el).parents(".footlist").addClass("listchecked");
         } else {
             $(el).parents(".footlist").removeClass("listchecked");
         }
+        pu_carts(el);
+        sessionStorage.setItem("goodscart", JSON.stringify(goodsArr));
+    }
+
+    function pu_carts(el) {
+        let sss = $(el).prop('checked');
+        console.log(sss)
+        let cartid = $(el).attr("cartid");
+        let goods = $(el).attr("goodsid");
+        let quantity = $(el).parents(".list").find(".ipt").val();
+        let data = {
+            "cartid": cartid,
+            "goods": goods,
+            "quantity": quantity
+        }
+        if (sss) {
+            if (goodsArr.length != 0) {
+                $.each(goodsArr, (index, item) => {
+                    if (item.cartid == $(el).attr("cartid")) {
+                        item.quantity = quantity;
+                    } else {
+                        goodsArr.push(data);
+                    }
+                })
+            } else {
+                goodsArr.push(data);
+            }
+        } else {
+            goodsArr.remove(data)
+        }
+        // console.log()
+        // $.myAjaxPut(`/cart/${$(el).attr("cartid")}/`, data, callback)
+
+        // function callback(res) {
+        //     console.log(res);
+        // }
     }
     //inptu数量增加
     $('.jia').click(function () {
@@ -86,6 +126,8 @@ function quanel() {
         let totprice = (iptvalue * danjia).toFixed(2);
         $(this).parent().siblings(".tot_price").children("#tot_price").html(totprice);
         jishuan();
+        pu_carts($(this).parents(".list").find(".goodscheck"));
+        sessionStorage.setItem("goodscart", JSON.stringify(goodsArr));
     })
     //inptu数量增加
     $('.jian').click(function () {
@@ -101,13 +143,13 @@ function quanel() {
         let totprice = (iptvalue * danjia).toFixed(2);
         $(this).parent().siblings(".tot_price").children("#tot_price").html(totprice);
         jishuan();
+        pu_carts($(this).parents(".list").find(".goodscheck"));
+        sessionStorage.setItem("goodscart", JSON.stringify(goodsArr));
     })
-
     //删除单个
     $(".del").click(function () {
         del(this);
     })
-
     function del(el) {
         $(el).parents(".list").remove();
         // console.log();
@@ -171,10 +213,10 @@ function callback_get(response_data) {
     console.log(response_data);
     let s = ""
     $.each(response_data, (index, item) => {
-    // console.log(item.goods.goods_icon)
-    s += `<ul class="list footlist">
+        // console.log(item.goods.goods_icon)
+        s += `<ul class="list footlist" >
             <li>
-                <input type="checkbox">
+                <input type="checkbox" class="goodscheck" cartId="${item.id}" goodsID="${item.goods.id}">
             </li>
             <li class="img">
                 <img src="${item.goods.goods_icon}" alt="">
@@ -201,10 +243,3 @@ function callback_get(response_data) {
     $(".footContent").html(s);
     quanel();
 }
-
-
-
-
-
-
-

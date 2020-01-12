@@ -205,7 +205,7 @@ export let b = $.extend({
               $.myAjaxGet(url, callback);
             },
             error: function (jqXHR, textStatus, errorThrown) {
-              window.location.href = "../static/pages/login.html";
+              window.location.href = "../../../static/pages/login.html";
             }
           });
         }

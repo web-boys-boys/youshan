@@ -6,7 +6,7 @@ import "../css/sweet-alert.css";
 import { BASE_URL } from "./BASE_URL";
 // import "../css/example.css";
 
-$("input").on("change", function() {
+$("input").on("change", function () {
   //表单验证
   let reg = new RegExp($(this).data("reg"));
 
@@ -23,7 +23,7 @@ $("input").on("change", function() {
 
 //记住用户名按钮
 let isf = 0;
-$(".svg-img").click(function() {
+$(".svg-img").click(function () {
   if (!isf) {
     $(this)
       .children()
@@ -38,7 +38,7 @@ $(".svg-img").click(function() {
 });
 
 //点击登录
-$("#submit").click(function() {
+$("#submit").click(function () {
   // login_ajax($("#username").val(), $("#password").val());
   // swal({
   //   title: "用户名或密码不正确!",
@@ -87,7 +87,7 @@ function login_ajax(username, userpass) {
     type: "post",
     async: false, //异步请求关闭，就变为了同步
     data: data,
-    success: function(response_data) {
+    success: function (response_data) {
       console.log(response_data);
       // alert("登陆成功");
       // let obj = data;
@@ -113,7 +113,7 @@ function login_ajax(username, userpass) {
         location.href = "../../index.html";
       }, 2000)
     },
-    error: function(response_data) {
+    error: function (response_data) {
       console.log(response_data);
       swal({
         title: "用户名或密码不正确!",
