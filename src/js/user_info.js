@@ -8,6 +8,9 @@ fun_header("");
 fun_footer();
 import { fun_user } from "./JsHtml";
 fun_user(0);
+import { BASE_URL } from './BASE_URL';
+import { b } from "./ajax"
+b()
 
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.js";
@@ -134,6 +137,68 @@ $(".fbpl").click(() => {
     let comment_font = $(".comment_font").val();
     console.log(comment_font);
 })
+
+$.myAjaxGet("/area/", callback);
+function callback(response_data) {
+    // console.log(response_data);
+    getarea(response_data)
+}
+function getarea(area) {
+    console.log(area);
+    let addone = ``;
+    $.each(area, (index, item) => {
+        if (item.area_parent == null) {
+            console.log(item)
+            addone += `<option value="${item.id}">${item.area_name}</option>`;
+
+        }
+    })
+    $('#addressone').append(addone);
+    getareatwo(area);
+}
+function getareatwo(area) {
+    $('#addressone').change(function () {
+        console.log($(this).val())
+        $('#addresstwo').html("<option>---请选择---</option>");
+        $('#addressthree').html("<option>---请选择---</option>");
+        let addone = `"<option>---请选择---</option>"`;
+        $.each(area, (index, item) => {
+            if (item.area_parent == $(this).val()) {
+                console.log(item)
+                addone += `<option value="${item.id}">${item.area_name}</option>`;
+            }
+        })
+        console.log($(this).parent().next().children().html(addone));
+        // $(this).next().append(addone);
+    })
+    $('#addresstwo').change(function () {
+        console.log($(this).val())
+        let addone = `"<option>---请选择---</option>"`;
+        $.each(area, (index, item) => {
+            if (item.area_parent == $(this).val()) {
+                console.log(item)
+                addone += `<option value="${item.id}">${item.area_name}</option>`;
+            }
+        })
+        console.log($(this).parent().next().children().html(addone));
+        // $(this).next().append(addone);
+    })
+}
+
+// $.ajax({
+//     url: `${BASE_URL}/area/`,
+//     type: "get",
+//     // type: "post",
+//     async: false,
+//     success: function (response_data) {
+//         console.log(response_data.content);
+//         console.info('22222');
+//     },
+//     error: function (response_data) {
+//         console.log(response_data.content);
+//     }
+// })
+
 // function ajaxfun() {
 //     $.ajax({
 //         url: "data.json",
