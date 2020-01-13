@@ -2,6 +2,7 @@ import '../less/index.less';
 import '../less/util.less';
 import '../less/Menu_Page.less';
 import './JsHtml.js';
+import { BASE_URL } from "./BASE_URL.js";
 
 //选择菜单
 $('.fr_menu li').click(function () {

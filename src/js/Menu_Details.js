@@ -1,7 +1,7 @@
 import "../less/index.less";
 import "../less/util.less";
 import "./JsHtml.js";
-import {BASE_URL} from './BASE_URL.js';
+import { BASE_URL } from "./BASE_URL.js";
 //加载头部尾部
 import { fun_header, fun_banner, fun_footer } from "./JsHtml";
 fun_header("");
@@ -19,7 +19,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./comment.js";
 
 //跳轉交錢頁面
-import "./apply.js";
+// import "./apply.js";
 
 function totalPrice() {
   //食材明细加减按钮
@@ -35,7 +35,6 @@ function totalPrice() {
       $(this)
         .siblings(".num")
         .html(count);
-
       zongjia_fun();
     });
   });
@@ -43,6 +42,8 @@ function totalPrice() {
   //jian
   $(".jian").each(function() {
     $(this).click(function() {
+      // let danjia = Number($(this).data("price"));
+      // console.log(danjia);
       let count = parseFloat(
         $(this)
           .siblings(".num")
@@ -63,12 +64,17 @@ totalPrice();
 
 function zongjia_fun() {
   let zongjia = 0;
-  let danjia = 10;
+  // console.log(el)
+  // let danjia = $(el).parent().siblings(".shicai-text").data("price");
+  // console.log(danjia);
   $.each($(".shicai"), (index, item) => {
     zongjia +=
       $(item)
         .find(".num")
-        .html() * danjia;
+        .html() *
+      $(item)
+        .find(".shicai-text")
+        .data("price");
     // console.log(zongjia);
   });
   $(".price").html(zongjia.toFixed(2));
@@ -94,17 +100,17 @@ function geturlparam() {
   let paramarry = params.slice(1).split("&");
   let sparam = {};
   paramarry.forEach(item => {
-      let itmes = item.split('=');
-      sparam[itmes[0]] = decodeURI(itmes[1]);
-  })
+    let itmes = item.split("=");
+    sparam[itmes[0]] = decodeURI(itmes[1]);
+  });
   return sparam;
 }
 let a = geturlparam();
-let searchid = '';
+let searchid = "";
 if (a.id) {
   searchid = a.id;
 }
-console.log(searchid)
+console.log(searchid);
 // ============前后端交互==================
 $.ajax({
   url: `${BASE_URL}/singlerecipe/${searchid}/`,
@@ -123,25 +129,29 @@ $.ajax({
     });
     let html = ``;
     $(res.recipegoodsr_set).each((index, item) => {
-      // console.log(item)
+      // let danjia = $(item)[0].goods.goods_price;
+      // console.log(danjia)
       html += ` <section class="shicai yutou">
-      <div class="shicai-text">${item.goods.goods_name}<span>${item.goods.goods_unit}</span></div>
+      <div class="shicai-text" data-price=${$(item)[0].goods.goods_price}>${
+        item.goods.goods_name
+      }<span>${item.goods.goods_unit}</span></div>
       <div class="range">
         <img
           class="jia"
-          src="${require('../images/commodity/jia.png')}"
+          src="${require("../images/commodity/jia.png")}"
           alt="loding"
         />
         <span class="num">1</span>
         <img
           class="jian"
-          src="${require('../images/commodity/jian.png')}"
+          src="${require("../images/commodity/jian.png")}"
           alt="loding"
         />
       </div>
     </section> `;
     });
     $(".ingredients-details-inf").html(html);
+    zongjia_fun();
     totalPrice();
   })
   .fail(err => {

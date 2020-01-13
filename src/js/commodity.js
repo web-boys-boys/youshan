@@ -20,7 +20,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./comment.js";
 
 //跳轉交錢頁面
-import "./apply.js";
+// import "./apply.js";
 
 //
 import "../css/animation.css";
